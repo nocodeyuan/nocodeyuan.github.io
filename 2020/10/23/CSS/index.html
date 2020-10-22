@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS 笔记 | Points</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Take an essay about CSS-knowledge-points for back to get next time. 选择器属性值筛选选择器123456789&#x2F;*选择值包含字符串的元素*&#x2F;el[attr*&#x3D;&quot;val&quot;] &#x2F;*选择值包含独立字符串单词val的元素*&#x2F;el[attr~&#x3D;&amp;#x27;val&amp;#x27;]&#x2F;*选择值以val开头或者val-的元素*&#x2F;el">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 笔记">
+<meta property="og:url" content="http://example.com/2020/10/23/CSS/index.html">
+<meta property="og:site_name" content="Points">
+<meta property="og:description" content="Take an essay about CSS-knowledge-points for back to get next time. 选择器属性值筛选选择器123456789&#x2F;*选择值包含字符串的元素*&#x2F;el[attr*&#x3D;&quot;val&quot;] &#x2F;*选择值包含独立字符串单词val的元素*&#x2F;el[attr~&#x3D;&amp;#x27;val&amp;#x27;]&#x2F;*选择值以val开头或者val-的元素*&#x2F;el">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/yuan/AppData/Roaming/Typora/typora-user-images/image-20201022205659630.png">
+<meta property="og:image" content="c:/Users/yuan/Desktop/Snipaste_2020-10-22_22-50-32.png">
+<meta property="article:published_time" content="2020-10-22T18:45:27.721Z">
+<meta property="article:modified_time" content="2020-10-22T19:14:04.541Z">
+<meta property="article:author" content="未入圈的羊">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/yuan/AppData/Roaming/Typora/typora-user-images/image-20201022205659630.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Points" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo"></a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/CSS/" class="article-date">
+  <time datetime="2020-10-22T18:45:27.721Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS 笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Take an essay about CSS-knowledge-points for back to get next time.</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><h4 id="属性值筛选选择器"><a href="#属性值筛选选择器" class="headerlink" title="属性值筛选选择器"></a>属性值筛选选择器</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*选择值包含字符串的元素*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-attr">[attr*=<span class="string">&quot;val&quot;</span>]</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">/*选择值包含独立字符串单词val的元素*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-attr">[attr~=<span class="string">&#x27;val&#x27;</span>]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*选择值以val开头或者val-的元素*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-attr">[attr|=<span class="string">&#x27;val&#x27;</span>]</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-attr">[attr|=<span class="string">&#x27;val1-val2&#x27;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><ul>
+<li><p>点击事件伪类选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*link初始状态，hover鼠标关注，active鼠标点击，visited点击后，focus元素获取焦点*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:link</span>&#123;&#125;</span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:hover</span>&#123;&#125;</span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:active</span>&#123;&#125;</span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:visited</span>&#123;&#125;</span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:focus</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>锚点触发选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*锚点触发到该元素改变样式*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:target</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根元素与空元素伪类选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*根元素*/</span></span><br><span class="line"><span class="selector-pseudo">:root</span>&#123;&#125;</span><br><span class="line"><span class="comment">/*空元素*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:empty</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子元素伪类</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> 	:first-child :last-child</span></span><br><span class="line"><span class="comment"> 	:first-of-type-of :last-of-type</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*el元素所有后代子元素中的首位*/</span></span><br><span class="line"><span class="selector-tag">el</span> <span class="selector-pseudo">:first-child</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*el元素直接子元素的首位*/</span></span><br><span class="line"><span class="selector-tag">el</span>&gt;<span class="selector-tag">first-child</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">     目标子元素，参数为固定值或奇数偶数,2n/2n-1/-n+2。。。表示 </span></span><br><span class="line"><span class="comment">     :nth-child(index)&#123;&#125;</span></span><br><span class="line"><span class="comment">     :nth-of-type(index)&#123;&#125;</span></span><br><span class="line"><span class="comment">	 :nth-last-child()&#123;&#125;</span></span><br><span class="line"><span class="comment">	 :nth-last-of-type()&#123;&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	唯一子元素伪类</span></span><br><span class="line"><span class="comment">	el :only-child&#123;&#125;</span></span><br><span class="line"><span class="comment">	el :only-of-type&#123;&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	排除元素选择器</span></span><br><span class="line"><span class="comment">	el :not()&#123;&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他元素选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	disable 不可用元素</span></span><br><span class="line"><span class="comment">	enable	可用元素</span></span><br><span class="line"><span class="comment">	checked	已选择元素</span></span><br><span class="line"><span class="comment">	required 必填项</span></span><br><span class="line"><span class="comment">	valid 邮箱网址等表单填写有效时</span></span><br><span class="line"><span class="comment">	invalid 无效时</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文本伪元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	::first-letter 第一个字符</span></span><br><span class="line"><span class="comment">	::first-line 第一行</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	::before</span></span><br><span class="line"><span class="comment">	::after</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    content: &#x27;&#x27;; //伪元素内容</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="选择器权重"><a href="#选择器权重" class="headerlink" title="选择器权重"></a>选择器权重</h4><ul>
+<li>！important（9999）&gt; 行内样式（1000）&gt; id选择器（100）&gt; class/属性选择器（10）&gt; 标签/伪元素（1）&gt; 通配符（0） &gt; 继承（NULL） &gt; 浏览器默认</li>
+</ul>
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><h4 id="定义字体"><a href="#定义字体" class="headerlink" title="定义字体"></a>定义字体</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span>&#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">    src: <span class="built_in">url</span>(<span class="string">&#x27;xxx.otf&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;opentype&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组合写法"><a href="#组合写法" class="headerlink" title="组合写法"></a>组合写法</h4><p>font: [font-weight] [font-style] font-size[/line-height] font-family;</p>
+<h4 id="文本大小写转换"><a href="#文本大小写转换" class="headerlink" title="文本大小写转换"></a>文本大小写转换</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*小型大写*/</span></span><br><span class="line"><span class="selector-tag">font-variant</span>: <span class="selector-tag">small-caps</span>;</span><br><span class="line"><span class="comment">/*大小写转换*/</span></span><br><span class="line"><span class="selector-tag">text-transform</span>: <span class="selector-tag">lowercase</span>;</span><br><span class="line"><span class="selector-tag">text-transform</span>: <span class="selector-tag">uppercase</span>;</span><br><span class="line"><span class="comment">/*首字母大写*/</span></span><br><span class="line"><span class="selector-tag">text-transform</span>: <span class="selector-tag">capitalize</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文本线"><a href="#文本线" class="headerlink" title="文本线"></a>文本线</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-decoration: underline | overline | line-through | none;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文本阴影"><a href="#文本阴影" class="headerlink" title="文本阴影"></a>文本阴影</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">text-shadow</span>: 颜色 水平偏移<span class="selector-tag">px</span> 垂直偏移<span class="selector-tag">px</span> 模糊程度<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文本空白与换行"><a href="#文本空白与换行" class="headerlink" title="文本空白与换行"></a>文本空白与换行</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">white-space: pre保留空白与换行 | pre-wrap保留空白与换行 | pre-line合并保留换行 | nowrap不换行;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*文本不换行 溢出隐藏 隐藏处理*/</span></span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文本缩进与对齐"><a href="#文本缩进与对齐" class="headerlink" title="文本缩进与对齐"></a>文本缩进与对齐</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*文本缩进,按文字大小缩进固定单位*/</span></span><br><span class="line"><span class="selector-tag">text-indent</span>: 2<span class="selector-tag">em</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*文本水平对齐方式*/</span></span><br><span class="line">text-align: left | center | right;	</span><br><span class="line"></span><br><span class="line"><span class="comment">/*文本垂直对齐*/</span></span><br><span class="line">vertical-align: top | middle | bottom;</span><br></pre></td></tr></table></figure>
+
+<h4 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h4><ul>
+<li><p>文本字间距</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*单个字符间距*/</span></span><br><span class="line"><span class="selector-tag">letter-spacing</span>: ?<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*单词间距*/</span></span><br><span class="line"><span class="selector-tag">word-spacing</span>: ?<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>排版方向</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">writing-mode: vertical-lr纵向从左到右 | vertical-rl纵向从右到左 | horizontal-tb横向从上到下 | horizontal-bt横向从下到上</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><h4 id="固定模型"><a href="#固定模型" class="headerlink" title="固定模型"></a>固定模型</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*元素大小固定，不受边距及边框影响。*/</span></span><br><span class="line"><span class="selector-tag">border-sizing</span>： <span class="selector-tag">border-box</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="排列方式"><a href="#排列方式" class="headerlink" title="排列方式"></a>排列方式</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	边距排列</span></span><br><span class="line"><span class="comment">	上右下左</span></span><br><span class="line"><span class="comment">	上下 左右</span></span><br><span class="line"><span class="comment">	上下 左 右</span></span><br><span class="line"><span class="comment">	负值溢出</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="边距合并"><a href="#边距合并" class="headerlink" title="边距合并"></a>边距合并</h4><ul>
+<li>上下元素重叠边距会自动合并取最大值。</li>
+</ul>
+<h4 id="盒子圆角"><a href="#盒子圆角" class="headerlink" title="盒子圆角"></a>盒子圆角</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: ?<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box-shadow</span>: 水平偏移<span class="selector-tag">px</span> 垂直偏移<span class="selector-tag">px</span> 模糊程度<span class="selector-tag">px</span> 阴影颜色<span class="selector-tag">rgba</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="元素轮廓线"><a href="#元素轮廓线" class="headerlink" title="元素轮廓线"></a>元素轮廓线</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*轮廓线显示不占用空间*/</span></span><br><span class="line"><span class="selector-tag">outline</span>: <span class="selector-tag">solid</span> 1<span class="selector-tag">px</span> <span class="selector-id">#000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*取消input轮廓线*/</span></span><br><span class="line"><span class="selector-tag">input</span>&#123;</span><br><span class="line">	<span class="attribute">outline</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="元素隐藏"><a href="#元素隐藏" class="headerlink" title="元素隐藏"></a>元素隐藏</h3><h4 id="display"><a href="#display" class="headerlink" title="display"></a>display</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">none</span>; 元素消失，不保留原始空间。</span><br></pre></td></tr></table></figure>
+
+<h4 id="visibility"><a href="#visibility" class="headerlink" title="visibility"></a>visibility</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">visibility</span>: <span class="selector-tag">hidden</span>; 元素隐藏，保留原始空间，相当于<span class="selector-tag">opacity</span>: 0;设置透明度为0。</span><br></pre></td></tr></table></figure>
+
+<h4 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overflow: scroll | hidden | auto; 溢出滚动 隐藏 自动</span><br></pre></td></tr></table></figure>
+
+<h4 id="尺寸控制"><a href="#尺寸控制" class="headerlink" title="尺寸控制"></a>尺寸控制</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*控制显示最大最小尺寸*/</span></span><br><span class="line"><span class="selector-tag">min-width</span>: ?<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">max-width</span>: ?<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="自动填充"><a href="#自动填充" class="headerlink" title="自动填充"></a>自动填充</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*自动填充*/</span></span><br><span class="line">width | height: fill-available;</span><br></pre></td></tr></table></figure>
+
+<h4 id="自动获取内容尺寸"><a href="#自动获取内容尺寸" class="headerlink" title="自动获取内容尺寸"></a>自动获取内容尺寸</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*适应块元素文本宽度*/</span></span><br><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">fit-content</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*自适应最大最小文本内容的尺寸*/</span></span><br><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">max-content</span>;</span><br><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">min-content</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*透明背景*/</span></span><br><span class="line"><span class="selector-tag">background-color</span>: <span class="selector-tag">transparent</span>;</span><br><span class="line"><span class="comment">/*背景图*/</span></span><br><span class="line"><span class="selector-tag">background-img</span>: <span class="selector-tag">url</span>(),<span class="selector-tag">url</span>();</span><br><span class="line"><span class="comment">/*背景重复*/</span></span><br><span class="line">background-repeat: repeat-x | repeat-y | no-repeat | space平均显示;</span><br><span class="line"><span class="comment">/*背景固定*/</span></span><br><span class="line">background-attachment: scroll滚动 | fixed固定;</span><br><span class="line"><span class="comment">/*背景位置*/</span></span><br><span class="line">background-position: top | top left | center | 50% 50%;</span><br><span class="line"><span class="comment">/*背景比例*/</span></span><br><span class="line">background-size: 100% 100% | cover显示部分 | contain完全显示空留白;</span><br><span class="line"><span class="comment">/*背景裁切*/</span></span><br><span class="line">background-clip: content-box只内容区 | padding-box包含内边距 | border-box包含边框;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">background-origin 规定了指定背景图片background-image 属性的原点位置的背景相对区域.</span></span><br><span class="line"><span class="comment">注意：当使用 background-attachment 为fixed时，该属性将被忽略不起作用。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*组合写法*/</span></span><br><span class="line">background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip];</span><br></pre></td></tr></table></figure>
+
+<h3 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*背景线性渐变*/</span></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(角度, <span class="selector-tag">color1</span>, <span class="selector-tag">color2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*径向渐变*/</span></span><br><span class="line">background: radial-gradient(at|to 原点位置, color1, color2);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*径向渐变标志位 控制渐变的位置 范围*/</span></span><br><span class="line"><span class="selector-tag">linear-gradient</span>(90<span class="selector-tag">deg</span>, <span class="selector-tag">color1</span>, <span class="selector-tag">color2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*渐变颜色中间点 ?%*/</span></span><br><span class="line"><span class="selector-tag">linear-gradient</span>(90<span class="selector-tag">deg</span>, <span class="selector-tag">color1</span>, ?%, <span class="selector-tag">color2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*重复的渐变*/</span></span><br><span class="line"><span class="selector-tag">repeating-linear-gradient</span>(<span class="selector-tag">deg</span>, <span class="selector-tag">color1</span>, <span class="selector-tag">midVal</span>, <span class="selector-tag">color2</span>);</span><br><span class="line"><span class="selector-tag">repeating-radial-gradient</span>(<span class="selector-tag">position</span>, <span class="selector-tag">color1</span>, <span class="selector-tag">color2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*旧进度条*/</span></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">repeating-linear-gradient</span>(45<span class="selector-tag">deg</span>, <span class="selector-tag">blue</span>, 25<span class="selector-tag">px</span>, <span class="selector-tag">yellow</span> 25<span class="selector-tag">px</span>, 25<span class="selector-tag">px</span>, <span class="selector-tag">red</span> 50<span class="selector-tag">px</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*浮动后元素会影响周围的元素的空间 在浮动元素后的元素可以通过设置清除浮动 还原浮动对空间的影响*/</span></span><br><span class="line">clear:both; //清除所有浮动</span><br><span class="line"></span><br><span class="line"><span class="comment">/*伪元素清除浮动*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*overflow触发BFC清除浮动 父元素尺寸计算子元素浮动*/</span></span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="内容环绕"><a href="#内容环绕" class="headerlink" title="内容环绕"></a>内容环绕</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*控制浮动元素与内容的距离 加在浮动元素上的样式*/</span></span><br><span class="line">shape-outside: border-box | margin-box | padding-box | content-box;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*控制元素形状*/</span></span><br><span class="line">clip-path: circle(弧度 at 原点坐标)圆形 | ellipse(水平弧度 垂直弧度)椭圆 | polygon(点1坐标, 点2坐标,..)绘制点连接多边形;</span><br><span class="line"></span><br><span class="line">shape-outside: circle() | ellipse() | polygon(); //控制内容按形状环绕</span><br><span class="line">shape-outside： url() //控制图片环绕，需要png类型图片</span><br></pre></td></tr></table></figure>
+
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h4 id="位置参考"><a href="#位置参考" class="headerlink" title="位置参考"></a>位置参考</h4><ul>
+<li>绝对定位或相对定位参考的是离自己最近的设置定位的父元素。</li>
+<li>固定定位参考的是文档根元素。</li>
+</ul>
+<h4 id="粘性定位"><a href="#粘性定位" class="headerlink" title="粘性定位"></a>粘性定位</h4><ul>
+<li>设置元素位置触发时，固定元素。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">sticky</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同级粘性元素会叠加，不同级的会替代。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/* 	声明flex*/</span></span><br><span class="line">	<span class="attribute">display</span>: flex | inline-flex;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 	主轴方向，项目的排列方向,主轴默认水平，交叉轴默认垂直*/</span></span><br><span class="line">	<span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 	声明一条轴线排不下如何换行*/</span></span><br><span class="line">	<span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 	flex-flow，是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。*/</span></span><br><span class="line">	<span class="attribute">flex-flow</span>: column wrap-reverse;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 	justify-content，定义主轴的对齐方式*/</span></span><br><span class="line">	<span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around | space-evenly;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    flex-start（默认值）：左对齐</span></span><br><span class="line"><span class="comment">    flex-end：右对齐</span></span><br><span class="line"><span class="comment">    center： 居中</span></span><br><span class="line"><span class="comment">    space-between：两端对齐，项目之间的间隔都相等。</span></span><br><span class="line"><span class="comment">    space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</span></span><br><span class="line"><span class="comment">    space-evenly：轴上每个项目平均分布。</span></span><br><span class="line"><span class="comment">*/</span>    </span><br><span class="line"></span><br><span class="line"><span class="comment">/* 	align-items，定义交叉轴的排列方式*/</span></span><br><span class="line">	<span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    flex-start：交叉轴的起点对齐。</span></span><br><span class="line"><span class="comment">    flex-end：交叉轴的终点对齐。</span></span><br><span class="line"><span class="comment">    center：交叉轴的中点对齐。</span></span><br><span class="line"><span class="comment">    baseline: 项目的第一行文字的基线对齐。</span></span><br><span class="line"><span class="comment">    stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。    </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	align-content，定义多行交叉轴方向的排列方式*/</span>  </span><br><span class="line">	<span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	</span></span><br><span class="line"><span class="comment">    align-self，对单个元素交叉轴位置控制 设置stretch填充时元素未设置高度或设为auto,可覆盖align-items属性*/</span></span><br><span class="line">	<span class="attribute">align-self</span>: flex-start | flex-end | center | stretch;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	order属性，数值越小越靠前*/</span></span><br><span class="line">	<span class="attribute">order</span>: &lt;integer&gt;;<span class="comment">/*默认0*/</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	flex-grow，放大比例，属性，定义flex容器内元素占用剩余空间的放大比例，默认0原始大小，*/</span></span><br><span class="line">    <span class="attribute">flex-grow</span>: &lt;number&gt;;<span class="comment">/*default 0*/</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	flex-shrink，缩小比例，控制flex容器内元素的缩小比例*/</span></span><br><span class="line">    <span class="attribute">flex-shrink</span>: &lt;number&gt;; <span class="comment">/* default 1 */</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">/*	flex-basis，定义了主轴尺寸。在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。*/</span>    </span><br><span class="line">    <span class="attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="comment">/* default auto */</span></span><br><span class="line">    <span class="comment">/*	优先级max/min尺寸 &gt; flex-basis基准尺寸 &gt; width/height	*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*	flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。*/</span> </span><br><span class="line">    <span class="attribute">flex</span>: flex-grow [flex-shrink] [flex-basis];</span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	flex可作用于文本*/</span>    </span><br><span class="line"><span class="comment">/*	flex边距自动*/</span></span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="grid栅格布局"><a href="#grid栅格布局" class="headerlink" title="grid栅格布局"></a>grid栅格布局</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    	绘制栅格，grid-template-rows grid-template-columns 绘制行列repeat绘制次数与绘制占比或尺寸</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(times, percent);</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">100px</span> <span class="number">20px</span>);</span><br><span class="line">    <span class="comment">/*绘制占100和20像素尺寸的列 绘制两次*/</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*	自动填充，auto-fill,自动填充内容绘制次数, 按照父元素的高度绘制20尺寸的栅格n行	*/</span></span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(auto-fill, <span class="number">20px</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*	按比例填充，fr单位*/</span></span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">2</span>，<span class="number">1</span>fr);<span class="comment">/*等比例绘制两行*/</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>:<span class="number">1</span>fr <span class="number">2</span>fr <span class="number">1</span>fr;<span class="comment">/*绘制三列占比1：2：1*/</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* 栅格尺寸范围，minmax*/</span></span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">2</span>，minmax(<span class="number">50px</span>, <span class="number">100px</span>));<span class="comment">/*绘制两行垂直方向上的尺寸最大100最小50*/</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* 栅格间隙留白，row-gap column-gap gap，作用于容器，定义在父元素内*/</span></span><br><span class="line">    <span class="attribute">row-gap</span>: <span class="number">5px</span>;<span class="attribute">column-gap</span>: <span class="number">10px</span>;<span class="comment">/*设置行间距为5，列间距为10*/</span></span><br><span class="line">    gap：&lt;row-gap&gt; &lt;column-gap&gt;;/*简写*/</span><br><span class="line"> </span><br><span class="line">   	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="放置元素"><a href="#放置元素" class="headerlink" title="放置元素"></a>放置元素</h4><ul>
+<li>grid-row-start，元素行开始栅格线位置。 </li>
+<li>grid-row-end，元素行结束栅格线位置。 </li>
+<li>grid-column-start，元素列开始栅格线位置。 </li>
+<li>grid-column-end，元素列结束栅格线位置。</li>
+</ul>
+<img src="C:\Users\yuan\AppData\Roaming\Typora\typora-user-images\image-20201022205659630.png" alt="image-20201022205659630" style="zoom:50%;" />
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">section</span>&#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">60%</span>;</span><br><span class="line"><span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">    <span class="comment">/* 3*3布局 */</span></span><br><span class="line"><span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line"><span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* 栅格间隔5像素*/</span></span><br><span class="line"><span class="attribute">gap</span>: <span class="number">5px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">section</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line"><span class="attribute">box-sizing</span>: border-box;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#3adf7b</span>;</span><br><span class="line"><span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line"><span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line"><span class="attribute">background-color</span>: <span class="number">#3aef</span>;</span><br><span class="line"><span class="attribute">background-clip</span>: content-box;</span><br><span class="line"><span class="attribute">text-align</span>: center;</span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span>&#123;</span><br><span class="line"><span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line"><span class="attribute">grid-column-end</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:nth-of-type(3)</span>&#123;</span><br><span class="line"><span class="attribute">grid-row-start</span>: <span class="number">2</span>;</span><br><span class="line"><span class="attribute">grid-row-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:nth-of-type(6)</span>&#123;</span><br><span class="line"><span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line"><span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h5 id="固定命名放置"><a href="#固定命名放置" class="headerlink" title="固定命名放置"></a>固定命名放置</h5><ul>
+<li>固定尺寸栅格命名，可以按照命名放置元素</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;	</span><br><span class="line">    <span class="comment">/* 绘制3*3栅格并为栅格线命名命名，可以使用栅格线名字放置元素 */</span></span><br><span class="line">    <span class="attribute">dispaly</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: [r1-start] <span class="number">100px</span> [r1-end r2-start] <span class="number">100px</span> [r2-end r3-start] <span class="number">100px</span> [r3-end];</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: [c1-start] <span class="number">100px</span> [c1-end c2-start] <span class="number">100px</span> [c2-end c3-start] <span class="number">100px</span> [c3-end];</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 元素放置到2号位置 */</span></span><br><span class="line">    <span class="attribute">grid-row-start</span>:  r1-start;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: r1-end;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: r1-end | r2-start;<span class="comment">/*同一条栅格线有两个名字都可以使用*/</span></span><br><span class="line">    <span class="attribute">grid-column-end</span>: r2-end | r3-start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="重复命名"><a href="#重复命名" class="headerlink" title="重复命名"></a>重复命名</h5><ul>
+<li><p>repeat绘制栅格，可以按照栅格线命名加编号放置元素。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 绘制3*3*/</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, [r-start] <span class="number">1</span>fr [r-end]);</span><br><span class="line">    <span class="attribute">grid-template-column</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,[c-start] <span class="number">1</span>fr [c-end]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 同样放置在2号*/</span></span><br><span class="line">    <span class="attribute">grid-row-start</span>: r-start <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: r-end <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: c-start <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: c-end <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>块元素水平垂直居中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">main</span>&#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, [c-s] <span class="number">1</span>fr [c-e]);</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, [r-s] <span class="number">1</span>fr [r-e]);</span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">main</span>&gt;<span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: pink;</span><br><span class="line">    <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span>&#123;</span><br><span class="line">    <span class="attribute">grid-row-start</span>: r-s <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: r-e <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: c-s <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: c-e <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="设置偏移量放置元素"><a href="#设置偏移量放置元素" class="headerlink" title="设置偏移量放置元素"></a>设置偏移量放置元素</h5><ul>
+<li>span</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 偏移设置在end上 */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">grid-row-start</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: span <span class="number">2</span>;<span class="comment">/*偏移两行*/</span></span><br><span class="line">    <span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: span <span class="number">1</span>;<span class="comment">/*偏移一行*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="元素定位简写"><a href="#元素定位简写" class="headerlink" title="元素定位简写"></a>元素定位简写</h5><ul>
+<li><p><code>grid-row: [row-start]/[row-end];</code></p>
+</li>
+<li><p><code>grid-column: [column-start]/[column-end];</code></p>
+</li>
+<li><p>偏移</p>
+<ul>
+<li><code>grid-row: [row-start]]/span 2;</code></li>
+<li><code>grid-column: [column-start]]/span3;</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*绘制3*3*/</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repear</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*子元素占满第二行*/</span></span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">2</span>/<span class="number">3</span>;</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">1</span>/<span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>可以用栅格布局开发类似bootstrap的栅格系统</strong></p>
+<h4 id="区域定位元素"><a href="#区域定位元素" class="headerlink" title="区域定位元素"></a>区域定位元素</h4><ul>
+<li><code>grid-area: [row-start] [column-start] [row-end] [column-end]</code>，确定元素四条栅格线的位置绘制元素。同时可以为栅格线命名。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 定位元素显示的区域，grid-area */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 3*3 */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,[r] <span class="number">1</span>fr);</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repear</span>(<span class="number">3</span>, [c] <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 定位到中心 */</span></span><br><span class="line">    <span class="attribute">grid-area</span>: r <span class="number">2</span>/c <span class="number">2</span>/r <span class="number">3</span>/c <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="划分区域"><a href="#划分区域" class="headerlink" title="划分区域"></a>划分区域</h4><ul>
+<li><p><code>grid-template-area: &quot;r1-c1 r1-c2&quot; &quot;r2-c1 r2-c2&quot; &quot;r3-c1 r3-c2&quot;</code>，为栅格命名，划分区域。</p>
+</li>
+<li><p><code>grid-area: xxx</code>，使用命名的区域。</p>
+</li>
+<li><p><strong>命名按行，每行的栅格命名在一起。每行多个栅格名称相同则独占一行。</strong></p>
+</li>
+<li><p><strong>上面栅格不命名区域的话可以使用 . 占位。</strong></p>
+<p><code>grid-template-area: &quot;. .&quot; &quot;. . &quot; &quot;same same&quot;;</code></p>
+<img src="C:\Users\yuan\Desktop\Snipaste_2020-10-22_22-50-32.png" alt="Snipaste_2020-10-22_22-50-32" style="zoom:50%;" />
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>1<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span>2<span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">article</span>&gt;</span>3<span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>4<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">main</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100vw</span>;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="number">60px</span> <span class="number">1</span>fr <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">60px</span> <span class="number">1</span>fr;</span><br><span class="line">    <span class="attribute">grid-template-areas</span>: <span class="string">&quot;header header&quot;</span> <span class="string">&quot;nav article&quot;</span> <span class="string">&quot;footer footer&quot;</span>;</span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">header</span>, <span class="selector-tag">nav</span>, <span class="selector-tag">article</span>, <span class="selector-tag">footer</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>:pink;</span><br><span class="line">    <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">header</span>&#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: header;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">nav</span>&#123;</span><br><span class="line">    <span class="attribute">grid-area</span>:nav;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">article</span>&#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: article;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">footer</span>&#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: footer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="元素流动"><a href="#元素流动" class="headerlink" title="元素流动"></a>元素流动</h4><ul>
+<li><code>grid-auto-flow</code>，控制元素的流动方向，默认从左到右先行后列。<ul>
+<li><code>row</code></li>
+<li><code>column</code></li>
+<li><code>dense</code>，当前面元素定位到后面时，后面的元素自动流动到前面。</li>
+</ul>
+</li>
+</ul>
+<h4 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式"></a>对齐方式</h4><ul>
+<li>水平 垂直</li>
+</ul>
+<h5 id="栅格对齐"><a href="#栅格对齐" class="headerlink" title="栅格对齐"></a>栅格对齐</h5><ul>
+<li>当容器的空间大于栅格的空间，设置栅格的对齐方式，默认在开始位置。    </li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">justify-content</span>: start | end | center | space-between | space-evenly | space-around;</span><br><span class="line">	<span class="attribute">align-content</span>: start | end | center | stretch | space-around | space-between | space-evenly;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>简写，<code>place-content</code>属性是<code>align-content</code>属性和<code>justify-content</code>属性的合并简写形式。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">place-content</span>: &lt;align-content&gt; &lt;justify-content&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="内容对齐"><a href="#内容对齐" class="headerlink" title="内容对齐"></a>内容对齐</h5><ul>
+<li><p>当栅格内容小于栅格，设置内容的对齐方式，默认拉伸占满。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">justify-items</span>: start | end | center | stretch;</span><br><span class="line">  	<span class="attribute">align-items</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简写，<code>place-items</code></p>
+</li>
+<li><p>单个内容设置对齐</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    justify-self：start | end | center | stretch;</span><br><span class="line">    align-self: start | end | center | stretch;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*简写*/</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">place-self</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="意外多出"><a href="#意外多出" class="headerlink" title="意外多出"></a>意外多出</h4><ul>
+<li>grid-auto-rows</li>
+<li>grid-auto-columns</li>
+</ul>
+<h4 id="其他简写"><a href="#其他简写" class="headerlink" title="其他简写"></a>其他简写</h4><p><strong>一般不建议使用</strong></p>
+<ul>
+<li><p><code>grid-template</code>属性是<code>grid-template-columns</code>、<code>grid-template-rows</code>和<code>grid-template-areas</code>这三个属性的合并简写形式。</p>
+</li>
+<li><p><code>grid</code>属性是<code>grid-template-rows</code>、<code>grid-template-columns</code>、<code>grid-template-areas</code>、 <code>grid-auto-rows</code>、<code>grid-auto-columns</code>、<code>grid-auto-flow</code>这六个属性的合并简写形式。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/CSS/" data-id="ckgld2gci000fyku333ixc5bq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/10/23/Module/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Javascript模块化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/23/jQuery/">jQuery相关记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/Cookie/">客户端存储</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/XMLHttpRequest/">XMLHttpRequest</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/">JavaScript异步</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/BOM/">JavaScriptBOM</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 未入圈的羊<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

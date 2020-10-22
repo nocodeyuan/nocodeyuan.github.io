@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Javascript语句与操作符 | Points</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="操作符 一元操作符  ++&#x2F;– 自增&#x2F;自减  对于数值做加减，字符数值、布尔类型、调用Number()转换类型再作加减，对象类型获取valueOf&#x2F;toString转换为字符再进行计算。  位运算符  位运算将64位数值转为32位二进制数，操作完成再转换为64位数值存储。 补数：二进制数反转。 取反数：正数取反为二进制取补数加一。   ~按位非，取32位二进制的补数 123let a &#x3D; 10;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript语句与操作符">
+<meta property="og:url" content="http://example.com/2020/10/23/Javascript%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%AC%A6/index.html">
+<meta property="og:site_name" content="Points">
+<meta property="og:description" content="操作符 一元操作符  ++&#x2F;– 自增&#x2F;自减  对于数值做加减，字符数值、布尔类型、调用Number()转换类型再作加减，对象类型获取valueOf&#x2F;toString转换为字符再进行计算。  位运算符  位运算将64位数值转为32位二进制数，操作完成再转换为64位数值存储。 补数：二进制数反转。 取反数：正数取反为二进制取补数加一。   ~按位非，取32位二进制的补数 123let a &#x3D; 10;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-22T21:37:13.154Z">
+<meta property="article:modified_time" content="2020-10-22T21:37:13.360Z">
+<meta property="article:author" content="未入圈的羊">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Points" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo"></a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Javascript语句与操作符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Javascript%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%AC%A6/" class="article-date">
+  <time datetime="2020-10-22T21:37:13.154Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript语句与操作符
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><ol>
+<li><p>一元操作符</p>
+<ul>
+<li><p>++/–</p>
+<p>自增/自减</p>
+<p> 对于数值做加减，字符数值、布尔类型、调用Number()转换类型再作加减，对象类型获取valueOf/toString转换为字符再进行计算。</p>
+</li>
+<li><p>位运算符</p>
+<ul>
+<li>位运算将64位数值转为32位二进制数，操作完成再转换为64位数值存储。</li>
+<li>补数：二进制数反转。</li>
+<li>取反数：正数取反为二进制取补数加一。</li>
+</ul>
+</li>
+<li><p>~按位非，取32位二进制的补数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>; <span class="comment">//0b1010</span></span><br><span class="line">~a; <span class="comment">//-11 -0b1011</span></span><br><span class="line"><span class="comment">//1111 1111 1111 1111 1111 1111 1111 0101</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&amp;按位与，32位二进制数相与运算</p>
+<p>2 &amp; 3</p>
+<p>原二进制按位相与运算，返回二进制再进行计算。</p>
+</li>
+<li><p>|按位或，32位二进制相或运算。</p>
+</li>
+<li><p>^按位异或，32位二进制异或运算，负负或正正皆为0。</p>
+</li>
+<li><p>&lt;&lt;左移,&gt;&gt;右移，将指定位数左右移动指定位数做运算。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;	<span class="comment">//10</span></span><br><span class="line"><span class="keyword">let</span> b = a &lt;&lt; <span class="number">5</span>; <span class="comment">//0b1000000 b===64</span></span><br><span class="line"><span class="keyword">let</span> c = b &gt;&gt; <span class="number">5</span>; <span class="comment">//0b10 c===2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&gt;&gt;&gt;无符号右移，所有32位右移，对负数影响大，对整数与有符号右移一样。</p>
+</li>
+<li><p>逻辑与或非</p>
+<p>与或操作有中断执行情况，即满足第一个条件则不会继续执行第二个条件。</p>
+<p>null返回null，undefined返回undefined，NaN返回NaN，对象操作返回对象。</p>
+</li>
+<li><p>乘除取模</p>
+</li>
+<li><p>指数运算</p>
+<p><code>3 ** 2 === Math.pow(3,2)</code></p>
+</li>
+<li><p>加减性运算符</p>
+<p>数字加字符得字符</p>
+<p>减操作会自动转换</p>
+</li>
+<li><p>关系运算符</p>
+<p>大于小于等于不等于</p>
+<ul>
+<li>任一布尔值，则转换为数值比较</li>
+<li>任意字符串和数值，转换为数值。都是字符串，则逐个比较每一位的字符编码。</li>
+<li>对象取valueOf/toString比较。</li>
+<li>对象判断相等，比较两个对象的地址是否相等。</li>
+</ul>
+</li>
+<li><p>全等与不全等</p>
+<p>全等不转换数值类型</p>
+</li>
+<li><p>三元运算符</p>
+</li>
+<li><p>逗号操作符</p>
+<p><code>let a = (1,2,3,4,5); //5</code></p>
+</li>
+</ul>
+</li>
+<li><p>逻辑非</p>
+<ul>
+<li>！对象，返回false。</li>
+<li>！空字符串，返回true。</li>
+<li>！0，返回true。</li>
+<li>！null，返回true。</li>
+<li>！NaN，返回true。</li>
+<li>！undefined，返回true。</li>
+</ul>
+</li>
+</ol>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><ol>
+<li><p>条件</p>
+<p>if……else</p>
+</li>
+<li><p>循环</p>
+<p>while</p>
+<p>do……while</p>
+<p>for</p>
+<p>for……in 对象元素遍历</p>
+<p>for……of 可迭代对象遍历</p>
+<p>break……continue</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标签语句</span></span><br><span class="line"><span class="keyword">let</span> num = <span class="number">0</span>;</span><br><span class="line">outFor:</span><br><span class="line"><span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">i === <span class="number">5</span> &amp;&amp; j === <span class="number">5</span></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">break</span> outFor; <span class="comment">//中止最外层循环</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    num++；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>with语句(不推荐使用)</em></p>
+<p>用于连接对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原本</span></span><br><span class="line"><span class="keyword">let</span> qs = location.search.substring(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">let</span> hostname = location.hostname;</span><br><span class="line"><span class="keyword">let</span> url = location.href;</span><br><span class="line"><span class="comment">//with</span></span><br><span class="line"><span class="function"><span class="title">with</span>(<span class="params">location</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> qs = search.substring(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">let</span> hostName = hostname;</span><br><span class="line">    <span class="keyword">let</span> url = href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>switch</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Javascript%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%AC%A6/" data-id="ckgld2gbu0007yku350ltbanj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/10/23/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          垃圾回收
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/23/Javascript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Javascript数据类型</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/23/jQuery/">jQuery相关记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/Cookie/">客户端存储</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/XMLHttpRequest/">XMLHttpRequest</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/">JavaScript异步</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/BOM/">JavaScriptBOM</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 未入圈的羊<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Points</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Points">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Points">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="未入圈的羊">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Points" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo"></a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-jQuery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/jQuery/" class="article-date">
+  <time datetime="2020-10-22T21:47:48.255Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/jQuery/">jQuery相关记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jQuery细节"><a href="#jQuery细节" class="headerlink" title="jQuery细节"></a>jQuery细节</h2><ol>
+<li><p>文档加载（入口函数）</p>
+<p><code>$(function()&#123;&#125;)</code></p>
+<ul>
+<li>替代<code>window.onload()</code>,js只能加载一次，jQuery可以执行多次</li>
+</ul>
+</li>
+<li><p>事件绑定</p>
+</li>
+<li><p>样式绑定</p>
+<hr>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ol>
+<li><strong>基本选择器</strong><ul>
+<li>标签选择器:<code>$(&quot;元素&quot;)</code></li>
+<li>id选择器:<code>$(&quot;#id&quot;)</code></li>
+<li>类选择器:<code>$(&quot;.class&quot;)</code></li>
+<li>并集选择器：<code>$(&quot;a,b&quot;)</code></li>
+</ul>
+</li>
+<li><strong>层级选择器</strong><ol>
+<li>后代选择器：<code>$(&quot;A B&quot;)</code>:选择A内部的所有B元素</li>
+<li>子选择器：<code>$(&quot;A &gt; B&quot;)</code>:选择A元素内部的所有B子元素</li>
+</ol>
+</li>
+<li><strong>属性选择器</strong><ol>
+<li>属性名称：<code>$(&quot;A[属性名]&quot;)</code>：获取拥有固定属性名的元素</li>
+<li>属性：<code>$(&quot;A[属性名=&#39;值&#39;]&quot;)</code>：获取固定属性名值的元素</li>
+<li>复合属性：<code>$(&quot;A[属性名=&#39;值&#39;][]...&quot;)</code>：获取属性多条件的元素</li>
+<li>非xx属性：<code>$(&quot;A[属性名!=&#39;值&#39;]&quot;)</code>：获取属性值不是xxx的元素</li>
+<li>以xx属性开始：<code>$(&quot;A[属性名^=&#39;xxx&#39;]&quot;)</code>：获取属性值以xxx开始的元素</li>
+<li>以xxx结束：<code>$(&quot;A[属性名$=&#39;xxx&#39;]&quot;)</code>：获取属性值以xxx结束的元素</li>
+<li>包含xxx：<code>$(&quot;A[属性名*=&#39;xxx&#39;]&quot;)</code>：获取属性值包含xxx的元素</li>
+</ol>
+</li>
+<li><strong>过滤选择器</strong><ol>
+<li>首元素选择器<ul>
+<li>:first</li>
+</ul>
+</li>
+<li>尾元素选择器<ul>
+<li>:last</li>
+</ul>
+</li>
+<li>非元素选择器<ul>
+<li>:not(selector选择器)</li>
+</ul>
+</li>
+<li>偶数选择器<ul>
+<li>:even 偶数，从0开始计数</li>
+</ul>
+</li>
+<li>奇数选择器<ul>
+<li>:odd 奇数 ，从0开始计数</li>
+</ul>
+</li>
+<li>等于索引选择器<ul>
+<li>:eq(index) 指定索引元素</li>
+</ul>
+</li>
+<li>大于索引选择器<ul>
+<li>:gt(index) 大于指定索引元素</li>
+</ul>
+</li>
+<li>小于索引选择器<ul>
+<li>:lt(index) 小于指定元素</li>
+</ul>
+</li>
+<li>标题选择器<ul>
+<li>:header 获得标题（h1-h6）元素，固定写法</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>表单过滤选择器</strong><ol>
+<li>可用元素选择器<ul>
+<li>:enable：获取可用元素</li>
+</ul>
+</li>
+<li>不可用元素选择器<ul>
+<li>:disable：不可用</li>
+</ul>
+</li>
+<li>选中后选择器<ul>
+<li>:checked 获取单选/复选框选中的元素</li>
+<li>:selected 获取下拉框选中的元素</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><ol>
+<li><strong>内容操作</strong><ol>
+<li>html():获取/设置元素的标签体内容</li>
+<li>text():获取/设置元素的标签体纯文本内容</li>
+<li>val():获取/设置元素的value属性值</li>
+</ol>
+</li>
+<li><strong>属性操作</strong><ol>
+<li>通用属性操作<ul>
+<li>attr():获取/设置元素的属性</li>
+<li>remoneAttr():删除元素属性</li>
+<li>prop():获取/设置元素的属性</li>
+<li>removeProp():删除元素属性</li>
+<li>区别：<ul>
+<li>操作元素固有属性，使用prop</li>
+<li>操作自定义属性，使用attr</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对class属性操作<ul>
+<li>getClass():获取class属性值</li>
+<li>removeClass():删除class属性值</li>
+<li>toggleClass():切换class属性值<ul>
+<li>toggleClass(“one”):判断元素是否存在class=“one”，存在删除，不存在添加</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>CRUD</strong>操作<ol>
+<li>append()：父元素将子元素追加到末尾<ul>
+<li>o1.append(o2):将o2添加o1末尾,<strong>父子关系</strong></li>
+</ul>
+</li>
+<li>prepend()：父元素将子元素追加到开头</li>
+<li>appendTo():</li>
+<li>prependTo():</li>
+<li>after():添加元素到元素后<ul>
+<li>o1.after(o2):将o2添加到o1后面，<strong>兄弟关系</strong></li>
+</ul>
+</li>
+<li>before():添加元素到元素前</li>
+<li>insertAfter()</li>
+<li>insertBefore() </li>
+<li>remove():移除元素<ul>
+<li>obj.remove()</li>
+</ul>
+</li>
+<li>empty():清空元素的所有后代元素</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ol>
+<li>默认显示隐藏动画<ul>
+<li>show([speed,[easing],[fn]])<ul>
+<li>参数<ul>
+<li>speed<ul>
+<li>动画的速度。三个预定义的值（slow，normal，fast）或者动画时长毫秒值</li>
+</ul>
+</li>
+<li>easing：用来指定切换效果，默认’swing‘，可用参数‘linear’<ul>
+<li>swing：动画执行先慢，中间快，最后又慢</li>
+<li>linear：动画匀速执行</li>
+</ul>
+</li>
+<li>fn：在动画完成时执行的和函数，每个元素执行一次</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>hide()</li>
+<li>toggle()</li>
+</ul>
+</li>
+<li>淡入淡出动画<ul>
+<li>slidedown()</li>
+<li>slideup()</li>
+<li>slideToggle()</li>
+</ul>
+</li>
+<li>滑动显示隐藏<ul>
+<li>fadeIn()</li>
+<li>fadeout()</li>
+<li>fadeToggle()</li>
+</ul>
+</li>
+</ol>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><ol>
+<li>jQuery对象.each(callback)<ul>
+<li>循环中true相当于continue，false相当于break</li>
+</ul>
+</li>
+<li>$.each(object,[callback])</li>
+<li>for…of;</li>
+</ol>
+<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><ol>
+<li>标准绑定方式<ul>
+<li>jq对象.事件(回调函数);</li>
+</ul>
+</li>
+<li>on绑定/off绑定<ul>
+<li>jq对象.on(“事件名称”,回调函数);</li>
+<li>jq对象.off(“事件名称”);</li>
+</ul>
+</li>
+<li>事件切换：toggle:1.9以后版本移除toggle方法，需要导入jquery-migrate.js 插件<ul>
+<li>jq对象.toggle(fn1,fn2…)</li>
+</ul>
+</li>
+</ol>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ol>
+<li>实现方式:增强JQuery功能<ol>
+<li>$.fn.extend(object)<ul>
+<li>增强通过JQuery获取对象的功能  $(“#id”)</li>
+</ul>
+</li>
+<li>$.extend(object)<ul>
+<li>增强JQuery对象自身的功能 $/JQuery</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><ol>
+<li><p>概念：ASynchronous JavaScript And Xml 异步的JavaScript和XML</p>
+</li>
+<li><p>同步与异步</p>
+<ul>
+<li>同步：客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作</li>
+<li>异步：客户端不需要等待服务器端的响应，在服务器处理请求的过程中，客户端可以进行其他操作</li>
+</ul>
+</li>
+<li><p>实现方式：AJAX是一种不需要刷新网页的情况下，能够更新部分网页的技术</p>
+<ol>
+<li><p>原生js</p>
+</li>
+<li><p>JQuery</p>
+<ol>
+<li><p>$.ajax()</p>
+<ul>
+<li><p>$.ajax({</p>
+<p>​    url:”xxxx”,</p>
+<p>​    type:”POST”,</p>
+<p>​    data:{</p>
+<p>​        “xxx”:”xxx”,</p>
+<p>​        “xxx”:”xxx”</p>
+<p>​    },success:function(data){</p>
+<p>​            xxx</p>
+<p>​        },error:function(){</p>
+<p>​                xxxx</p>
+<p>​            },dataType:”text/json”</p>
+<p>})</p>
+</li>
+</ul>
+</li>
+<li><p>$.get():发送GET请求</p>
+<ul>
+<li>$get(url,[data],[callback],[type])<ul>
+<li>url:请求路径</li>
+<li>data：数据</li>
+<li>callback：回调函数</li>
+<li>type：数据格式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>$.post()</p>
+<ul>
+<li>$post(url,[data],[callback],[type])<ul>
+<li>url:请求路径</li>
+<li>data：数据</li>
+<li>callback：回调函数</li>
+<li>type：数据格式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ol>
+<li>概念：JavaScript Object Notation  JavaScript对象表示法，现在多用于存储和交换文本信息的语法，进行数据传输</li>
+<li>语法<ol>
+<li>基本规则<ul>
+<li>数据在名称/值对中：json数据是由键值对构成<ul>
+<li>键用引号包裹</li>
+<li>值的取值类型：<ol>
+<li>数字（整数/浮点数）</li>
+<li>字符串（在双引号中）</li>
+<li>逻辑值（true/false）</li>
+<li>数组（在方括号中）</li>
+<li>对象（在花括号中）</li>
+<li>null</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>数据用逗号分隔：多个键值对由逗号分隔</li>
+<li>花括号保存对象</li>
+<li>方括号保存数组</li>
+</ul>
+</li>
+<li>获取数据<ol>
+<li>json对象 .键名</li>
+<li>json对象.[“键名”]</li>
+<li>数组对象[索引]</li>
+</ol>
+</li>
+<li>JSON解析器<ol>
+<li>Jsonlib</li>
+<li>Gson</li>
+<li>fastjson</li>
+<li>jackson！！</li>
+</ol>
+</li>
+<li>JSON数据和Java对象的相互转换<ol>
+<li>JSON转为Java对象<ol>
+<li>导入Jackson相关jar包</li>
+<li>创建Jackson核心对象ObjectMapper</li>
+<li>调用方法<ul>
+<li>readValue(json字符串数据, Class)</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Java对象转为JSON<ol>
+<li>导入Jackson相关jar包</li>
+<li>创建Jackson核心对象ObjectMapper</li>
+<li>调用方法<ul>
+<li>writeValue(参数1，obj)：<ul>
+<li>参数1：<ul>
+<li>File：将obj对象转换为JSON字符串，并保存到指定文件中</li>
+<li>Writer：将obj对象转换为JSON字符串，并将JSON数据填充到字符输入流</li>
+<li>OutputStream</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>writeValueAsString(obj)：将对象转为JSON字符串</li>
+</ul>
+</li>
+<li>注解：<ol>
+<li>@JsonIgnore：排除属性：转化后不显示该属性</li>
+<li>@JsonFormat：定义在属性声明或者get方法上，属性值的格式化：@JsonFormat（pattern = “xxx”）转换为固定xxx格式</li>
+</ol>
+</li>
+<li>复杂的Java对象转换<ol>
+<li>List：转换后为数组包裹的json字符串</li>
+<li>Map：转换后格式与对象转换一样</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>校验用户名是否存在<ol>
+<li>服务器响应的数据，在客户端使用时，要想当作json数据格式使用<ol>
+<li>$get(type)：将最后一个参数type指定为“json”</li>
+<li>在服务器端设置响应数据的MIME类型，application/json</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/jQuery/" data-id="ckgld2gc1000cyku30ity4qmq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Cookie" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Cookie/" class="article-date">
+  <time datetime="2020-10-22T21:45:36.499Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/Cookie/">客户端存储</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><ul>
+<li><p><strong>HTTP cookie</strong>通常也叫作cookie。要求服务器在响应HTTP请求时，通过发送Set-Cookie HTTP 头部包含的会话信息。</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Content-type</span>: text/html</span><br><span class="line"><span class="attribute">Set-Cookie</span>: name=value</span><br><span class="line"><span class="attribute">Other-header</span>: other-header-value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>响应会设置一个包含name，value的键值对cookie，经过URL编码，发送到浏览器存储，并在之后的请求中都会通过HTTP头部cookie再将它们发回服务器。</li>
+</ul>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/index.js1</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Cookie</span>: name=value</span><br><span class="line"><span class="attribute">Other-header</span>: other-header-value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>后台可以进行cookie的<strong>限制</strong>设置。</li>
+</ul>
+</li>
+</ul>
+<h4 id="编码与解码"><a href="#编码与解码" class="headerlink" title="编码与解码"></a>编码与解码</h4><ul>
+<li><p>encodeURIComponent(URIString)，编码，将转义用于分隔 URI 各个部分的标点符号。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * &#39; ( ) 。</span><br><span class="line">其他字符（比如 ：;&#x2F;?:@&amp;&#x3D;+$,# 这些用于分隔 URI 组件的标点符号），都是由一个或多个十六进制的转义序列替换的。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>decodeURIComponent(encodeURIComponentString)，解码。</p>
+</li>
+</ul>
+<h4 id="cookie的构成"><a href="#cookie的构成" class="headerlink" title="cookie的构成"></a>cookie的构成</h4><ul>
+<li><p>名称（name）：不区分大小写，后端可能区分大小写。</p>
+</li>
+<li><p>值（value）：存储在cookie中的字符串值，必须经过URL编码。</p>
+</li>
+<li><p>域（domain）：cookie有效的域。发送到这个域中的所有请求都包含对应的cookie，这个值可以包含子域。</p>
+</li>
+<li><p>路径（path）：请求URL包含这个路径才会把cookie发送到服务器。</p>
+</li>
+<li><p>过期时间（expires）：expires，表示何时删除cookie的时间戳（Wdy,DD-Mon-YYYY HH:MM:SS GMT）</p>
+</li>
+<li><p>安全标志（secure）：secure单个值非键值对，验证证书。</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Content-type</span>: text/html</span><br><span class="line"><span class="attribute">Set-Cookie</span>: name=value;expires=Thu, 15-Oct-20 18:15:22 GMT;domain=.nocode.net;path=/;secure</span><br><span class="line"><span class="attribute">Other-header</span>: other-header-value</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="Javascript中的cookie"><a href="#Javascript中的cookie" class="headerlink" title="Javascript中的cookie"></a>Javascript中的cookie</h4><h3 id="浏览器存储API"><a href="#浏览器存储API" class="headerlink" title="浏览器存储API"></a>浏览器存储API</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Cookie/" data-id="ckgld2gbl0001yku328iq6hzn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-XMLHttpRequest" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/XMLHttpRequest/" class="article-date">
+  <time datetime="2020-10-22T21:44:46.816Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/XMLHttpRequest/">XMLHttpRequest</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h3><ul>
+<li><p>new XMLHttpRequest() </p>
+</li>
+<li><p>open方法，接收三个参数，准备发送请求。</p>
+<ul>
+<li>请求类型</li>
+<li>请求url</li>
+<li>是否异步，布尔类型</li>
+</ul>
+</li>
+<li><p>send方法，发送请求。接收一个参数作为请求体内容。</p>
+<ul>
+<li>返回值<ul>
+<li>responseText，响应体。</li>
+<li>responseXML，如果响应类型为xml类型，返回包含数据的xml文档。</li>
+<li>status，响应http的状态。</li>
+<li>statusText，响应http的状态描述。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>readyState</p>
+<ul>
+<li>0，未初始化Uninitialized，尚未调用open方法。</li>
+<li>1，已打开Open，已调用open方法，未调用send方法。</li>
+<li>2，已发送Sent，已调用send方法，尚未收到响应。</li>
+<li>3，接收中Receiving，已经收到部分响应。</li>
+<li>4，完成Complete，已经收到所有响应，可以使用了。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="comment">//每次readyState的值变化时，调用onreadystatechange事件。</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">xhr.readyState == <span class="number">4</span></span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span></span>)</span>&#123;</span><br><span class="line">            alert(xhr.reponseText)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            alert(xhr.status)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">xhr.open(<span class="string">&#x27;get&#x27;</span>,url,<span class="literal">true</span>);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br><span class="line"><span class="comment">//取消异步，xhr对象会停止触发事件，并阻止访问这个对象上任何与响应相关的属性。</span></span><br><span class="line">xhr.abort();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>setRequestHeader</strong>，设置请求头信息，setRequestHeader(‘MyHeader’,’MyValue’)</p>
+<p>请求头：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/home.html</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: developer.mozilla.org</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:50.0) Gecko/20100101 Firefox/50.0</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line"><span class="attribute">Accept-Language</span>: en-US,en;q=0.5</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate, br</span><br><span class="line"><span class="attribute">Referer</span>: https://developer.mozilla.org/testpage.html</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span>: 1</span><br><span class="line"><span class="attribute">If-Modified-Since</span>: Mon, 18 Jul 2016 02:36:04 GMT</span><br><span class="line"><span class="attribute">If-None-Match</span>: &quot;c561c68d0ba92bbeb8b0fff2a9199f722e3a621a&quot;</span><br><span class="line"><span class="attribute">Cache-Control</span>: max-age=0</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Accept，浏览器可以处理的内容类型。</li>
+<li>Accept-Charset，浏览器可以显示的字符集。</li>
+<li>Accept-Encoding，浏览器可以处理的压缩编码类型。</li>
+<li>Accept-Language，浏览器使用的语言。</li>
+<li>Connection，浏览器与服务器的连接类型。</li>
+<li>Cookie，页面中设置的cookie。</li>
+<li>Host，发送请求的页面所在的域。</li>
+<li>Referer，发送请求的页面URI。</li>
+<li>User-Agent，浏览器用户代理字符串。</li>
+</ul>
+</li>
+<li><p>http状态码</p>
+<table>
+<thead>
+<tr>
+<th>1**</th>
+<th>信息，服务器收到请求，需要请求者继续执行操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2**</td>
+<td>成功，操作被成功接收并处理</td>
+</tr>
+<tr>
+<td>3**</td>
+<td>重定向，需要进一步的操作以完成请求</td>
+</tr>
+<tr>
+<td>4**</td>
+<td>客户端错误，请求包含语法错误或无法完成请求</td>
+</tr>
+<tr>
+<td>5**</td>
+<td>服务器错误，服务器在处理请求的过程中发生了错误</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">状态码</th>
+<th align="left">状态码英文名称</th>
+<th>中文描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">100</td>
+<td align="left">Continue</td>
+<td>继续。<a target="_blank" rel="noopener" href="http://www.dreamdu.com/webbuild/client_vs_server/">客户端</a>应继续其请求</td>
+</tr>
+<tr>
+<td align="left">101</td>
+<td align="left">Switching Protocols</td>
+<td>切换协议。服务器根据客户端的请求切换协议。只能切换到更高级的协议，例如，切换到HTTP的新版本协议</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">200</td>
+<td align="left">OK</td>
+<td>请求成功。一般用于GET与POST请求</td>
+</tr>
+<tr>
+<td align="left">201</td>
+<td align="left">Created</td>
+<td>已创建。成功请求并创建了新的资源</td>
+</tr>
+<tr>
+<td align="left">202</td>
+<td align="left">Accepted</td>
+<td>已接受。已经接受请求，但未处理完成</td>
+</tr>
+<tr>
+<td align="left">203</td>
+<td align="left">Non-Authoritative Information</td>
+<td>非授权信息。请求成功。但返回的meta信息不在原始的服务器，而是一个副本</td>
+</tr>
+<tr>
+<td align="left">204</td>
+<td align="left">No Content</td>
+<td>无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档</td>
+</tr>
+<tr>
+<td align="left">205</td>
+<td align="left">Reset Content</td>
+<td>重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域</td>
+</tr>
+<tr>
+<td align="left">206</td>
+<td align="left">Partial Content</td>
+<td>部分内容。服务器成功处理了部分GET请求</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">300</td>
+<td align="left">Multiple Choices</td>
+<td>多种选择。请求的资源可包括多个位置，相应可返回一个资源特征与地址的列表用于用户终端（例如：浏览器）选择</td>
+</tr>
+<tr>
+<td align="left">301</td>
+<td align="left">Moved Permanently</td>
+<td>永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</td>
+</tr>
+<tr>
+<td align="left">302</td>
+<td align="left">Found</td>
+<td>临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI</td>
+</tr>
+<tr>
+<td align="left">303</td>
+<td align="left">See Other</td>
+<td>查看其它地址。与301类似。使用GET和POST请求查看</td>
+</tr>
+<tr>
+<td align="left">304</td>
+<td align="left">Not Modified</td>
+<td>未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源</td>
+</tr>
+<tr>
+<td align="left">305</td>
+<td align="left">Use Proxy</td>
+<td>使用代理。所请求的资源必须通过代理访问</td>
+</tr>
+<tr>
+<td align="left">306</td>
+<td align="left">Unused</td>
+<td>已经被废弃的HTTP状态码</td>
+</tr>
+<tr>
+<td align="left">307</td>
+<td align="left">Temporary Redirect</td>
+<td>临时重定向。与302类似。使用GET请求重定向</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">400</td>
+<td align="left">Bad Request</td>
+<td>客户端请求的语法错误，服务器无法理解</td>
+</tr>
+<tr>
+<td align="left">401</td>
+<td align="left">Unauthorized</td>
+<td>请求要求用户的身份认证</td>
+</tr>
+<tr>
+<td align="left">402</td>
+<td align="left">Payment Required</td>
+<td>保留，将来使用</td>
+</tr>
+<tr>
+<td align="left">403</td>
+<td align="left">Forbidden</td>
+<td>服务器理解请求客户端的请求，但是拒绝执行此请求</td>
+</tr>
+<tr>
+<td align="left">404</td>
+<td align="left">Not Found</td>
+<td>服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</td>
+</tr>
+<tr>
+<td align="left">405</td>
+<td align="left">Method Not Allowed</td>
+<td>客户端请求中的方法被禁止</td>
+</tr>
+<tr>
+<td align="left">406</td>
+<td align="left">Not Acceptable</td>
+<td>服务器无法根据客户端请求的内容特性完成请求</td>
+</tr>
+<tr>
+<td align="left">407</td>
+<td align="left">Proxy Authentication Required</td>
+<td>请求要求代理的身份认证，与401类似，但请求者应当使用代理进行授权</td>
+</tr>
+<tr>
+<td align="left">408</td>
+<td align="left">Request Time-out</td>
+<td>服务器等待客户端发送的请求时间过长，超时</td>
+</tr>
+<tr>
+<td align="left">409</td>
+<td align="left">Conflict</td>
+<td>服务器完成客户端的 PUT 请求时可能返回此代码，服务器处理请求时发生了冲突</td>
+</tr>
+<tr>
+<td align="left">410</td>
+<td align="left">Gone</td>
+<td>客户端请求的资源已经不存在。410不同于404，如果资源以前有现在被永久删除了可使用410代码，网站设计人员可通过301代码指定资源的新位置</td>
+</tr>
+<tr>
+<td align="left">411</td>
+<td align="left">Length Required</td>
+<td>服务器无法处理客户端发送的不带Content-Length的请求信息</td>
+</tr>
+<tr>
+<td align="left">412</td>
+<td align="left">Precondition Failed</td>
+<td>客户端请求信息的先决条件错误</td>
+</tr>
+<tr>
+<td align="left">413</td>
+<td align="left">Request Entity Too Large</td>
+<td>由于请求的实体过大，服务器无法处理，因此拒绝请求。为防止客户端的连续请求，服务器可能会关闭连接。如果只是服务器暂时无法处理，则会包含一个Retry-After的响应信息</td>
+</tr>
+<tr>
+<td align="left">414</td>
+<td align="left">Request-URI Too Large</td>
+<td>请求的URI过长（URI通常为网址），服务器无法处理</td>
+</tr>
+<tr>
+<td align="left">415</td>
+<td align="left">Unsupported Media Type</td>
+<td>服务器无法处理请求附带的媒体格式</td>
+</tr>
+<tr>
+<td align="left">416</td>
+<td align="left">Requested range not satisfiable</td>
+<td>客户端请求的范围无效</td>
+</tr>
+<tr>
+<td align="left">417</td>
+<td align="left">Expectation Failed</td>
+<td>服务器无法满足Expect的请求头信息</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">500</td>
+<td align="left">Internal Server Error</td>
+<td>服务器内部错误，无法完成请求</td>
+</tr>
+<tr>
+<td align="left">501</td>
+<td align="left">Not Implemented</td>
+<td>服务器不支持请求的功能，无法完成请求</td>
+</tr>
+<tr>
+<td align="left">502</td>
+<td align="left">Bad Gateway</td>
+<td>作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应</td>
+</tr>
+<tr>
+<td align="left">503</td>
+<td align="left">Service Unavailable</td>
+<td>由于超载或系统维护，服务器暂时的无法处理客户端的请求。延时的长度可包含在服务器的Retry-After头信息中</td>
+</tr>
+<tr>
+<td align="left">504</td>
+<td align="left">Gateway Time-out</td>
+<td>充当网关或代理的服务器，未及时从远端服务器获取请求</td>
+</tr>
+<tr>
+<td align="left">505</td>
+<td align="left">HTTP Version not supported</td>
+<td>服务器不支持请求的HTTP协议的版本，无法完成处理</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>请求类型</p>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">GET</td>
+<td align="left">请求指定的页面信息，并返回实体主体。请求资源。</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">HEAD</td>
+<td align="left">类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">POST</td>
+<td align="left">向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和/或已有资源的修改。提交数据。</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">PUT</td>
+<td align="left">从客户端向服务器传送的数据取代指定的文档的内容。</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">DELETE</td>
+<td align="left">请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">CONNECT</td>
+<td align="left">HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">OPTIONS</td>
+<td align="left">允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">TRACE</td>
+<td align="left">回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">PATCH</td>
+<td align="left">是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>getResponeseHeader(key)，获取指定响应头信息。</p>
+</li>
+<li><p>getAllResponseHeaders()，获取响应头所有信息。</p>
+</li>
+<li><p>get请求</p>
+<p>get请求查询字符串的键值都需要使用encodeURIComponent()编码，所有键值对使用&amp;连接。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//拼接请求url函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addURLParam</span>(<span class="params">url,name,value</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//如果路径中不含参，则以？号拼接，否则用&amp;号拼接</span></span><br><span class="line">    url += (url.indexOf(<span class="string">&#x27;?&#x27;</span>) == -<span class="number">1</span> ? <span class="string">&#x27;?&#x27;</span> : <span class="string">&#x27;&amp;&#x27;</span>);</span><br><span class="line">    <span class="comment">//添加转码后的键值</span></span><br><span class="line">    url += <span class="string">`<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(name)&#125;</span>=<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(value)&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">return</span> url;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;/registerAccount&#x27;</span>;</span><br><span class="line">url = addURIParam(url,<span class="string">&#x27;id&#x27;</span>,<span class="number">1</span>);<span class="comment">//url &#x27;/registerAccont?id=1&#x27;</span></span><br><span class="line">url = addURIParam(url,<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;_this&#x27;</span>);<span class="comment">//url &#x27;/registerAccont?id=1&amp;name=_this&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>post请求</p>
+<p>post请求用于向服务器发送需要保存的数据。</p>
+<ul>
+<li>serialize方法，将form表单中的数据转化为字符串。</li>
+<li>需要设置请求头的Content-Type为<code>application/x-www-formurlencoded</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">submitData</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">xhr.readyState == <span class="number">4</span></span>)</span>&#123;</span><br><span class="line">            <span class="function"><span class="title">if</span>(<span class="params">(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span></span>)</span>&#123;</span><br><span class="line">                alert(xhr.responseText);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                 alert(xhr.status);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    xhr.open(<span class="string">&#x27;post&#x27;</span>,url,<span class="literal">true</span>);</span><br><span class="line">    <span class="comment">//设置Content-Type</span></span><br><span class="line">    xhr.setRequsetHeader(<span class="string">&#x27;Content-Type&#x27;</span>,<span class="string">&#x27;application/x-www-formurlencoded&#x27;</span>);</span><br><span class="line">    <span class="keyword">let</span> form = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;user-info&#x27;</span>);</span><br><span class="line">    <span class="comment">//发送数据</span></span><br><span class="line">    xhr.send(serialize(form));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用FormData，对表单数据序列化。</p>
+<p>不需要设置任何请求头部信息。</p>
+<p><code>xhr.send(new FormData(form))</code></p>
+</li>
+<li><p>超时timeout属性，ie8后所有浏览器给XHR对象添加timeout属性，表示发送请求后等待多时毫秒，如果请求不成功就中断请求。</p>
+</li>
+<li><p>ontimeout事件，在超时时间后仍未收到响应时调用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">xhr.readyState == <span class="number">4</span></span>)</span>&#123;</span><br><span class="line">            <span class="function"><span class="title">if</span>(<span class="params">(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span></span>)</span>&#123;</span><br><span class="line">                alert(xhr.responseText);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                alert(xhr.status);</span><br><span class="line">            &#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;<span class="function"><span class="title">catch</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xhr.open(<span class="string">&#x27;get&#x27;</span>,url,<span class="literal">true</span>);</span><br><span class="line"><span class="comment">//设置超时时间</span></span><br><span class="line">xhr.timeout = <span class="number">1000</span>;</span><br><span class="line"><span class="comment">//超时后调用ontimeout函数，并设置xhr对象的readyState为4，仍然会触发执行onreadystatechange方法，由于是中断响应所以xhr.status不存在。</span></span><br><span class="line">xhr.ontimeout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">&#x27;Request did not return in a second...&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>进度事件</strong></p>
+<ul>
+<li>loadstart，在接受到响应的第一个字符时触发。</li>
+<li>progress，在接收响应期间反复触发。</li>
+<li>error，在请求出错时触发。</li>
+<li>abort，在调用abort()终止连接时触发会终止所有与响应相关的事件触发。</li>
+<li>load，在成功接收完响应时触发。</li>
+<li>loadend，在通信完成时，且在error，abort或load之后触发。</li>
+</ul>
+<p>每次请求都会首先触发loadstart，之后时一个或多个progress事件，之后是error，abort或load中的一个，最后以loadend结束。</p>
+<ul>
+<li><p>进度事件接收一个event对象，他的target属性为XHR对象。</p>
+</li>
+<li><p><strong>onload事件</strong>代替onreadystatechange事件，直接在完成响应时触发。只要从服务器收到响应，无论什么状态码都会触发load事件。</p>
+</li>
+<li><p><strong>onprogress事件</strong>接收一个event对象，target属性为XHR对象，额外三个属性：</p>
+<ul>
+<li>lengthComputable，布尔值，表示进度信息是否可用。</li>
+<li>position，接收到的字节数。</li>
+<li>totalSize，<strong>响应</strong>的Content-Length头部定义的总字节数。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="comment">//onload事件完成响应执行</span></span><br><span class="line">xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span></span>)</span>&#123;</span><br><span class="line">        alert(xhr.responseText);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        alert(xhr.status);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在响应期间反复执行，制作响应进度百分比</span></span><br><span class="line">xhr.onprogress = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> progressStatus = <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">event.lengthComputable</span>)</span>&#123;</span><br><span class="line">        progressStatus.innerHTML = event.position/event.totalSize*<span class="number">100</span> + <span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xhr.open(<span class="string">&#x27;get&#x27;</span>,url,<span class="literal">true</span>);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="原生封装axios"><a href="#原生封装axios" class="headerlink" title="原生封装axios"></a>原生封装axios</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"><span class="built_in">window</span></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//参数为配置对象,默认get请求,queryParams和data都为空对象</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">axios</span>(<span class="params">&#123; url, method = <span class="string">&quot;GET&quot;</span>, params = &#123;&#125;, data = &#123;&#125; &#125;</span>) </span>&#123;</span><br><span class="line">		<span class="comment">//返回一个Promise</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">			<span class="comment">//处理method的大小写</span></span><br><span class="line">			method = method.toUpperCase();</span><br><span class="line"></span><br><span class="line">			<span class="comment">//处理params, 拼接成queryString</span></span><br><span class="line">			<span class="keyword">if</span> (params) &#123;</span><br><span class="line">				<span class="keyword">let</span> queryString = <span class="string">&quot;&quot;</span>;</span><br><span class="line">				<span class="built_in">Object</span>.keys(params).forEach(<span class="function">(<span class="params">key</span>) =&gt;</span> &#123;</span><br><span class="line">					queryString += <span class="string">`<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;params[key]&#125;</span>&amp;`</span>;</span><br><span class="line">				&#125;);</span><br><span class="line">				<span class="comment">//去掉最后一个&amp;</span></span><br><span class="line">				queryString = queryString.substring(<span class="number">0</span>, queryString.length - <span class="number">1</span>);</span><br><span class="line">				<span class="comment">//把queryString拼到url上</span></span><br><span class="line">				url += <span class="string">&quot;?&quot;</span> + queryString;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="comment">//创建xhr对象</span></span><br><span class="line">			<span class="keyword">const</span> request = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">			<span class="comment">//打开连接(还没有请求)</span></span><br><span class="line">			request.open(method, url);</span><br><span class="line">			<span class="comment">//发送请求</span></span><br><span class="line">			<span class="keyword">if</span> (method === <span class="string">&quot;GET&quot;</span> || method === <span class="string">&quot;DELETE&quot;</span>) &#123;</span><br><span class="line">				request.send();</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (method === <span class="string">&quot;POST&quot;</span> || method === <span class="string">&quot;PUT&quot;</span>) &#123;</span><br><span class="line">				<span class="comment">//设置请求头类型</span></span><br><span class="line">				request.setRequestHeader(</span><br><span class="line">					<span class="string">&quot;ContentType&quot;</span>,</span><br><span class="line">					<span class="string">&quot;application/json;charset=utf-8&quot;</span></span><br><span class="line">				);</span><br><span class="line">				<span class="comment">//将data从js对象转成json string</span></span><br><span class="line">				request.send(<span class="built_in">JSON</span>.stringify(data));</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="comment">//绑定状态改变监听</span></span><br><span class="line">			request.onreadystatechange = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">				<span class="comment">//请求没有完成</span></span><br><span class="line">				<span class="keyword">if</span> (request.readyState !== <span class="number">4</span>) <span class="keyword">return</span>;</span><br><span class="line">				<span class="comment">//只有status在[200,300)之间才代表成功</span></span><br><span class="line">				<span class="keyword">const</span> &#123; status, statusText &#125; = request;</span><br><span class="line">				<span class="comment">//axios的源码中也是这样的简单粗暴</span></span><br><span class="line">				<span class="keyword">if</span> ((status &gt;= <span class="number">200</span>) &amp; (status &lt; <span class="number">300</span>)) &#123;</span><br><span class="line">					<span class="comment">//response对象</span></span><br><span class="line">					<span class="keyword">const</span> response = &#123;</span><br><span class="line">						data: <span class="built_in">JSON</span>.parse(request.response),</span><br><span class="line">						status,</span><br><span class="line">						statusText,</span><br><span class="line">					&#125;;</span><br><span class="line">					<span class="comment">//resolve promise</span></span><br><span class="line">					resolve(response);</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="comment">//其他状态都表示失败, reject promise, 给予一个友好的提示</span></span><br><span class="line">					reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;request failed! response code = &quot;</span> + status));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">window</span>.axios = axios;</span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><h4 id="fetch方法"><a href="#fetch方法" class="headerlink" title="fetch方法"></a>fetch方法</h4><ul>
+<li>全局作用域方法，返回promise，fetch(url,option)，参数url，option配置对象。</li>
+</ul>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><ul>
+<li>在then方法中使用response对象。</li>
+</ul>
+<h5 id="分派请求"><a href="#分派请求" class="headerlink" title="分派请求"></a>分派请求</h5><h5 id="读取响应"><a href="#读取响应" class="headerlink" title="读取响应"></a>读取响应</h5><ul>
+<li><p>读取资源完整内容。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetch(url).then(<span class="function"><span class="params">response</span>=&gt;</span>response.text()).then(<span class="function"><span class="params">data</span>=&gt;</span><span class="built_in">console</span>.log(data))</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="处理状态码和请求失败"><a href="#处理状态码和请求失败" class="headerlink" title="处理状态码和请求失败"></a>处理状态码和请求失败</h5><ul>
+<li><p>response的ok属性，测试在状态码为非200~299时响应的状态。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fetch(url).then(</span><br><span class="line">    			response=&gt;&#123;<span class="built_in">console</span>.log(response.status,response.ok)&#125;,</span><br><span class="line">                error=&gt;<span class="built_in">console</span>.log(error)</span><br><span class="line">               );</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="自定义选项"><a href="#自定义选项" class="headerlink" title="自定义选项"></a>自定义选项</h5><ul>
+<li>参数二，初始化请求配置。</li>
+<li>body，请求体。</li>
+<li>cache，缓存设置。</li>
+<li>headers，请求头信息。</li>
+<li>method，请求方法。</li>
+<li>redirect，重定向设置。</li>
+</ul>
+<h4 id="请求模式"><a href="#请求模式" class="headerlink" title="请求模式"></a>请求模式</h4><ul>
+<li>发送json数据</li>
+<li>在请求体中设置发送参数</li>
+<li>发送文件</li>
+<li>加载Blob文件</li>
+<li>发送跨源请求</li>
+<li>中断请求</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/XMLHttpRequest/" data-id="ckgld2gcj000gyku3grqi0k6b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript异步" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/" class="article-date">
+  <time datetime="2020-10-22T21:43:37.266Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/">JavaScript异步</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h4><ul>
+<li>解决异步加载与异步事件循环依赖</li>
+</ul>
+<h4 id="宏任务与微任务"><a href="#宏任务与微任务" class="headerlink" title="宏任务与微任务"></a>宏任务与微任务</h4><ul>
+<li>事件循环：同步&gt;微任务&gt;宏任务</li>
+<li>事件占用主线程一定是事件完成再开启其他任务。</li>
+</ul>
+<h4 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h4><ul>
+<li>pending待定状态</li>
+<li>fulfilled兑现，resolved解决状态</li>
+<li>rejected拒绝状态</li>
+</ul>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ul>
+<li><p>创建</p>
+<p>new Promise(executor)，executor执行函数。</p>
+</li>
+<li><p>实例方法</p>
+<p>promise.then([fulfillment],[rejection])，用于promise状态注册处理函数。</p>
+<p>promise.catch([rejection])，用于处理reject状态。</p>
+<p>promise.finally([handler])</p>
+</li>
+<li><p>API</p>
+<p>Promise.resolve([value|promise])</p>
+<p>Promise.reject([reason])</p>
+<p>Promise.all(iterable)，接收所有已解决状态的promise。</p>
+<p>Promise.race(iterable)，接受所最先改变状态的promise。</p>
+<p>Promise.allSettled(iterable)，接受所有promise。</p>
+</li>
+<li><p>then方法返回一个 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Promise"><code>Promise</code></a>。它最多需要有两个参数：Promise 的成功和失败情况的回调函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// function doubleNum(value, func) &#123;</span></span><br><span class="line"><span class="comment">// 	setTimeout(func(2 * value), 1000);</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// const func = (value) =&gt; &#123;</span></span><br><span class="line"><span class="comment">// 	doubleNum(value, (x) =&gt; console.log(x));</span></span><br><span class="line"><span class="comment">// &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// doubleNum(1, func);</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doubleComp</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(x);</span><br><span class="line">		<span class="built_in">setTimeout</span>(resolve(<span class="number">2</span> * x), <span class="number">1000</span>);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line">doubleComp(<span class="number">1</span>)</span><br><span class="line">	.then(<span class="function">(<span class="params">x</span>) =&gt;</span> doubleComp(x))</span><br><span class="line">	.then(<span class="function">(<span class="params">x</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="number">2</span> * x));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="promise队列"><a href="#promise队列" class="headerlink" title="promise队列"></a>promise队列</h4><ul>
+<li><p>任务队列，promise的then方法返回新的promise，让前一个promise完成后再执行下一个。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组map</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">queue</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> promise = <span class="built_in">Promise</span>.resolve();</span><br><span class="line">	arr.map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">		promise = promise.then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">				<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">					<span class="built_in">console</span>.log(item);</span><br><span class="line">					resolve();</span><br><span class="line">				&#125;, <span class="number">1000</span>);</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//数组reduce</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reduceLog</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">	arr.reduce(<span class="function">(<span class="params">promise, n</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> promise.then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">				<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">					<span class="built_in">console</span>.log(n);</span><br><span class="line">					resolve();</span><br><span class="line">				&#125;, <span class="number">1000</span>);</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;, <span class="built_in">Promise</span>.resolve());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">reduceLog(arr);<span class="comment">//每间隔一秒输出元素 1，2，3，4，5</span></span><br><span class="line"></span><br><span class="line">queue(arr);<span class="comment">//每间隔一秒输出元素 1，2，3，4，5</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="async与await"><a href="#async与await" class="headerlink" title="async与await"></a>async与await</h4><ul>
+<li><p>async与await相互依赖，async定义为函数关键字，await相当于promise的then方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params">delay = <span class="number">2000</span></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">			resolve();</span><br><span class="line">		&#125;, delay);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">const</span> v <span class="keyword">of</span> arr) &#123;</span><br><span class="line">		<span class="keyword">await</span> sleep();</span><br><span class="line">		<span class="built_in">console</span>.log(v);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">show(arr);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>并行执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">&quot;p1&quot;</span>);</span><br><span class="line">	&#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">&quot;p2&quot;</span>);</span><br><span class="line">	&#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">progress</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">await</span> <span class="built_in">Promise</span>.all([arr]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">progress([p1, p2]);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/" data-id="ckgld2gbo0003yku35144fw55" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-BOM" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/BOM/" class="article-date">
+  <time datetime="2020-10-22T21:42:39.885Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/BOM/">JavaScriptBOM</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h4><ul>
+<li><p>全局作用域对象，在全局定义的引用时以下对象的属性。</p>
+<ul>
+<li>ECMAScript中的Global对象。</li>
+<li>浏览器的window对象。</li>
+</ul>
+</li>
+<li><p>BOM（brower object model）</p>
+<ul>
+<li>window.open(url,target,features)，导航到指定URL，例如：<code>window.open(&#39;https://www.baidu.com&#39;,&#39;_blank&#39;,&#39;fullscreen=yes&#39;)</code></li>
+<li>第三个参数设置浏览器特性（工具栏，地址栏，状态栏），不设置即默认。</li>
+</ul>
+</li>
+<li><p>定时器</p>
+<p>//</p>
+</li>
+<li><p><strong>系统对话框属性</strong></p>
+<ul>
+<li>alert，警告，带默认确定按钮，无返回。</li>
+<li>comfirm，确认，带确认及取消按钮，返回布尔值。</li>
+<li>promet，对话框，带文本输入框及一个确认按钮，返回输入的值。</li>
+</ul>
+</li>
+</ul>
+<h4 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h4><p>地址栏对象</p>
+<ul>
+<li><p>既是window的属性，又是document的属性。</p>
+</li>
+<li><p>location.hash，URL散列值（#号后面跟零或多个字符），如果没有返回空字符串。</p>
+</li>
+<li><p>location.host，服务器名及端口名。</p>
+</li>
+<li><p>location.hostname，服务器名（域名）</p>
+</li>
+<li><p>location.href，完整URL</p>
+</li>
+<li><p>location.pathname，URL中的路径或文件名</p>
+</li>
+<li><p>location.port，端口</p>
+</li>
+<li><p>location.protocol，页面使用的协议，一般为http或https</p>
+</li>
+<li><p>location.search，URL的查询字符串，以？号 开头。</p>
+</li>
+<li><p>location.origin，URL的源地址，只读。</p>
+</li>
+<li><p>URLSearchParams，操作location.search的类。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将URL的参数整合为键值对对象，直接操作这个对象。</span></span><br><span class="line"><span class="keyword">let</span> q = location.search;<span class="comment">//?</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="keyword">new</span> URLSearchParams(q);</span><br><span class="line">url.get(key);<span class="comment">//value</span></span><br><span class="line">url.set(key,value);</span><br><span class="line">url.delete(key);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>location.assign(url)，立即启动导航到新的地址。</p>
+</li>
+<li><p>location.replace(url)，重新加载到地址，不能返回上一级。</p>
+</li>
+</ul>
+<h4 id="navigator"><a href="#navigator" class="headerlink" title="navigator"></a>navigator</h4><p>浏览器产品对象</p>
+<ul>
+<li>API</li>
+<li>检测插件</li>
+<li>navigator.registerProtocolHandler(处理协议ftp/mailto,url,应用名称)，注册处理程序。</li>
+</ul>
+<h4 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h4><p>客户端显示器对象</p>
+<h4 id="history"><a href="#history" class="headerlink" title="history"></a>history</h4><p>历史记录对象</p>
+<ul>
+<li>表示用户当前窗口首次使用以来用户的导航历史记录。</li>
+<li>history.go()，-1后退一页，1前进一页，2前进两页，url导航到历史最近的目标页面。</li>
+<li>history.back()，history.forward()，go的简写。</li>
+<li>history.length，历史记录条目个数。</li>
+<li>hashchange事件，改变浏览器url不会加载新页面。</li>
+<li>history.pushState(state对象，新状态标题，相对url)</li>
+<li>popState(),processState(),replaceState().</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/BOM/" data-id="ckgld2gbd0000yku3et60a9gv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Javascript类与函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Javascript%E7%B1%BB%E4%B8%8E%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2020-10-22T21:42:04.184Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/Javascript%E7%B1%BB%E4%B8%8E%E5%87%BD%E6%95%B0/">Javascript类与函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="类定义"><a href="#类定义" class="headerlink" title="类定义"></a>类定义</h4><ul>
+<li>class Person{}</li>
+<li>const Person = class{}</li>
+<li>类的声明无法提升，类是块级作用域。</li>
+<li>类的构成<ul>
+<li>构造函数</li>
+<li>实例方法</li>
+<li>获取与设置函数</li>
+<li>静态函数</li>
+</ul>
+</li>
+</ul>
+<h4 id="类构造"><a href="#类构造" class="headerlink" title="类构造"></a>类构造</h4><ul>
+<li>实例化过程：<ul>
+<li>在内存中创建新对象。</li>
+<li>新对象内部的[[Prototype]]指针被赋值为构造函数的prototype属性。</li>
+<li>构造函数内部的this被赋值为这个新对象。</li>
+<li>执行构造函数内部的代码（给新对象添加属性）。</li>
+<li>如果构造函数返回非空对象，则返回该对象（构造函数的原型不作为新对象的原型）；否则返回新创建的对象。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">flag</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.foo = <span class="string">&#x27;foo&#x27;</span>;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">flag</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                bar: <span class="string">&#x27;bar&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> Person(<span class="literal">true</span>);</span><br><span class="line">p1 <span class="keyword">instanceof</span> Person;<span class="comment">// false,返回的不是构造函数的this对象。</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>类构造函数与普通构造函数的区别：<ul>
+<li>普通构造函数实例化时不使用new操作符，this指向全局对象即（window）。类构造函数实例化必须使用new操作符。</li>
+</ul>
+</li>
+<li>类存在prototype属性，<code>Person === Person.prototype.constructor;//true</code></li>
+<li><code>typeof Person //function</code></li>
+<li>p1 instanceof Person，使用instanceof操作符确认p1是不是Person构造的实例。</li>
+<li>类中定义的constructor不会被当成构造函数，<code>p1 instanceof Person.constructor;//false</code></li>
+<li>与立即执行函数类似，类也可以在定义之后立即实例化。</li>
+<li>类也可以像其他对象一样作为参数传递。</li>
+</ul>
+<h4 id="实例，原型与类成员"><a href="#实例，原型与类成员" class="headerlink" title="实例，原型与类成员"></a>实例，原型与类成员</h4><ul>
+<li><p>实例成员：每个类的实例对象都对应着唯一的成员对象，这意味着所有成员都不会在原型上共享。</p>
+</li>
+<li><p>原型方法：在类块中定义的所有方法都会定义在类的原型上。</p>
+</li>
+<li><p>访问器：类定义支持获取和设置访问器。</p>
+</li>
+<li><p>静态方法：每个类只能有一个静态成员，this引用类自身。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//存在与不同实例上</span></span><br><span class="line">        <span class="built_in">this</span>.locate = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&#x27;instance&#x27;</span>,<span class="built_in">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//定义在类的原型对象上</span></span><br><span class="line">        <span class="function"><span class="title">locate</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&#x27;prototype&#x27;</span>,<span class="built_in">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//静态成员定义在类本身</span></span><br><span class="line">        <span class="keyword">static</span> <span class="function"><span class="title">locate</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&#x27;class&#x27;</span>,<span class="built_in">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非函数原型和类成员：可在类块外部定义类的引用，可在类原型添加类的引用。</p>
+</li>
+<li><p>类块支持定义生成器和迭代器。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.colors = [<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;blue&#x27;</span>,<span class="string">&#x27;green&#x27;</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    *[<span class="built_in">Symbol</span>.iterator]()&#123;</span><br><span class="line">        <span class="keyword">yield</span> *<span class="built_in">this</span>.colors.entries();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//直接返回迭代器实例</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.colors = [<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;blue&#x27;</span>,<span class="string">&#x27;green&#x27;</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    [<span class="built_in">Symbol</span>.iterator]()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.colors.values();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><ul>
+<li>extends</li>
+</ul>
+<h4 id="代理与反射"><a href="#代理与反射" class="headerlink" title="代理与反射"></a>代理与反射</h4><ul>
+<li><p>代理：Proxy，通过反射api实现对象的增强。</p>
+</li>
+<li><p>反射：Reflex，反射api可以设置代理或直接使用。</p>
+<ul>
+<li>get()</li>
+<li>set()</li>
+<li>has()</li>
+<li>defineProperty()</li>
+<li>deleteProperty()</li>
+<li>getOwnPropertyDescriptor()</li>
+<li>ownKeys()</li>
+<li>getPrototypeOf()</li>
+<li>setPrototypeOf()</li>
+<li>isExtensible()</li>
+<li>preventExtensible()</li>
+<li>apply()</li>
+<li>construct()</li>
+</ul>
+</li>
+<li><p>代理模式</p>
+<ul>
+<li>跟踪属性访问</li>
+<li>隐藏属性</li>
+<li>属性验证</li>
+<li>函数与构造函数参数验证</li>
+<li>数据绑定与可观察对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h4><ul>
+<li>function声明</li>
+<li>变量接受匿名函数</li>
+<li>变量接受箭头函数</li>
+</ul>
+<h4 id="caller和callee"><a href="#caller和callee" class="headerlink" title="caller和callee"></a>caller和callee</h4><ul>
+<li><p>caller，func.caller返回调用该func函数的函数。</p>
+</li>
+<li><p>callee，arguments.callee返回参数所定义的函数本身。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//递归,严格模式下无法使用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">num &lt;= <span class="number">1</span></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//使用arguments.callee返回factorial本身</span></span><br><span class="line">        <span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//严格改进，使用命名函数表达式</span></span><br><span class="line"><span class="keyword">const</span> factorial = (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">num &lt;= <span class="number">1</span></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num * f(num - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><ul>
+<li>谁调用就指向谁。</li>
+</ul>
+<h4 id="new-target"><a href="#new-target" class="headerlink" title="new.target"></a>new.target</h4><ul>
+<li>构造函数通过new关键词调用返回本身，不使用new返回undefined。</li>
+</ul>
+<h4 id="函数的属性和方法"><a href="#函数的属性和方法" class="headerlink" title="函数的属性和方法"></a>函数的属性和方法</h4><ul>
+<li>length，返回函数参数列表的长度。</li>
+<li>call和apply方法<ul>
+<li>call和apply会绑定传入对象的this指向，返回该函数指向该对象的结果。<code>func.call/apply(obj,...)</code></li>
+<li>bind方法，会创建返回一个新的函数实例，其this值会被绑定到传给bind的对象。</li>
+<li>函数.apply(this,[arg1,arg2])</li>
+<li>函数.call(this,arg1,arg2)</li>
+</ul>
+</li>
+</ul>
+<h4 id="尾调用函数"><a href="#尾调用函数" class="headerlink" title="尾调用函数"></a>尾调用函数</h4><ul>
+<li><p>函数返回函数返回结果。</p>
+</li>
+<li><p>满足条件可用其优化</p>
+<ol>
+<li>代码在严格模式下执行。</li>
+<li>外部函数的返回值是对尾调函数的调用。</li>
+<li>尾调用函数返回后不需要 执行额外的逻辑，即尾调函数返回主函数也立即返回。</li>
+<li>尾调函数不是引用外部函数作用域中自由变量的闭包。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outerFunc</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">innerFunc</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a+b&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//0,1,2,3,5,8,13,21</span></span><br><span class="line"><span class="comment">//完美尾调优化递归斐波那契数列</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fb</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> fbFunc(<span class="number">0</span>, <span class="number">1</span>, num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fbFunc</span>(<span class="params">a, b, n</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n === <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> fbFunc(b, a + b, n - <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="this-1"><a href="#this-1" class="headerlink" title="this"></a>this</h4><ul>
+<li>在全局函数中调用，指向window，严格模式为undefined。</li>
+<li>作为对象方法调用，指向这个对象。</li>
+<li>匿名函数不会绑定对象，所以指向window。</li>
+</ul>
+<h4 id="闭包内存泄漏"><a href="#闭包内存泄漏" class="headerlink" title="闭包内存泄漏"></a>闭包内存泄漏</h4><ul>
+<li>将外部函数作用域被内部函数引用的变量赋值给另一个变量，当内部函数完成后，释放该变量内存。</li>
+</ul>
+<h4 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h4><p>//</p>
+<h4 id="模块私有与模块增强"><a href="#模块私有与模块增强" class="headerlink" title="模块私有与模块增强"></a>模块私有与模块增强</h4><ul>
+<li><strong>私有/模块</strong>：函数定义私有变量和方法，返回一个含有可访问私有对象的属性的对象。</li>
+<li><strong>增强</strong>：函数模块中定义私有内容并实例化其他模块的实例，返回带有特定属性的对象。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Javascript%E7%B1%BB%E4%B8%8E%E5%87%BD%E6%95%B0/" data-id="ckgld2gbs0006yku30abyfij8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Javascript对象原型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Javascript%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B/" class="article-date">
+  <time datetime="2020-10-22T21:41:11.118Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/Javascript%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B/">Javascript对象原型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><ol>
+<li><p><strong>定义对象</strong>，可以定义对象的属性和行为。可以通过Object.defineProperty()方法设置属性及属性的可执行操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">&#x27;name&#x27;</span>,&#123;</span><br><span class="line">    writable: <span class="literal">true</span>, <span class="comment">//默认true表示值可以改变</span></span><br><span class="line">    value: <span class="string">&#x27;lisi&#x27;</span>, <span class="comment">//属性值</span></span><br><span class="line">	configurable: <span class="literal">true</span> <span class="comment">//默认true表示属性可以使用delete obj.name删除。</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>访问器属性</strong>：给属性添加get和set方法，在对象调用访问器属性时，对对象进行一些操作，不作为迭代属性。</p>
+<p>访问器具有configurable，enumerable属性。其get，set函数，默认值为undefined。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//版本对象</span></span><br><span class="line"><span class="keyword">let</span> versionNum = &#123;</span><br><span class="line">    year_: <span class="number">2017</span>,</span><br><span class="line">    edition: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义新的年份属性</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(versionNum, <span class="string">&#x27;year&#x27;</span>, &#123;</span><br><span class="line">    <span class="function"><span class="title">get</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.year_;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">set</span>(<span class="params">newYear</span>)</span>&#123;</span><br><span class="line">    	<span class="function"><span class="title">if</span>(<span class="params">newYear &gt; <span class="number">2017</span></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">this</span>.year_ = newYear;</span><br><span class="line">            <span class="built_in">this</span>.edition += newYear - <span class="number">2017</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//调用属性的set方法</span></span><br><span class="line">versionNum.year = <span class="number">2020</span>;</span><br><span class="line"><span class="comment">//调用get方法</span></span><br><span class="line">versionNum.year</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同时定义多个属性：同时定义的属性writable，cofigurable，enumerable属性不定义的话都为false。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> book = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperties(book, &#123;</span><br><span class="line">	year_: &#123;</span><br><span class="line">		writable: <span class="literal">true</span>,</span><br><span class="line">		enumerable: <span class="literal">true</span>,</span><br><span class="line">		value: <span class="number">2017</span>,</span><br><span class="line">	&#125;,</span><br><span class="line">	edition: &#123;</span><br><span class="line">		writable: <span class="literal">true</span>,</span><br><span class="line">		enumerable: <span class="literal">true</span>,</span><br><span class="line">		value: <span class="number">1</span>,</span><br><span class="line">	&#125;,</span><br><span class="line">	year: &#123;</span><br><span class="line">		<span class="function"><span class="title">get</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">this</span>.year_;</span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="function"><span class="title">set</span>(<span class="params">newValue</span>)</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (newValue &gt; <span class="number">2017</span>) &#123;</span><br><span class="line">				<span class="built_in">this</span>.year_ = newValue;</span><br><span class="line">				<span class="built_in">this</span>.edition += newValue - <span class="number">2017</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>读取属性特性</p>
+<p><code>Object.getOwnPropertyDescriptor(obj,&#39;prop&#39;)</code>，返回一个prop属性对象，具有value，configurable，writable，enumerable属性。访问器属性对象还有get，set函数属性。</p>
+<p>es2017定义了新的Object静态方法，Object.getOwnPropertyDescriptors()，会在对象的属性上调用Object.defineProperties()方法返回一个描述对象的新对象。</p>
+</li>
+<li><p>当前对象方法及Object方法</p>
+<ul>
+<li><p>**hasOwnProperty(propertyName)**：确定实例上是否存在该属性。</p>
+</li>
+<li><p>**isPrototypeof()**：检查一个对象是否存在于另一个对象的原型链上。</p>
+</li>
+<li><p>propertyIsEnumerable(propertyName)，判断属性是否可枚举。</p>
+</li>
+<li><p>toLocaleString()</p>
+</li>
+<li><p>toString()</p>
+</li>
+<li><p>valueOf()</p>
+</li>
+<li><p>Object.keys(obj)</p>
+</li>
+<li><p>Object.values(obj)</p>
+</li>
+<li><p>Object.entries(obj)</p>
+</li>
+<li><p>Object.fromEntries(Map)：把键值对列表转换成对象。</p>
+</li>
+<li><p>**Object.create(obj[,{}])**：依赖目标对象创建对象，obj即为新建对象的原型，可接受第二个参数，效果相当于Object.defineProperties()的第二个参数，给新实例添加属性和配置。</p>
+</li>
+<li><p>**Object.assign(o1,o2)**：用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</p>
+</li>
+<li><p>Object.freeze(obj)：冻结对象，一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。<code>freeze()</code> 返回和传入的参数相同的对象。</p>
+</li>
+<li><p>**Object.getPrototypeOf(obj)**：获取obj的原型对象。</p>
+</li>
+<li><p><code>Object.defineProperty()</code></p>
+</li>
+<li><p><code>Object.defineProperties()</code>：定义属性集对象。</p>
+</li>
+<li><p><code>Object.getOwnPropertyDescriptor()</code>：传递两个参数，对象和对象的键，获取对象属性的描述。</p>
+</li>
+<li><p><code>Object.getOwnPropertyDescriptors()</code>：获取对象的属性键值对描述。</p>
+</li>
+<li><p><code>Object.getOwnPropertyNames()</code>：在给定对象上找到的自身属性对应的字符串数组，不包括只为Symbol的属性。</p>
+</li>
+<li><pre><code class="js">Object.getOwnPropertySymbols(obj)//在给定对象自身上找到的所有 Symbol 属性的数组。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">6. **合并对象**</span><br><span class="line"></span><br><span class="line">   Object.assign()方法将接受一个或多个对象可枚举（enumerable为true）的属性和自身hasOwnProperty()返回true的属性复制到目标对象。以字符串和符号为建的属性会被复制，通过源对象get取得属性的值，通过本对象set设置到键上。</span><br><span class="line"></span><br><span class="line">7. 对象标识及相等判定</span><br><span class="line"></span><br><span class="line">   es6的Object.is()，&#96;Object.is(NaN,NaN)&#x2F;&#x2F;true&#96;</span><br><span class="line"></span><br><span class="line">8. 对象增强</span><br><span class="line"></span><br><span class="line">   * 属性简写：当属性名和属性值的引用变量同名时属性值可以省略。</span><br><span class="line">   * 计算属性：属性键可以通过[]引用变量或函数作为键值。</span><br><span class="line"></span><br><span class="line">   * 方法名简写：&#96;getName: function()&#123;&#125;&#96; &#96;getName()&#123;&#125;&#96;，和计算属性兼容&#96;[]()&#123;&#125;&#96;。</span><br><span class="line">   * 对象解构：同名解构或解构不存在的属性时赋初始值。</span><br><span class="line">     * 嵌套解构：&#123;a:&#123;b&#125;&#125; &#x3D; obj。</span><br><span class="line">     * 函数参数解构不影响arguments对象。</span><br><span class="line"></span><br><span class="line">#### 对象实例化</span><br><span class="line"></span><br><span class="line">* 传参数使用new Object()或不传参数new Object。</span><br><span class="line"></span><br><span class="line">#### 构造函数</span><br><span class="line"></span><br><span class="line">* constructor</span><br><span class="line"></span><br><span class="line">#### 原型</span><br><span class="line"></span><br><span class="line">* 构造函数，原型对象和实例是三个不同的对象。</span><br><span class="line"></span><br><span class="line">* 实例和构造函数没有直接连接，和原型对象有直接来连接。</span><br><span class="line"></span><br><span class="line">  * 实例对象通过&#96;_proto_&#96;连接到原型。</span><br><span class="line">  * 构造函数通过&#96;prototype&#96;连接到原型。</span><br><span class="line"></span><br><span class="line">* 同一个构造函数创建的两个实例共享一个原型对象。</span><br><span class="line"></span><br><span class="line">* 目标对象属性访问不存在时，会沿着指针访问对象的原型获取属性。</span><br><span class="line"></span><br><span class="line">* 目标对象设置属性会遮蔽原型对象的同属性，目标对象设置为null也会，除用delete操作实例属性才会继续访问原型。</span><br><span class="line"></span><br><span class="line">* in操作符，判断对象或原型上是否才能在该属性。</span><br><span class="line"></span><br><span class="line">  &#96;&#96;&#96;javascript</span><br><span class="line">  &#x2F;&#x2F;确定属性在原型上</span><br><span class="line">  !object.hasOwnProperty(proName) &amp;&amp; (proName in object)</span><br></pre></td></tr></table></figure></code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>hasPrototypeProperty(obj,’name’)确定name属性是否只存在obj原型上。</p>
+</li>
+<li><p>for……in循环返回对象及原型所有可枚举属性，遮蔽原型不可枚举enumerable为false的实例属性也会被返回。</p>
+</li>
+<li><p>Object.keys()返回实例可枚举属性，Object.getOwnPropertyNames()返回所有属性无论是否可枚举。</p>
+</li>
+<li><p>Object.values()和Object.entries()返回对象属性值的数组和对象属性和值的键值对数组，非字符串属性会转化为字符串，不返回符号属性。</p>
+</li>
+<li><p>通过对象字面量的方法重写原型，原型的构造函数就不会指向Person而是Object，所以要将Person复制给Person.prototype对象并保证构造函数属性不可枚举，值指向Person。</p>
+<p><strong>创建实例须在重写原型之后进行。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    name: <span class="string">&#x27;lisi&#x27;</span>,</span><br><span class="line">    age: <span class="number">12</span>,</span><br><span class="line">    <span class="function"><span class="title">sayName</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Person.prototype,<span class="string">&#x27;constructor&#x27;</span>,&#123;</span><br><span class="line">    enumerable: <span class="literal">false</span>,</span><br><span class="line">    value: Person</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><ul>
+<li>实例对象通过内部指针指向原型，原型的constructor属性指向构造函数，如果原型是另一个构造函数的实例，则存在内部指针指向其原型，套娃的原型链。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">this</span>.property =  <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">Father.prototype.getFlag = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.property;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.sonProperty = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//继承</span></span><br><span class="line">Son.prototype = <span class="keyword">new</span> Father();</span><br><span class="line">Son.prototype.getSonFlag = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.sonProperty;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Son().getFlag())</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Father.prototype.isPrototypeOf(new Son())，判断Father的原型是否在Son实例的原型链上。</p>
+<ul>
+<li>用对象字面量的重写子对象的原型会覆盖之前继承的原型，是Object的实例而不是父类构造函数的实例。</li>
+</ul>
+</li>
+<li><p>原型链的问题</p>
+<p>父构造函数属性存在引用值时，两个子实例中改变引用值会作用到另一个实例上。</p>
+</li>
+<li><p>组合继承</p>
+<p>通过实例化父对象的 构造赋值给新对象的原型传递方法，通过父构造.call或apply绑定新对象构造传递引用属性。（p244）</p>
+</li>
+<li><p>原型式继承</p>
+<p>既继承原始值属性也继承引用属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">    F.prototype = o;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>es5规范<code>Object.create(o,&#123;&#125;)</code></p>
+</li>
+<li><p><strong>寄生式组合继承：</strong>使用组合继承会调用两次父类的构造，因此使用<strong>寄生式组合继承</strong>。将父类构造的引用副本引入子类构造，通过增强将子类原型的构造指向子类构造，减少父类构造的引用也同时避免子类实例属性直接操作父类构造的引用。（p247）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritProperty</span>(<span class="params">Father, Son</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> obj = <span class="built_in">Object</span>.create(Father.prototype);</span><br><span class="line">	<span class="comment">//父类实例指向子类原型</span></span><br><span class="line">	obj.constructor = Son;</span><br><span class="line">	Son.prototype = obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">this</span>.name = name;</span><br><span class="line">	<span class="built_in">this</span>.colors = [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;grey&quot;</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">	Father.call(<span class="built_in">this</span>, name);</span><br><span class="line">	<span class="built_in">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Father.prototype.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line">Son.prototype.sayAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">this</span>.age);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">inheritProperty(Father, Son);</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Son(<span class="string">&quot;lisi&quot;</span>).sayName();<span class="comment">//&quot;lisi&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Javascript%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B/" data-id="ckgld2gbq0004yku36xpab7hf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Javascript集合" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Javascript%E9%9B%86%E5%90%88/" class="article-date">
+  <time datetime="2020-10-22T21:39:39.612Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/Javascript%E9%9B%86%E5%90%88/">Javascript集合</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h4 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h4><ol>
+<li>new Array([length])</li>
+<li>[]</li>
+</ol>
+<h4 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a>Array.from()</h4><ul>
+<li>参数1：类数组对象，可迭代的结构，有length属性或可索引的结构。</li>
+<li>参数2：增强数组元素的函数。</li>
+<li>参数3：指定参数二函数对象引用的this对象。</li>
+</ul>
+<h4 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of()"></a>Array.of()</h4><ul>
+<li>将一组参数转换为数组。</li>
+</ul>
+<h4 id="数组索引"><a href="#数组索引" class="headerlink" title="数组索引"></a>数组索引</h4><ul>
+<li><p>通过数组索引访问，增加及删除元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [];</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">1</span>;	<span class="comment">//add</span></span><br><span class="line">arr.length === <span class="number">1</span>; <span class="comment">//true</span></span><br><span class="line">arr[arr.length] = <span class="number">2</span>; <span class="comment">//add</span></span><br><span class="line">arr.length = <span class="number">1</span>; <span class="comment">//delete</span></span><br><span class="line">arr[<span class="number">5</span>] = <span class="number">6</span>; <span class="comment">//add</span></span><br><span class="line">arr.length; <span class="comment">//6</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h4><ul>
+<li><p>判断一个对象是不是数组</p>
+<p><code>Array.isArray(arr)</code></p>
+<p><code>arr instanceof Array</code>：在多框架结构中可能被重写而导致不适用。</p>
+</li>
+</ul>
+<h4 id="迭代器方法"><a href="#迭代器方法" class="headerlink" title="迭代器方法"></a>迭代器方法</h4><p>Array原型上暴露的方法，keys(),values(),entries()，返回可迭代的数据结构，可通过Array.from获取。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">Array</span>.from(a.keys());</span><br><span class="line"><span class="built_in">Array</span>.from(a.values());</span><br><span class="line"><span class="built_in">Array</span>.from(a.entries());</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>keys返回键数组。</li>
+<li>values返回值数组。</li>
+<li>entries返回元素键值对数组的二维数组。</li>
+</ul>
+<h4 id="填充与复制"><a href="#填充与复制" class="headerlink" title="填充与复制"></a>填充与复制</h4><ul>
+<li>fill()：将参数1的值填充到数组参数二位置与参数三位置之间，左闭右开，填充不影响数组长度。</li>
+<li>copyWithin：<ul>
+<li>一个参数，代表从0开始复制原数组插入到数组参数位置。</li>
+<li>二个参数，代表从第二个参数位置开始复制，插入到原数组第一个参数位置。</li>
+<li>三个参数，代表复制从第二个参数位置到第三个参数位置，插入到第一个参数位置。</li>
+</ul>
+</li>
+</ul>
+<h4 id="数组元素"><a href="#数组元素" class="headerlink" title="数组元素"></a>数组元素</h4><ul>
+<li>null和undefined在操作时会以空字符串的形式表示。</li>
+</ul>
+<h4 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h4><ul>
+<li>toString：返回数组元素以逗号相连接的字符串。</li>
+<li>valueOf：返回数组本身。</li>
+<li>toLocaleString：在调用时会调用每个元素的toLocaleString方法，无特殊跟toString相同。</li>
+</ul>
+<h4 id="栈方法"><a href="#栈方法" class="headerlink" title="栈方法"></a>栈方法</h4><ul>
+<li>后进先出。</li>
+<li><strong>push</strong>末尾压入<strong>返回数组新长度</strong>,<strong>pop</strong>取出返回<strong>最后一项</strong>。</li>
+<li>改变原数组。</li>
+</ul>
+<h4 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h4><ul>
+<li>先进先出，shift和push方法。</li>
+<li><strong>shift取出数组第一项并返回值</strong>。</li>
+<li><strong>unshift将元素推入数组开头，返回新长度</strong>。</li>
+</ul>
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><ul>
+<li><p><strong>sort排序，reverse反转会改变原数组</strong>，<strong>返回新数组</strong>。</p>
+</li>
+<li><p>sort会调用String()转型为字符串比较。</p>
+<p>稳妥的比较方法时在sort方法内传入一个比较函数作为参数。</p>
+<p><code>sort((v1,v2) =&gt; v1-v2)</code>正序</p>
+<p><code>sort((v1,v2) =&gt; v2-v1)</code>倒序</p>
+</li>
+</ul>
+<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><ul>
+<li><p><strong>slice：截取原数组，不改变原数组大小</strong>。</p>
+</li>
+<li><p><strong>splice：可以进行删除，插入，更新操作，直接操作原数组。</strong></p>
+<p>splice(开始位置索引，改变元素数量，新元素…)</p>
+</li>
+</ul>
+<h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><ul>
+<li><p><strong>indexOf，lastIndexOf，includes</strong>。</p>
+</li>
+<li><p><strong>includes，返回布尔值</strong>。</p>
+</li>
+<li><p>断言函数</p>
+<p>find，findIndex</p>
+<p>接受一个函数，参数为元素，元素索引和数组本身。</p>
+<p><strong>find返回第一个匹配的值</strong>。</p>
+<p><strong>findIndex返回第一个匹配的值的索引</strong>。</p>
+</li>
+</ul>
+<h4 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h4><ul>
+<li>every：返回所有元素经函数的判断是否全都满足，返回布尔类型。<strong>判断</strong></li>
+<li>some：对数组每一项都运行函数传入的函数，有一个结果为true，则返回true。<strong>判断</strong></li>
+<li>filter：返回经函数返回true的元素数组，不改变原数组。<strong>过滤</strong></li>
+<li>foreach：对数组每一项都运行函数传入的函数，不返回。<strong>遍历</strong></li>
+<li>map：对数组每一项都运行函数传入的函数，返回每一项的处理结果组成的数组，不改变原数组。<strong>遍历及操作</strong></li>
+</ul>
+<h4 id="归并方法"><a href="#归并方法" class="headerlink" title="归并方法"></a>归并方法</h4><ul>
+<li>reduce：<strong>接受一个回调函数和一个初始值作为参数</strong>，回调函数四个参数：上一次归并值，当前项，当前项的索引，数组本身。第一次进行时，第一个参数取数组第一个元素。第二个参数取数组第二个元素。</li>
+<li>reduceRight：从数组最后一位向前归并。</li>
+</ul>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ol>
+<li>定义：new Map()</li>
+<li>设置值：set(‘id’,’1010’)</li>
+<li>判断：has(key)</li>
+<li>获取：get(key)</li>
+<li>删除：map.delete(key)</li>
+<li>清空：map.clear()</li>
+<li>迭代：for…of，foreach</li>
+<li>迭代器：keys，values，entries和本身相同。</li>
+</ol>
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><ul>
+<li>基本和map相同，添加元素用add方法。</li>
+<li>迭代器entries返回的都是值。</li>
+</ul>
+<h3 id="默认迭代对象"><a href="#默认迭代对象" class="headerlink" title="默认迭代对象"></a>默认迭代对象</h3><p>都可以使用解构和for……of</p>
+<ul>
+<li>Array</li>
+<li>定型数组</li>
+<li>Map</li>
+<li>Set</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Javascript%E9%9B%86%E5%90%88/" data-id="ckgld2gbv0008yku3haobbzeg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-垃圾回收" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" class="article-date">
+  <time datetime="2020-10-22T21:38:35.940Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/">垃圾回收</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><ol>
+<li>var声明的变量会被提升到当前作用域的前端（函数作用域或全局作用域），对一个变量声明并赋值，声明的语句会被提升，赋值语句不会。</li>
+<li>let块级作用域，即花括号包裹的语句块，不可重复声明。严格来说会被提升，但由于暂时性死区，所以会报错。</li>
+<li>const声明的常量同样拥有块级作用域，变量不可以重新赋值，但可以给对象变量属性赋值。如果不想改变对象属性使用<code>const a = Object.freeze()</code>，会使变量的属性赋值无效。</li>
+</ol>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ul>
+<li><p>标识符查找</p>
+<p>当作用域引用变量的时候，会确定变量的值，如果当前作用域无法获取变量的值，则会访问上一级作用域继续搜索，当获取到值的时候搜索结束。也就产生了局部变量与全局变量的关系，当他们相同，则优先搜索到局部变量使搜索结束。搜索发生在当前作用域或当前作用域链上，同时会搜索对象以及对象的原型链所以并不会获得全局变量的值。</p>
+</li>
+</ul>
+<h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><ul>
+<li>浏览器史上用过的垃圾标记策略。</li>
+</ul>
+<ol>
+<li><p>标记清理</p>
+<p>垃圾回收程序运行时，会去掉在上下文中的变量及其应用的变量，其他添加标记待删除。随后运行一次清理，回收内存。</p>
+</li>
+<li><p>引用计数</p>
+<p>保留变量被引用的次数，当被替换引用时减1直到归零，垃圾回收程序运行时清理所有计数为零的变量内存。</p>
+<p>缺点是当两个对象分别以属性的方式引用对方，那么他们的计数永远为2，无法清除。</p>
+</li>
+</ol>
+<ul>
+<li><p>性能</p>
+<p>垃圾回收的事件调度会影响js的性能。ie6是固定分配空间来进行垃圾回收，ie7按回收空间占比进行了改进。</p>
+</li>
+<li><p>内存管理</p>
+<ol>
+<li><p>全局作用域的对象，在数据不再必要的时候将它设置为null，解除引用。</p>
+</li>
+<li><p>通过es6，let，const声明块级作用域的变量，不接受window全局，在某些情况下块级作用域先于函数作用域关闭，优先被垃圾回收。</p>
+</li>
+<li><p>隐藏类和删除操作优化：</p>
+<ul>
+<li>隐藏类存在于类的声明中，当类的两个实例对象同时声明时，他们存在相同的隐藏类，垃圾回收可以方便地回收。</li>
+</ul>
+<ol>
+<li>在声明类的时候，将需要的参数全部放到构造函数中，防止私自添加改变实例的隐藏类。</li>
+<li>如不需要类的属性，不是将属性删除，而是将属性设置为null。</li>
+</ol>
+</li>
+<li><p>内存泄漏，通过程序改变内存占用的时间和空间。</p>
+<ol>
+<li>声明全局变量。</li>
+<li>定时器占用外部变量。</li>
+<li>闭包占用变量。</li>
+</ol>
+</li>
+<li><p>静态分配与对象池</p>
+<ul>
+<li>频繁的对象创建，更新与删除会更快地占用内存从而触发垃圾回收程序。</li>
+<li>避免动态创建对象和其他对象（数组会自己动态改变自身长度弃用原数组，提前分配长度有效避免）实例化。</li>
+<li>静态分配就是使用对象池静态方法按需获取对象，使用，归还。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" data-id="ckgld2gc4000eyku359enddxw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Javascript语句与操作符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Javascript%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%AC%A6/" class="article-date">
+  <time datetime="2020-10-22T21:37:13.154Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/Javascript%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%AC%A6/">Javascript语句与操作符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><ol>
+<li><p>一元操作符</p>
+<ul>
+<li><p>++/–</p>
+<p>自增/自减</p>
+<p> 对于数值做加减，字符数值、布尔类型、调用Number()转换类型再作加减，对象类型获取valueOf/toString转换为字符再进行计算。</p>
+</li>
+<li><p>位运算符</p>
+<ul>
+<li>位运算将64位数值转为32位二进制数，操作完成再转换为64位数值存储。</li>
+<li>补数：二进制数反转。</li>
+<li>取反数：正数取反为二进制取补数加一。</li>
+</ul>
+</li>
+<li><p>~按位非，取32位二进制的补数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>; <span class="comment">//0b1010</span></span><br><span class="line">~a; <span class="comment">//-11 -0b1011</span></span><br><span class="line"><span class="comment">//1111 1111 1111 1111 1111 1111 1111 0101</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&amp;按位与，32位二进制数相与运算</p>
+<p>2 &amp; 3</p>
+<p>原二进制按位相与运算，返回二进制再进行计算。</p>
+</li>
+<li><p>|按位或，32位二进制相或运算。</p>
+</li>
+<li><p>^按位异或，32位二进制异或运算，负负或正正皆为0。</p>
+</li>
+<li><p>&lt;&lt;左移,&gt;&gt;右移，将指定位数左右移动指定位数做运算。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;	<span class="comment">//10</span></span><br><span class="line"><span class="keyword">let</span> b = a &lt;&lt; <span class="number">5</span>; <span class="comment">//0b1000000 b===64</span></span><br><span class="line"><span class="keyword">let</span> c = b &gt;&gt; <span class="number">5</span>; <span class="comment">//0b10 c===2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&gt;&gt;&gt;无符号右移，所有32位右移，对负数影响大，对整数与有符号右移一样。</p>
+</li>
+<li><p>逻辑与或非</p>
+<p>与或操作有中断执行情况，即满足第一个条件则不会继续执行第二个条件。</p>
+<p>null返回null，undefined返回undefined，NaN返回NaN，对象操作返回对象。</p>
+</li>
+<li><p>乘除取模</p>
+</li>
+<li><p>指数运算</p>
+<p><code>3 ** 2 === Math.pow(3,2)</code></p>
+</li>
+<li><p>加减性运算符</p>
+<p>数字加字符得字符</p>
+<p>减操作会自动转换</p>
+</li>
+<li><p>关系运算符</p>
+<p>大于小于等于不等于</p>
+<ul>
+<li>任一布尔值，则转换为数值比较</li>
+<li>任意字符串和数值，转换为数值。都是字符串，则逐个比较每一位的字符编码。</li>
+<li>对象取valueOf/toString比较。</li>
+<li>对象判断相等，比较两个对象的地址是否相等。</li>
+</ul>
+</li>
+<li><p>全等与不全等</p>
+<p>全等不转换数值类型</p>
+</li>
+<li><p>三元运算符</p>
+</li>
+<li><p>逗号操作符</p>
+<p><code>let a = (1,2,3,4,5); //5</code></p>
+</li>
+</ul>
+</li>
+<li><p>逻辑非</p>
+<ul>
+<li>！对象，返回false。</li>
+<li>！空字符串，返回true。</li>
+<li>！0，返回true。</li>
+<li>！null，返回true。</li>
+<li>！NaN，返回true。</li>
+<li>！undefined，返回true。</li>
+</ul>
+</li>
+</ol>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><ol>
+<li><p>条件</p>
+<p>if……else</p>
+</li>
+<li><p>循环</p>
+<p>while</p>
+<p>do……while</p>
+<p>for</p>
+<p>for……in 对象元素遍历</p>
+<p>for……of 可迭代对象遍历</p>
+<p>break……continue</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标签语句</span></span><br><span class="line"><span class="keyword">let</span> num = <span class="number">0</span>;</span><br><span class="line">outFor:</span><br><span class="line"><span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">i === <span class="number">5</span> &amp;&amp; j === <span class="number">5</span></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">break</span> outFor; <span class="comment">//中止最外层循环</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    num++；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>with语句(不推荐使用)</em></p>
+<p>用于连接对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原本</span></span><br><span class="line"><span class="keyword">let</span> qs = location.search.substring(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">let</span> hostname = location.hostname;</span><br><span class="line"><span class="keyword">let</span> url = location.href;</span><br><span class="line"><span class="comment">//with</span></span><br><span class="line"><span class="function"><span class="title">with</span>(<span class="params">location</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> qs = search.substring(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">let</span> hostName = hostname;</span><br><span class="line">    <span class="keyword">let</span> url = href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>switch</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Javascript%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%AC%A6/" data-id="ckgld2gbu0007yku350ltbanj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/23/jQuery/">jQuery相关记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/Cookie/">客户端存储</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/XMLHttpRequest/">XMLHttpRequest</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/">JavaScript异步</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/BOM/">JavaScriptBOM</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 未入圈的羊<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

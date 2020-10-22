@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Points</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Points">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Points">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="未入圈的羊">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Points" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo"></a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Javascript数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Javascript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time datetime="2020-10-22T21:36:24.484Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/Javascript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Javascript数据类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h3><ol>
+<li><p>6种简单数据类型</p>
+<p>Undefined，Null，Boolean，Number，String，Symbol。引用数据类型（object，function，array）</p>
+</li>
+<li><p><strong>typeof</strong></p>
+<p>判断变量类型</p>
+<p>返回值：undefined,boolean,string,number,object,function,symbol.</p>
+</li>
+<li><p><strong>instanceof</strong></p>
+<p>判断对象类型</p>
+</li>
+<li><p><strong>null</strong>，空对象的引用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//object</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//false</span></span><br><span class="line"><span class="literal">null</span> <span class="keyword">instanceof</span> object</span><br><span class="line"></span><br><span class="line"><span class="comment">//true</span></span><br><span class="line">!<span class="literal">null</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//false</span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>boolean</strong></p>
+<p>将其他类型的值在转换成boolean，用Boolean。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a &#x3D; 1;</span><br><span class="line">&#x2F;&#x2F;true</span><br><span class="line">Boolean(a);</span><br></pre></td></tr></table></figure>
+
+<p>true：true，非空字符串，非零数值，任意对象</p>
+<p>false：false，空字符串，0，NaN，null，undefined。</p>
+</li>
+<li><p><strong>number</strong></p>
+<ul>
+<li><p>十进制与八进制与十六进制</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//十进制</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">8</span>;</span><br><span class="line"><span class="comment">//二进制以0b开头</span></span><br><span class="line"><span class="keyword">let</span> d = <span class="number">0b1000</span>;</span><br><span class="line"><span class="comment">//八进制以0开头</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">0</span>10;</span><br><span class="line"><span class="comment">//十六进制以0x开头</span></span><br><span class="line"><span class="keyword">let</span> c = <span class="number">0x8</span>;</span><br></pre></td></tr></table></figure>
+
+<p>数学运算默认转为十进制</p>
+<ul>
+<li><p>Number数值转换</p>
+</li>
+<li><p>parseInt</p>
+<p>接受两个参数，第一个是带数值字符串，第二个是进制底数（介于2~36，不写或为0默认十进制），否则返回NaN。</p>
+<p>解析字符串头空格忽略，</p>
+<p>第一个字符是非数值、+、-则返回NaN，</p>
+<p>数值加字符则返回数值忽略字符，</p>
+<p>数值中间空格，则只返回空格前面数值。</p>
+</li>
+<li><p>parseFloat</p>
+<p>无第二个参数，</p>
+<p>只解析十进制数值，</p>
+<p>不解析其他进制数，</p>
+<p>只解析第一个小数点，遇到第二个小数点则中断。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>string</strong></p>
+<ul>
+<li><p>定义：0或多个16位Unicode字符序列。</p>
+<ul>
+<li>字符字面量：\n换行,\t制表,\b退格,\r回车,\f换页，表示一个字符，占一个字符长度。</li>
+</ul>
+</li>
+<li><p>字符串长度，length。</p>
+</li>
+<li><p>toString方法，数字，字符串，对象，布尔值，可以调用。可以接受一个参数作为表示底数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">16</span>;</span><br><span class="line">a.toString(<span class="number">16</span>) <span class="comment">//==&gt; 0x10</span></span><br><span class="line">a.toString(<span class="number">8</span>) <span class="comment">//==&gt; 020</span></span><br><span class="line">a.toString(<span class="number">2</span>) <span class="comment">//==&gt; 0b10000</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String()</p>
+<ul>
+<li>如果值有toString方法，默认调用，不传参数。</li>
+<li>值为null，undefined返回自身的字符串。</li>
+</ul>
+</li>
+<li><p>模板字符串，可以换行书写。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">`bbb</span></span><br><span class="line"><span class="string">		aaa`</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	bbb</span></span><br><span class="line"><span class="comment">	aaa</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模板字符串插值</p>
+<p>表达式插值，会调用toString()方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;a&#125;</span> world`</span>)<span class="comment">//hello world</span></span><br><span class="line"><span class="comment">//--------------------------------------</span></span><br><span class="line"><span class="keyword">let</span> fn = &#123;<span class="attr">toString</span>: <span class="function">() =&gt;</span> <span class="string">&#x27;hello&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;fn&#125;</span> world`</span>)<span class="comment">//hello world</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>标签函数</p>
+<p>获取插值中间的字符串作为数组参数(除去插值以外的字符串包含空格，最后一个插值最后默认加空格，所以字符串数组长度永远比插值数组大1)，</p>
+<p>获取模板字符串中的插值作为函数参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> c = <span class="string">`count <span class="subst">$&#123;a&#125;</span> + <span class="subst">$&#123;b&#125;</span> = <span class="subst">$&#123;a + b&#125;</span>`</span>;</span><br><span class="line"><span class="comment">//标签函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">repeat</span>(<span class="params">strs, ...args</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> strs[<span class="number">0</span>] + args.map(<span class="function">(<span class="params">e, i</span>) =&gt;</span> <span class="string">`<span class="subst">$&#123;e&#125;</span><span class="subst">$&#123;strs[i + <span class="number">1</span>]&#125;</span>`</span>).join(<span class="string">&quot;&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> d = repeat<span class="string">`count <span class="subst">$&#123;a&#125;</span> + <span class="subst">$&#123;b&#125;</span> = <span class="subst">$&#123;a + b&#125;</span>`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(d);<span class="comment">//count 1 + 2 = 3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模板字符串可以解析原始字符串字面量转义的值，特殊符号会被转换，不想被转换可以使用String.raw。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`\u00a9`</span> <span class="comment">//@那种版本号</span></span><br><span class="line"><span class="built_in">String</span>.raw<span class="string">`\u00a9`</span> <span class="comment">//&quot;\u00a9&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可通过下标访问字符串对应的字符。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>symbol</strong></p>
+<ul>
+<li><p>定义一个符号</p>
+<p><code>let a = Symbol()</code></p>
+<p>保存一个字符串</p>
+<p><code>let a = Symbol(&#39;a&#39;)</code></p>
+<p>获取描述</p>
+<p><code>a.description</code></p>
+<p>全局注册符号</p>
+<p><code>let a =  Symbol.for(&#39;a&#39;)</code></p>
+<p>访问全局符号key</p>
+<p><code>Symbol.keyFor(a) //&#39;a&#39;</code></p>
+<p>作为对象属性</p>
+<p><code>let a = &#123;&#125;  a[Symbol(&#39;a&#39;)] = &#39;a&#39;</code></p>
+<p>对象访问符号</p>
+<p><code>Object.getOwnPropertySymbols(a)</code></p>
+<p><code>Reflect.ownKeys(a)</code></p>
+<p>使用场景</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用户名相同时作为对象唯一符号</span></span><br><span class="line"><span class="keyword">let</span> user1 = &#123;<span class="attr">name</span>: <span class="string">&#x27;lisi&#x27;</span>, <span class="attr">key</span>: <span class="built_in">Symbol</span>()&#125;</span><br><span class="line"><span class="keyword">let</span> user2 = &#123;<span class="attr">name</span>: <span class="string">&#x27;lisi&#x27;</span>, <span class="attr">key</span>: <span class="built_in">Symbol</span>()&#125;</span><br><span class="line"><span class="keyword">let</span> classScore = &#123;</span><br><span class="line">    [user1.key]: &#123;<span class="attr">id</span>: <span class="number">1</span>, <span class="attr">score</span>: <span class="number">11</span>&#125;,</span><br><span class="line">    [user2.key]: &#123;<span class="attr">id</span>: <span class="number">2</span>, <span class="attr">score</span>: <span class="number">22</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//保存 获取数据</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">martData</span> </span>&#123;</span><br><span class="line">	<span class="keyword">static</span> data = &#123;&#125;;</span><br><span class="line">	<span class="keyword">static</span> <span class="function"><span class="title">setData</span>(<span class="params">name, value</span>)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.data[name] = value;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">static</span> <span class="function"><span class="title">getData</span>(<span class="params">name</span>)</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">this</span>.data[name];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> guestDate = &#123;</span><br><span class="line">	name: <span class="string">&quot;apple&quot;</span>,</span><br><span class="line">	desc: <span class="string">&quot;guest_data&quot;</span>,</span><br><span class="line">	key: <span class="built_in">Symbol</span>(<span class="string">&quot;guest&quot;</span>),</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> carData = &#123;</span><br><span class="line">	name: <span class="string">&quot;apple&quot;</span>,</span><br><span class="line">	desc: <span class="string">&quot;car_Data&quot;</span>,</span><br><span class="line">	key: <span class="built_in">Symbol</span>(<span class="string">&quot;car&quot;</span>),</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">martData.setData(guestDate.key, guestDate);</span><br><span class="line">martData.setData(carData.key, carData);</span><br><span class="line"><span class="built_in">console</span>.log(martData.getData(guestDate.key));</span><br><span class="line"><span class="built_in">console</span>.log(martData.getData(carData.key));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//作为私有变量</span></span><br><span class="line"><span class="keyword">let</span> site = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FullName</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="title">constructor</span>(<span class="params">name</span>)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">		<span class="built_in">this</span>[site] = <span class="string">&quot;nocodeyuan.com&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">getData</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>[site]&#125;</span> <span class="subst">$&#123;<span class="built_in">this</span>.name&#125;</span>`</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> man = <span class="keyword">new</span> FullName(<span class="string">&quot;yuan&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(man.getData());</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><h4 id="object"><a href="#object" class="headerlink" title="object"></a>object</h4><ul>
+<li><p>引用数据类型：Object（Array，Function）</p>
+</li>
+<li><p>创建对象</p>
+<p><code>new Object()</code></p>
+</li>
+<li><p>属性</p>
+<ul>
+<li><p>constructor</p>
+</li>
+<li><p>hasOwnProperty(propertyName)</p>
+</li>
+<li><p>isPrototypeof()：检查一个对象是否存在于另一个对象的原型链上。</p>
+</li>
+<li><p>propertyIsEnumerable(propertyName)，判断属性是否可迭代。</p>
+</li>
+<li><p>toLocaleString()</p>
+</li>
+<li><p>toString()</p>
+</li>
+<li><p>valueOf()</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>对象</strong></th>
+<th align="left"><strong>返回值</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Array</td>
+<td align="left">返回数组对象本身。</td>
+</tr>
+<tr>
+<td align="left">Boolean</td>
+<td align="left">布尔值。</td>
+</tr>
+<tr>
+<td align="left">Date</td>
+<td align="left">存储的时间是从 1970 年 1 月 1 日午夜开始计的毫秒数 UTC。</td>
+</tr>
+<tr>
+<td align="left">Function</td>
+<td align="left">函数本身。</td>
+</tr>
+<tr>
+<td align="left">Number</td>
+<td align="left">数字值。</td>
+</tr>
+<tr>
+<td align="left">Object</td>
+<td align="left">对象本身。这是默认情况。</td>
+</tr>
+<tr>
+<td align="left">String</td>
+<td align="left">字符串值。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Math 和 Error 对象没有 valueOf 方法。</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><ol>
+<li>初始化：<code>new Date()</code></li>
+<li>格式化：toDateString(),toTimeString(),toLocaleDateString(),toLocaleTimeString(),toUTCString()</li>
+<li>组件方法：getTime，getFullYear…</li>
+</ol>
+<h4 id="RegExp"><a href="#RegExp" class="headerlink" title="RegExp"></a>RegExp</h4><ol>
+<li>定义：<code>// new RegExp()</code></li>
+<li>方法：exec()匹配，test()测试</li>
+<li>exec：匹配字符串第一个符合正则目标的值<ul>
+<li>index：匹配到的索引</li>
+<li><code>let re = /a/g</code>，全局匹配，执行一次匹配一次，结束返回null。</li>
+</ul>
+</li>
+<li>string.match(正则表达式)，匹配字符串符合正则规则的字符。</li>
+</ol>
+<h3 id="原始值与引用值"><a href="#原始值与引用值" class="headerlink" title="原始值与引用值"></a>原始值与引用值</h3><ol>
+<li><p>原始值为字面量，不可赋予属性。原始值声明变量对应的是一个实际值，相同的值可以通过声明变量独立使用，互不干扰。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>, b = a; b += <span class="number">1</span>; a<span class="comment">//a 1 b 2</span></span><br><span class="line"><span class="keyword">let</span> o1 = <span class="keyword">new</span> <span class="built_in">Object</span>(),o2 = o1;o1.name = <span class="string">&#x27;lisi&#x27;</span>;o2.name === <span class="string">&#x27;lisi&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引用值为对象的引用，声明变量对应对象的引用，指向相同对象的引用改变对象的属性，则其他引用属性也会随之改变。</p>
+</li>
+<li><p>函数传参（原始值或者对象）都是通过值传递，而非引用传递。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Javascript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" data-id="ckgld2gbr0005yku329bs8z58" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/HTML/" class="article-date">
+  <time datetime="2020-10-22T21:31:56.637Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/HTML/">HTML</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h3><ul>
+<li>Hyper Text Markup Language超文本标记语言，最基础的网页开发语言</li>
+<li>超文本：超文本是用超链接的方式，将各种不同空间的文字信息组织在一起的网状文本</li>
+<li>标记语言：由标签构成的语言，html，xml</li>
+</ul>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><h4 id="标签分类"><a href="#标签分类" class="headerlink" title="标签分类"></a>标签分类</h4><h5 id="行级标签"><a href="#行级标签" class="headerlink" title="行级标签"></a>行级标签</h5><p>特点：可以和其他元素保持在同一行，不可以自动换行，但不能设置宽高<br>常见的行级标签：a，span，strong，u（下划线），em(强调)，i(斜体)，sub(下标),sup(上标)</p>
+<h5 id="块级标签"><a href="#块级标签" class="headerlink" title="块级标签"></a>块级标签</h5><p>特点：不可以和其他元素保持在同一行（独占一行），可以自动换行，能设置宽高<br>常见的块级标签：div，p，h1-h6，ul，li，dl（定义列表，跟ul…li类似），dt（定义了定义列表中的项目），dd（定义描述项目的内容，跟dt一起搭配）</p>
+<h5 id="行内块级标签"><a href="#行内块级标签" class="headerlink" title="行内块级标签"></a>行内块级标签</h5><p>特点：可以和其他元素保持在在一行，还能能设置宽高<br>常见标签：textarea，input，img，button</p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>这些标签很多，这里列举的是一部分，更多的标签需要不断练习才能记得牢。<br>所谓的行级标签，块级标签，其实可以根据需要，在开发中通过css样式互相转换。即通过设置displiay属性，它的属性值中，inline（元素以行内标签进行展示），block（元素以块级标签进行展示），inline-block（元素以行内块级标签进行展示）</p>
+<hr>
+<h4 id="文件标签"><a href="#文件标签" class="headerlink" title="文件标签"></a>文件标签</h4><ol>
+<li><code>&lt;!DOCTYPE html&gt;</code>定义文档的类型</li>
+<li>html：文档的根标签</li>
+<li>head：头标签，用于指定htm文档的属性</li>
+<li>body：体标签</li>
+</ol>
+<h4 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h4><ul>
+<li>标题h1-h6/段落p/换行br/水平线hr/加粗b/斜体i/字体font/居中center</li>
+</ul>
+<h4 id="图片标签"><a href="#图片标签" class="headerlink" title="图片标签"></a>图片标签</h4><ul>
+<li><code>&lt;img /&gt;</code></li>
+</ul>
+<h4 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h4><ul>
+<li>有序列表：<code>&lt;ol&gt; &lt;li&gt;&lt;/li&gt; &lt;/ol&gt;</code></li>
+<li>无序列表：<code>&lt;ul&gt; &lt;li&gt;&lt;/li&gt; &lt;/ul&gt;</code></li>
+<li>自定义列表：<code>&lt;dl&gt;&lt;dt&gt;描述&lt;/dt&gt;&lt;dd&gt;内容1&lt;/dd&gt;&lt;dd&gt;内容2&lt;/dd&gt;&lt;/dl&gt;</code></li>
+</ul>
+<h4 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签</h4><ul>
+<li><code>&lt;a href=&quot;xxx&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;</code></li>
+<li>“_blank”打开新空白页面</li>
+<li>“_self”本页面打开</li>
+<li>设置点击不跳转：<code>&lt;a href=&quot;javascript=void(0);&quot;&gt;</code></li>
+</ul>
+<h4 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h4><ul>
+<li><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></li>
+<li>table定义一个表格区域</li>
+<li>tr定义行。td定义列，<strong>th</strong>包裹在tr内定义表第一行作为表头</li>
+<li>border属性：边框宽度</li>
+<li>caption:定义标题</li>
+<li>td中：rowspan占两行。colspan占两列</li>
+<li><em>thead</em>表头，<em>tbody</em>表格体，<em>tfoot</em>表格脚部</li>
+</ul>
+<h4 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h4><p>概念：收集用户数据</p>
+<h5 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h5><p>用于定义表单区域的，区域代表采集用户数据的范围<br>     * action属性：指定提交用户数据的URL<br>          * method属性：指定提交方式<br>       * get/post<br>       * 区别：<br>         * get：请参数会再地址栏显示，参数大小有限制，不安全<br>         * post：参数不会在地址栏显示，会被封装在请求体中，比较安全</p>
+<h5 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h5><pre><code>      表单项（label标签的for属性对应一个表单项的id属性）
+      * **type属性**：
+
+   * 默认text，文本属性，list属性指定数据列
+
+     * `&lt;datalist id=&quot;list&quot;&gt;&lt;/datalist&gt;`指定id属性，可供文本标签访问
+   * password：密码
+   * radio：单选，name属性需要是一致的，value提供单选的值，check=checked默认选择
+   * checkbox：复选框，name属性需要是一致的，value提供选择的值，check=checked默认选择
+   * file：上传文件
+   * hidden：用于提交用户验证
+   * 按钮：
+     * img：图片作为按钮点击则提交表单
+     * button
+     * sumit：提交
+       * value属性：定义提交按钮的意思
+   * 取色器：color
+   * date：日期
+   * email：邮箱正则校验
+   * number：数字
+   * url：填写网址
+      * range：范围取值
+
+      * **name属性**：表单中的数据要想被提交，须指定name属性
+
+      * **required**：必填项
+
+      * **placeholder**：指定输入框的提示信息，当值变更时会就消失
+
+      * **autofocus**：自动获取焦点
+
+        * **form**：input可以不放在表单域中，通过form属性关联form标签的id提交数据
+
+          `&lt;form id =&quot;frm&quot;&gt;&lt;form/&gt; &lt;input form=&quot;frm&quot;/&gt;`</code></pre>
+<h5 id="select标签"><a href="#select标签" class="headerlink" title="select标签"></a>select标签</h5><ul>
+<li>name属性：定义下拉菜单的值信息<ul>
+<li>option标签select子元素：下拉菜单的选择项（第一个默认请选择，值为空）</li>
+<li>value属性定义选项的值</li>
+<li>optgroup标签包裹option标签，可以用label属性赋值</li>
+</ul>
+</li>
+</ul>
+<p><strong>textarea</strong>：文本域：定义一个文本输入区</p>
+<ul>
+<li>cols：指定文本列数，也就是每行显示字数</li>
+<li>rows：指定文本行数</li>
+<li>name：指定文本的复制变量</li>
+</ul>
+<hr>
+<h4 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h4><ul>
+<li>HTML5中为了提高程序可读性，提供的标签<ul>
+<li>header：头标签</li>
+<li>nav：导航</li>
+<li>aside：侧边栏</li>
+<li>footer</li>
+<li>section：章节，定义文档某个区域</li>
+<li>article:文章，内容标签</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/HTML/" data-id="ckgld2gbn0002yku37pzh2s5u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Webpack/" class="article-date">
+  <time datetime="2020-10-22T21:31:13.430Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/Webpack/">webpack</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>初学webpack</p>
+<ul>
+<li>初始化目录<ul>
+<li>npm init -y</li>
+</ul>
+</li>
+</ul>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
+<li><p>webpack依赖</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* webpack</span><br><span class="line">* webpack-cli</span><br><span class="line">* webpack-dev-server  热部署</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>处理JS</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* babel-loader@版本号  转换js</span><br><span class="line">* babel-core</span><br><span class="line">* babel-preset-env</span><br><span class="line"></span><br><span class="line">* babel-plugin-transform-runtime</span><br><span class="line">* babel-pulgin-transform-decorators</span><br><span class="line">* babel-pulgin-transform-decorators-legacy</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>处理CSS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* sass-loader</span><br><span class="line">* node-sass</span><br><span class="line">* css-loader，将css文件变成commomjs模块加载到js中，内容是样式字符串。</span><br><span class="line"></span><br><span class="line">* style-loader，创建style标签，将js中的样式资源插入进去，添加到head中。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>处理图片</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">* file-loader ,图片或其他资源（字体文件等）的处理。</span><br><span class="line">* url-loader，es6模块引入。</span><br><span class="line">options: &#123;</span><br><span class="line">	limit: 8 * 1024, &#x2F;&#x2F;表示配置图片体积小于8kb，就会采用base64压缩成字符串处理。</span><br><span class="line">    esModule: false, &#x2F;&#x2F;关闭es6模块加载，使用commomjs。</span><br><span class="line">    name: &#39;[hash: 10].[ext]&#39; &#x2F;&#x2F;取文件名的hash值的前十位加上文件的原来的扩展名。</span><br><span class="line">&#125;</span><br><span class="line">优点： 减少请求数量。</span><br><span class="line">缺点： 图片转换后体积增大，文件请求速度会变慢。</span><br><span class="line"></span><br><span class="line">* html-loader , 处理文档中的img图片，commomjs模块引入。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>处理模板</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* ejs-loader</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>处理HTML</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* html-webpack-plugin</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
+<li><p><code>npm init</code> 文件目录初始化</p>
+</li>
+<li><p><code>npm install --save -dev</code>，<code>npm i -D</code>，开发环境。</p>
+<p><code>npm install --save</code>，<code>npm i -S</code>，生产环境。</p>
+</li>
+<li><p>安装依赖<code>npm i -D webpack webpack-cli webpack-dev-server babel-loader@7 babel-core babel-prset-env babel-plugin-transform-runtime babel-plugin-transform-decorators babel-plugin-transform-decorators-legacy sass-loader node-sass css-loader style-loader ejs-loader html-webpack-plugin --registry=https://registry.npm.taobao.org/</code></p>
+</li>
+</ol>
+<h3 id="配置依赖"><a href="#配置依赖" class="headerlink" title="配置依赖"></a>配置依赖</h3><ul>
+<li>配置文件webpack.config.js，作为模块导出module.exports。</li>
+<li>mode，webpack模式，development/production。</li>
+<li>path模块，解决文件url问题，通过require导入<code>const path = require(&#39;path&#39;);</code><ul>
+<li>resolve方法，相当于命令行cd。<ul>
+<li>__dirname，表示当前webpack配置文件的绝对路径。</li>
+<li>目标路径。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>entry，入口文件对象。</li>
+<li>output<ul>
+<li>path，打包后路径。</li>
+<li>filename，入口文件路径。</li>
+</ul>
+</li>
+<li>module<ul>
+<li>rules，定义规则。<ul>
+<li>test，匹配以什么结尾的文件。</li>
+<li>loader，定义处理此类文件的loader。</li>
+<li>exclude，排除不需要处理的文件。</li>
+<li>use，使用多个loader的数组，从右向左进行。</li>
+<li>options<ul>
+<li>name</li>
+<li>limit</li>
+<li>esModule</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>plugins，值为数组，配置插件需要require导入。<ul>
+<li>配置项为数组元素，一般为<code>new XXX()</code>。</li>
+</ul>
+</li>
+<li>devServer<ul>
+<li>contentBase，项目路径。</li>
+<li>compress，启动gzip压缩。</li>
+<li>open，当打开服务，即开启默认浏览器。</li>
+<li>host，主机地址。</li>
+<li>port，服务端口。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&#x27;html-webpack-plugin&#x27;</span>),</span><br><span class="line">      path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    mode: <span class="string">&#x27;development&#x27;</span>,</span><br><span class="line">    entry: &#123;</span><br><span class="line">        index: path.resolve(__dirname, <span class="string">&#x27;./src/js/index.js&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname + <span class="string">&#x27;/dist&#x27;</span>), </span><br><span class="line">        filename: <span class="string">&#x27;js/[name].js&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">                loader: <span class="string">&#x27;babel-loader&#x27;</span>,</span><br><span class="line">                exclude: path.resolve(__dirname, <span class="string">&#x27;node_modules&#x27;</span>)，</span><br><span class="line">                options: &#123;</span><br><span class="line">                	preset: [<span class="string">&#x27;@babel/preset-env&#x27;</span>]</span><br><span class="line">            	&#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">&#x27;style-loader&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;css-loader&#x27;</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.scss$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">&#x27;style-loader&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;css-loader&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;sass-loader&#x27;</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.tpl$/</span>,</span><br><span class="line">                loader: <span class="string">&#x27;ejs-loader&#x27;</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">            filename: <span class="string">&#x27;index.html&#x27;</span>,</span><br><span class="line">            template: path.resolve(__dirname, <span class="string">&#x27;./src/index.html&#x27;</span>),</span><br><span class="line">            chunks: [<span class="string">&#x27;index&#x27;</span>],</span><br><span class="line">            excludeChunks: path.resolve(__dirname, <span class="string">&#x27;node_modules&#x27;</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        open: <span class="literal">true</span>,</span><br><span class="line">        host: <span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">        port: <span class="number">2000</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package.json</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;webpack_demo&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.0.1&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;description&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;main&quot;</span>: <span class="string">&quot;index.js&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;test&quot;</span>: <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;start&quot;</span>: <span class="string">&quot;webpack-dev-server --config webpack.config.js&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;build&quot;</span>: <span class="string">&quot;webpack --config webpack.config.js&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;keywords&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;webpack&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">&quot;author&quot;</span>: <span class="string">&quot;yuanjingwei&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;license&quot;</span>: <span class="string">&quot;ISC&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;babel-core&quot;</span>: <span class="string">&quot;^6.26.3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;babel-loader&quot;</span>: <span class="string">&quot;^7.1.5&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;babel-plugin-transform-decorators&quot;</span>: <span class="string">&quot;^6.24.1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;babel-plugin-transform-decorators-legacy&quot;</span>: <span class="string">&quot;^1.3.5&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;babel-plugin-transform-runtime&quot;</span>: <span class="string">&quot;^6.23.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;babel-preset-env&quot;</span>: <span class="string">&quot;^1.7.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;css-loader&quot;</span>: <span class="string">&quot;^5.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;ejs-loader&quot;</span>: <span class="string">&quot;^0.5.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;html-webpack-loader&quot;</span>: <span class="string">&quot;0.0.5&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;html-webpack-plugin&quot;</span>: <span class="string">&quot;^4.5.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;node-sass&quot;</span>: <span class="string">&quot;^4.14.1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;sass-loader&quot;</span>: <span class="string">&quot;^10.0.3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;style-loader&quot;</span>: <span class="string">&quot;^2.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;webpack&quot;</span>: <span class="string">&quot;^4.41.5&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;webpack-cli&quot;</span>: <span class="string">&quot;^3.3.10&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;webpack-dev-server&quot;</span>: <span class="string">&quot;^3.10.1&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="生产环境"><a href="#生产环境" class="headerlink" title="生产环境"></a>生产环境</h2><h3 id="提取css文件为单独文件"><a href="#提取css文件为单独文件" class="headerlink" title="提取css文件为单独文件"></a>提取css文件为单独文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* mini-css-extract-plugin</span></span><br><span class="line"><span class="comment">	使用MiniCssExtractPlugin.loader代替style-loader，将css文件提取为单独文件。</span></span><br><span class="line"><span class="comment">	插件</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">new</span> MiniCssExtractPlugin(&#123;</span><br><span class="line">	<span class="comment">//对输出的css文件进行重命名</span></span><br><span class="line">	filename: <span class="string">&#x27;css/style.css&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="css兼容性处理"><a href="#css兼容性处理" class="headerlink" title="css兼容性处理"></a>css兼容性处理</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	css兼容性处理：postcss -&gt; postcss-loader postcss-preset-env</span></span><br><span class="line"><span class="comment">	在package.json中配置browerslist,通过配置加载指定的css兼容性样式。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="string">&quot;browerslist&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;development&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;last 1 chrome version&quot;</span>,</span><br><span class="line">        <span class="string">&quot;last 1 firefox version&quot;</span>,</span><br><span class="line">        <span class="string">&quot;last 1 safari version&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">&quot;production&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;&gt;0.2%&quot;</span>,</span><br><span class="line">        <span class="string">&quot;not dead&quot;</span>,</span><br><span class="line">        <span class="string">&quot;not op_mini all&quot;</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在css rule中配置</span></span><br><span class="line">&#123;</span><br><span class="line">    loader: <span class="string">&#x27;postcss-loader&#x27;</span>,</span><br><span class="line">    options: &#123;</span><br><span class="line">        ident: <span class="string">&#x27;postcss&#x27;</span>,</span><br><span class="line">        plugins: <span class="function">() =&gt;</span> [</span><br><span class="line">            <span class="comment">//调用postcss的插件</span></span><br><span class="line">            <span class="built_in">require</span>(<span class="string">&#x27;postcss-preset-env&#x27;</span>)();</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置nodejs环境变量，改变当前环境"><a href="#设置nodejs环境变量，改变当前环境" class="headerlink" title="设置nodejs环境变量，改变当前环境"></a>设置nodejs环境变量，改变当前环境</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">process.env.NODE_ENV = <span class="string">&quot;development&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="压缩css"><a href="#压缩css" class="headerlink" title="压缩css"></a>压缩css</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	optimize-css-assets-webpack-plugin压缩css，压缩css文件体积。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">new</span> OptimizeCssAssetsWebpackPlugin()</span><br></pre></td></tr></table></figure>
+
+<h3 id="js语法检查"><a href="#js语法检查" class="headerlink" title="js语法检查"></a>js语法检查</h3><ul>
+<li>规范编码差异</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *	eslint-loader eslint 在rules中检查js文件 </span></span><br><span class="line"><span class="comment"> * 	在package.json中设置检查规则（airbnb） </span></span><br><span class="line"><span class="comment"> * 	eslint-config-airbnb带react插件 </span></span><br><span class="line"><span class="comment"> *	eslint-config-airbnb-base基于es6 -&gt; </span></span><br><span class="line"><span class="comment"> * 	eslint-config-airbnb-base eslint eslint-plugin-import</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//package.json</span></span><br><span class="line"><span class="string">&quot;eslintConfig&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;extends&quot;</span>: <span class="string">&#x27;airbnb-base&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//webpack.config.js 	module.rules</span></span><br><span class="line">&#123;</span><br><span class="line">    test: <span class="regexp">/\.js&amp;/</span>,</span><br><span class="line">    exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">    <span class="comment">//优先执行，优先于js兼容性处理，因为兼容性做完可能转换为es5语法无法通过eslint检查。</span></span><br><span class="line">    enforce: <span class="string">&#x27;pre&#x27;</span>,</span><br><span class="line">    loader: <span class="string">&#x27;eslint-loader&#x27;</span>,</span><br><span class="line">    options: &#123;</span><br><span class="line">        <span class="comment">//自动修复eslint错误</span></span><br><span class="line">        fix: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//js文件注释忽略eslint检查</span></span><br><span class="line"><span class="comment">//eslint-disable-next-line</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="js兼容性处理"><a href="#js兼容性处理" class="headerlink" title="js兼容性处理"></a>js兼容性处理</h3><ul>
+<li><p>基本兼容老浏览器</p>
+<p>使用babel-loader @babel/core @babel/preset-env，只能转换基本语法。</p>
+</li>
+<li><p>@babel/polyfill，在需要兼容性的脚本中引入。</p>
+<p>需要引入所有兼容性方案，体积太大。</p>
+</li>
+<li><p>按需兼容，core-js</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//module.rules</span></span><br><span class="line">&#123;</span><br><span class="line">    test: <span class="regexp">/\.js&amp;/</span>,</span><br><span class="line">    exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">    loader: <span class="string">&#x27;babel-loader&#x27;</span>,</span><br><span class="line">    options: &#123;</span><br><span class="line">        presets: [</span><br><span class="line">            [</span><br><span class="line">                <span class="string">&#x27;@babel/preset-env&#x27;</span>,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">//按需加载</span></span><br><span class="line">                    useBuiltIns: <span class="string">&#x27;useage&#x27;</span>,</span><br><span class="line">                    <span class="comment">//指定core-js版本</span></span><br><span class="line">                    corejs: &#123;</span><br><span class="line">                        version: <span class="number">3</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="comment">//指定兼容性做到浏览器的具体版本</span></span><br><span class="line">                    targets: &#123;</span><br><span class="line">                        chrome: <span class="string">&#x27;60&#x27;</span>,</span><br><span class="line">                        firefox: <span class="string">&#x27;60&#x27;</span>,</span><br><span class="line">                        ie: <span class="string">&#x27;9&#x27;</span>,</span><br><span class="line">                        safari: <span class="string">&#x27;10&#x27;</span>,</span><br><span class="line">                        edge: <span class="string">&#x27;17&#x27;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="压缩js与html"><a href="#压缩js与html" class="headerlink" title="压缩js与html"></a>压缩js与html</h3><ul>
+<li><p>压缩js</p>
+<p>将环境改为生产环境即压缩js代码</p>
+</li>
+<li><p>压缩html</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">    template: path.resolve(__dirname, <span class="string">&#x27;./src/index.html&#x27;</span>),</span><br><span class="line">    minify: &#123;</span><br><span class="line">        <span class="comment">//移除空格</span></span><br><span class="line">        collapseWhitespace: <span class="literal">true</span>,</span><br><span class="line">        <span class="comment">//移除注释</span></span><br><span class="line">        removeComments: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Webpack/" data-id="ckgld2gbx000ayku3e9dte4ks" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-resume" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/resume/" class="article-date">
+  <time datetime="2020-10-22T21:27:37.097Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/resume/">前端简历</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 style="cursor:pointer;color:#4b4b4b;border-bottom:0.4px solid #f1f2f3"><a target="_blank" rel="noopener" href="https://nocodeyuan.github.io/" style="color:#4b4b4b;text-decoration:none"><strong><svg t="1602523766402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3973" width="18" height="18"><path d="M954.181818 795.927273c-55.854545-162.909091-172.218182-286.254545-314.181818-332.8 76.8-41.890909 128-123.345455 128-216.436364C768 111.709091 656.290909 0 518.981818 0c-137.309091 0-249.018182 111.709091-249.018182 249.018182 0 90.763636 48.872727 169.890909 121.018182 211.781818C246.690909 505.018182 125.672727 628.363636 69.818182 795.927273c-16.290909 51.2-9.309091 114.036364 23.272727 158.254545 30.254545 41.890909 76.8 69.818182 128 69.818182l390.981818 0c13.963636 0 27.927273-16.290909 27.927273-30.254545 0-13.963636-11.636364-30.254545-27.927273-30.254545L221.090909 963.490909c-32.581818 0-65.163636-16.290909-83.781818-44.218182-20.945455-30.254545-27.927273-69.818182-16.290909-104.727273 62.836364-190.836364 221.090909-318.836364 390.981818-318.836364S840.145455 623.709091 902.981818 814.545455c11.636364 34.909091 6.981818 74.472727-16.290909 104.727273-20.945455 27.927273-51.2 44.218182-83.781818 44.218182-13.963636 0-27.927273 11.636364-27.927273 27.927273 0 13.963636 11.636364 27.927273 27.927273 27.927273 51.2 0 97.745455-23.272727 128-65.163636C963.490909 905.309091 972.8 847.127273 954.181818 795.927273zM323.490909 249.018182c0-107.054545 88.436364-193.163636 195.490909-193.163636s195.490909 86.109091 195.490909 193.163636S626.036364 442.181818 518.981818 442.181818 323.490909 356.072727 323.490909 249.018182z" p-id="3974"></path></svg> 袁靖玮</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                                     <strong style="line-height:27px;font-style:oblique">前端开发 南京</strong></h2>
+
+<h6 style="color:#4b4b4b;">19814666836 | <a href="mailto:15077861350@163.com" style="color:#4b4b4b;text-decoration:none">15077861350@163.com</a></h6>
+
+
+
+<h3><a style="text-decoration:none;color:#4b4b4b" target="_blank" rel="noopener" href="https://www.chsi.com.cn/xlcx/lscx/query.do?zsbh=65320189124105003&xm=%E8%A2%81%E9%9D%96%E7%8E%AE"><svg t="1602524386578" class="icon" viewBox="0 0 1026 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5837" width="20" height="18"><path d="M981.567401 373.726208 981.567401 543.26272l35.689472 35.699712-74.415104 77.443072-75.336704-75.158528 51.58912-46.90944L919.094185 400.489472c-218.90048 90.257408-289.074176 118.310912-337.620992 140.2112-48.54784 21.900288-83.506176 21.789696-131.652608 3.647488-48.1536-18.147328-277.363712-101.80096-391.17824-156.269568-75.948032-36.340736-80.837632-59.388928 1.304576-90.231808 107.200512-40.725504 284.38528-105.946112 378.305536-141.541376 55.593984-22.490112 84.995072-34.768896 136.026112-9.121792C665.399209 184.810496 873.609129 262.941696 977.141673 305.6896 1067.266985 345.020416 1006.677929 357.957632 981.567401 373.726208L981.567401 373.726208zM592.030633 607.809536c52.936704-21.84192 124.314624-57.957376 202.141696-91.298816L794.172329 784.20992c0 0-100.652032 107.07456-277.599232 107.07456-190.558208 0-293.490688-107.07456-293.490688-107.07456L223.082409 534.336512c60.068864 24.4736 127.521792 45.531136 209.153024 73.473024C482.546601 625.71008 546.388905 631.899136 592.030633 607.809536L592.030633 607.809536zM592.030633 607.809536" p-id="5838" fill="#707070"></path></svg> 学历</a></h3>
+
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2017.07.01    南京航空航天大学    软件工程    本科</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 style="color:#4b4b4b"><a target="_blank" rel="noopener" href="https://github.com/nocodeyuan/" style="color:#4b4b4b;text-decoration:none"><svg t="1602524590632" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6824" width="20" height="18"><path d="M254.037315 745.648h267.208c11.52 19.344 24.616 37.304 39.44 53.536h-306.64v-53.536z m0-84.688h231.312a358.4 358.4 0 0 1-10.112-53.504h-221.2v53.504z m0-138.16H475.941315c2.304-18.288 5.712-36.256 10.72-53.496H254.021315v53.496h0.024z m431.304 358.72v46.8c0 22.384-16.76 40.6-37.336 40.6h-560.56c-20.608 0-37.304-18.216-37.304-40.6V250.08l185.76-167.68v178H138.101315v53.504h147.12V53.504h362.784c20.608 0 37.336 18.216 37.336 40.528v160.072c15.896-5.4 32.424-9.024 49.36-11.56v-148.48C734.725315 42.24 695.813315 0 648.037315 0H250.021315L0.821315 224.944v703.336c0 51.84 38.872 94.072 86.656 94.072h560.56c47.792 0 86.696-42.16 86.696-94.072v-35.28c-16.936-2.496-33.464-6.12-49.36-11.48h-0.032zM187.053315 469.336h-63.68v53.504h63.68v-53.504z m-63.648 329.84h63.68v-53.528h-63.68v53.536z m63.648-191.68h-63.68v53.496h63.68v-53.504z m717.744-120.336l-39.168-32.56-99.576 140.904-89.52-74.44-30.096 42.488 128.728 107.04 129.632-183.432zM1024.821315 567.824c0-149.056-111.76-270.256-249.176-270.256-137.344 0-249.08 121.24-249.08 270.256 0 149.024 111.76 270.264 249.08 270.264 137.376 0 249.144-121.2 249.144-270.264H1024.821315z m-49.36 0c0 119.464-89.624 216.8-199.848 216.8-110.16 0-199.896-97.264-199.896-216.8 0-119.528 89.56-216.792 199.896-216.792 110.224 0 199.856 97.264 199.856 216.8z" p-id="6825" fill="#515151"></path></svg> 专业技能</a></h3>
+
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* HTML、CSS、Javascript ES5&#x2F;ES6、jQuery、React、Ant Design、Bootstrap.</span><br><span class="line"></span><br><span class="line">* Java、Spring.</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 style="border-bottom:1px solid #f1f2f3;color:#4b4b4b"><svg t="1602526854936" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8932" width="20" height="18"><path d="M895.872 131.648c-53.568-55.232-228.608-66.88-366.144-66.88L523.648 64.768C519.168 64.64 500.096 64 472.512 64c-103.744 0-241.664 7.872-309.12 45.248C64.512 163.968 61.376 406.272 64.768 509.568c-3.392 104.96-0.256 350.464 98.624 405.248C230.784 952.128 368.64 960 472.384 960c27.584 0 46.72-0.64 51.264-0.768l6.144 0c137.472 0 312.512-11.648 366.08-66.88 60.352-62.272 64.96-286.464 64.064-380.352C960.832 418.048 956.224 193.92 895.872 131.648zM186.048 149.312C248.32 114.752 394.88 109.952 472.512 109.952c30.528 0 50.368 0.704 50.368 0.704s2.432 0 6.784 0c43.904 0 283.904 2.368 332.8 52.736 53.888 55.68 51.2 348.608 51.2 348.608s0.192 24.576-0.768 60.352c-1.6-1.344-3.2-2.816-5.44-3.136l-173.312-23.808-67.264-298.368L666.88 246.464c-3.2-13.888-14.016-25.472-28.8-29.056-20.8-4.928-41.6 7.936-46.592 28.8l-95.36 401.856L406.208 367.872 406.08 367.36C402.56 356.608 393.728 347.84 381.888 344.576 363.328 339.648 344.192 350.656 339.2 369.344L290.816 550.016l-174.08 19.2C114.496 569.408 112.576 570.624 110.848 572.032 110.336 536.96 111.04 512.256 111.168 509.568 110.848 499.904 100.736 196.544 186.048 149.312zM862.528 860.608c-48.896 50.368-288.768 52.736-332.736 52.736-4.416 0-6.848 0-6.848 0s-19.968 0.704-50.496 0.704c-77.76 0-224.192-4.8-286.4-39.296-58.752-32.576-72.256-188.736-74.816-286.144 1.664 1.344 3.264 2.816 5.568 3.072l200.448 22.208c13.888 1.408 27.264-7.168 31.104-20.992l1.024-3.52 25.856-91.008 93.632 286.016c3.52 10.56 12.16 19.392 23.744 22.336 18.048 4.608 36.544-6.272 41.216-24.384l0.064-0.256 92.352-359.488 36.608 166.528 1.216 4.928c3.712 16.96 19.968 28.416 37.504 26.048l206.016-28.288c1.856-0.256 3.392-1.344 4.864-2.368C909.248 680.256 898.56 823.36 862.528 860.608z" p-id="8933"></path></svg> 工作经历</h3>
+
+<h4 style="color:#636e72">瑞声科技公司（全职）    2019.04 - 2020.04</h4>
+
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">主要业务：建立工厂信息化数据管理平台。</span><br><span class="line"></span><br><span class="line">职位：研发（信息化）</span><br><span class="line"></span><br><span class="line">技术栈：Javascript、MySQL.</span><br><span class="line"></span><br><span class="line">岗位职责：</span><br><span class="line"></span><br><span class="line">  1. 切实理解工厂的运作模式。</span><br><span class="line"></span><br><span class="line">  2. 参与平台建立的整个开发流程，包括：</span><br><span class="line"></span><br><span class="line">     产品对接、需求评省、功能设计、数据库设计、前端开发、站点部署（数据采集）、运维等。</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 style="color:#636e72">南京安威德科技有限公司（实习)    2018.04 - 2018.10 </h4>   
+
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">主要业务：开发行政监管办公系统。</span><br><span class="line"></span><br><span class="line">职位：JavaWeb开发</span><br><span class="line"></span><br><span class="line">技术栈：Javascript、Java、Spring、Oracle.</span><br><span class="line"></span><br><span class="line">岗位职责：负责项目前后端功能开发。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 style="color:#4b4b4b"><svg t="1602527002852" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11611" width="20" height="20"><path d="M67.030138 926.781818l890.334721 0L957.364859 707.735963 67.030138 707.735963 67.030138 926.781818zM511.17368 758.959601 906.14122 758.959601l0 116.598578L511.17368 875.55818 511.17368 758.959601zM67.030138 97.788164l0 219.045855 890.334721 0L957.364859 97.788164 67.030138 97.788164zM906.14122 265.61038 512.196986 265.61038 512.196986 149.010779 906.14122 149.010779 906.14122 265.61038zM67.030138 621.807918l890.334721 0L957.364859 402.762063 67.030138 402.762063 67.030138 621.807918zM511.17368 453.985702 906.14122 453.985702l0 116.598578L511.17368 570.58428 511.17368 453.985702z" p-id="11612"></path></svg> 项目经历</h3>
+
+<h4 style="border-bottom:1px solid #f1f2f3;color:#636e72">2019.04 - 2020.04    数据管理平台项目</h4>
+
+<ul>
+<li><p><strong style="color:#636e55">项目简介：</strong></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 建立基于办公网络B&#x2F;S架构的数据展示平台。</span><br><span class="line"></span><br><span class="line">2. 实现识别工厂机器工作状态、实现人员产量数据的动态展示。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong style="color:#636e55">主要技术栈：</strong>Javascript、Bootstrap.</p>
+</li>
+<li><p><strong style="color:#636e55">主要工作：</strong></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 在工作中使用HTML、CSS完成符合W3C规范的PC端页面。</span><br><span class="line"></span><br><span class="line">2. 使用XMLHttpRequest封装Ajax请求获取后台数据。</span><br><span class="line"></span><br><span class="line">3. 贴近用户，接受反馈，修复页面BUG。</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h4 style="border-bottom:1px solid #f1f2f3;color:#636e72">2018.07 - 2018.10    安徽行政信息管理平台项目</h4>
+
+<ul>
+<li><p><strong style="color:#636e55">项目简介：</strong></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">该系统主要服务于警务办公，实现人员数据管理、人员会话记录、报表、工作流程审批等服务。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong style="color:#636e55">主要技术栈：</strong></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">React、Java、Spring、Oracle、Android SDK.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong style="color:#636e55">主要工作：</strong></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 参与开发，熟悉公司业务结构与技术栈。</span><br><span class="line"></span><br><span class="line">2. 独立完成封装系统公共查询、数据展示服务到Android平台客户端的开发。</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h4 style="border-bottom:1px solid #f1f2f3;color:#636e72">2018.04 - 2018.06    福建行政管理系统项目</h4>
+
+<ul>
+<li><p><strong style="color:#636e55">项目简介：</strong></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 该系统致力于监管场所人员信息的电子化管理。</span><br><span class="line"></span><br><span class="line">2. 要求记录被监管人员的所有个人信息、日常活动轨迹及管理人员、医生的工作记录。</span><br><span class="line"></span><br><span class="line">3. 要求录入数据人性化，人员监管状态实时更新。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong style="color:#636e55">主要工作：</strong></p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过学习了解公司的技术栈与业务结构、完成系统的功能测试、修复系统Bug。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/resume/" data-id="ckgld2gc2000dyku38vi4fiwz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Module" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Module/" class="article-date">
+  <time datetime="2020-10-22T20:21:42.337Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/Module/">Javascript模块化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>commomJS、AMD、CMD与ES6模块化。</p>
+<h4 id="模块化的作用"><a href="#模块化的作用" class="headerlink" title="模块化的作用"></a>模块化的作用</h4><ol>
+<li>防止全局污染。</li>
+<li>规范js脚本依赖与执行顺序。</li>
+</ol>
+<h4 id="立即执行函数模块"><a href="#立即执行函数模块" class="headerlink" title="立即执行函数模块"></a>立即执行函数模块</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//module_a.js导出模块作为立即执行函数返回值。</span></span><br><span class="line"><span class="keyword">var</span> module_a = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//es5函数作用域</span></span><br><span class="line">    <span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">    <span class="comment">//返回对象类型，方便返回多个值。</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        a: a;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">//module_b.js</span></span><br><span class="line"><span class="keyword">var</span> module_b = (<span class="function"><span class="keyword">function</span>(<span class="params">module_a</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//es5函数作用域</span></span><br><span class="line">    <span class="keyword">var</span> b = module_a.a.reserve();</span><br><span class="line">    <span class="comment">//返回对象类型，方便返回多个值。</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">       b: b;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)(module_a);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Node环境（CommomJS）"><a href="#Node环境（CommomJS）" class="headerlink" title="Node环境（CommomJS）"></a>Node环境（CommomJS）</h4><ul>
+<li><p>同步模块加载规范</p>
+</li>
+<li><p>特点：</p>
+<ol>
+<li>js模块相互依赖，需要使用require导入，创建模块实例（立即执行函数）。</li>
+<li>同步加载js脚本。</li>
+<li>缓存机制，每导入一次，都会进行缓存，出现相异再次缓存。</li>
+</ol>
+</li>
+<li><p>require</p>
+</li>
+<li><p>module.exports</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//module_a.js导出模块作为立即执行函数返回值。</span></span><br><span class="line"><span class="keyword">var</span> a = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    a</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//module_b.js</span></span><br><span class="line"><span class="comment">//使用require导入模块</span></span><br><span class="line"><span class="keyword">var</span> moduleA = <span class="built_in">require</span>(<span class="string">&#x27;./module_a.js&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> moduleA.a.reserve();</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">//导出模块</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    b</span><br><span class="line">&#125;;	</span><br></pre></td></tr></table></figure>
+
+<h4 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h4><ul>
+<li><strong>异步模块</strong>定义 Asynchronous Module Definition，使用<strong>RequireJS</strong>，异步加载脚本。</li>
+<li>定义模块：define(moduleName,[module],factory)</li>
+<li>引入模块：require([module],callback)，依赖前置，依赖完成加载再执行callback。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//module_a.js</span></span><br><span class="line">define(<span class="string">&#x27;moduleA&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        a</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//module_b.js</span></span><br><span class="line">define(<span class="string">&#x27;moduleB&#x27;</span>,[<span class="string">&#x27;moduleA&#x27;</span>],<span class="function"><span class="keyword">function</span>(<span class="params">moduleA</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        b: moduleA.a.reserve()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//module_c.js,使用模块需配置模块地址。</span></span><br><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        moduleA: <span class="string">&#x27;./module_a&#x27;</span>,</span><br><span class="line">        moduleB: <span class="string">&#x27;./module_b&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>([<span class="string">&#x27;moduleA&#x27;</span>,<span class="string">&#x27;moduleB&#x27;</span>],<span class="function"><span class="keyword">function</span>(<span class="params">moduleA,moduleB</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(moduleA.a,moduleB.b)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h4><ul>
+<li>通用模块定义 Commom Module Definition，使用SeaJS，依赖就近，按需加载。</li>
+<li>定义模块：define(function(require,exports,module){})</li>
+<li>引入模块：seajs.use([module路径],function(moduleA,moduleB,moduleC){})</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//module_a.js</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="built_in">module</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        a: a</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//module_b.js</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="built_in">module</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> moduleA = <span class="built_in">require</span>(<span class="string">&#x27;./module_a.js&#x27;</span>),</span><br><span class="line">        b = moduleA.a.reserve();</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        b: b</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//module_c.js</span></span><br><span class="line">seajs.use([<span class="string">&#x27;./module_a.js&#x27;</span>,<span class="string">&#x27;./module_b.js&#x27;</span>],<span class="function"><span class="keyword">function</span>(<span class="params">moduleA,moduleB</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(moduleA.a,moduleB.b);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="ES6模块化"><a href="#ES6模块化" class="headerlink" title="ES6模块化"></a>ES6模块化</h4><ul>
+<li>import</li>
+<li>export default</li>
+</ul>
+<h4 id="模块化区别"><a href="#模块化区别" class="headerlink" title="模块化区别"></a>模块化区别</h4><ul>
+<li><p>CommomJS与ES6模块化</p>
+<ol>
+<li><p>CommomJS引入的是拷贝的值。</p>
+<p>ES6引入的是值的引用。</p>
+</li>
+<li><p>CommomJS模块是在运行时加载，</p>
+<p>ES6模块是在编译时加载。</p>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Module/" data-id="ckgld2gbw0009yku38us120g5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/CSS/" class="article-date">
+  <time datetime="2020-10-22T18:45:27.721Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/CSS/">CSS 笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Take an essay about CSS-knowledge-points for back to get next time.</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><h4 id="属性值筛选选择器"><a href="#属性值筛选选择器" class="headerlink" title="属性值筛选选择器"></a>属性值筛选选择器</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*选择值包含字符串的元素*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-attr">[attr*=<span class="string">&quot;val&quot;</span>]</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">/*选择值包含独立字符串单词val的元素*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-attr">[attr~=<span class="string">&#x27;val&#x27;</span>]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*选择值以val开头或者val-的元素*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-attr">[attr|=<span class="string">&#x27;val&#x27;</span>]</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-attr">[attr|=<span class="string">&#x27;val1-val2&#x27;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><ul>
+<li><p>点击事件伪类选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*link初始状态，hover鼠标关注，active鼠标点击，visited点击后，focus元素获取焦点*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:link</span>&#123;&#125;</span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:hover</span>&#123;&#125;</span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:active</span>&#123;&#125;</span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:visited</span>&#123;&#125;</span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:focus</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>锚点触发选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*锚点触发到该元素改变样式*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:target</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根元素与空元素伪类选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*根元素*/</span></span><br><span class="line"><span class="selector-pseudo">:root</span>&#123;&#125;</span><br><span class="line"><span class="comment">/*空元素*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">:empty</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子元素伪类</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> 	:first-child :last-child</span></span><br><span class="line"><span class="comment"> 	:first-of-type-of :last-of-type</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*el元素所有后代子元素中的首位*/</span></span><br><span class="line"><span class="selector-tag">el</span> <span class="selector-pseudo">:first-child</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*el元素直接子元素的首位*/</span></span><br><span class="line"><span class="selector-tag">el</span>&gt;<span class="selector-tag">first-child</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">     目标子元素，参数为固定值或奇数偶数,2n/2n-1/-n+2。。。表示 </span></span><br><span class="line"><span class="comment">     :nth-child(index)&#123;&#125;</span></span><br><span class="line"><span class="comment">     :nth-of-type(index)&#123;&#125;</span></span><br><span class="line"><span class="comment">	 :nth-last-child()&#123;&#125;</span></span><br><span class="line"><span class="comment">	 :nth-last-of-type()&#123;&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	唯一子元素伪类</span></span><br><span class="line"><span class="comment">	el :only-child&#123;&#125;</span></span><br><span class="line"><span class="comment">	el :only-of-type&#123;&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	排除元素选择器</span></span><br><span class="line"><span class="comment">	el :not()&#123;&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他元素选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	disable 不可用元素</span></span><br><span class="line"><span class="comment">	enable	可用元素</span></span><br><span class="line"><span class="comment">	checked	已选择元素</span></span><br><span class="line"><span class="comment">	required 必填项</span></span><br><span class="line"><span class="comment">	valid 邮箱网址等表单填写有效时</span></span><br><span class="line"><span class="comment">	invalid 无效时</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文本伪元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	::first-letter 第一个字符</span></span><br><span class="line"><span class="comment">	::first-line 第一行</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	::before</span></span><br><span class="line"><span class="comment">	::after</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    content: &#x27;&#x27;; //伪元素内容</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="选择器权重"><a href="#选择器权重" class="headerlink" title="选择器权重"></a>选择器权重</h4><ul>
+<li>！important（9999）&gt; 行内样式（1000）&gt; id选择器（100）&gt; class/属性选择器（10）&gt; 标签/伪元素（1）&gt; 通配符（0） &gt; 继承（NULL） &gt; 浏览器默认</li>
+</ul>
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><h4 id="定义字体"><a href="#定义字体" class="headerlink" title="定义字体"></a>定义字体</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span>&#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">    src: <span class="built_in">url</span>(<span class="string">&#x27;xxx.otf&#x27;</span>) <span class="built_in">format</span>(<span class="string">&#x27;opentype&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组合写法"><a href="#组合写法" class="headerlink" title="组合写法"></a>组合写法</h4><p>font: [font-weight] [font-style] font-size[/line-height] font-family;</p>
+<h4 id="文本大小写转换"><a href="#文本大小写转换" class="headerlink" title="文本大小写转换"></a>文本大小写转换</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*小型大写*/</span></span><br><span class="line"><span class="selector-tag">font-variant</span>: <span class="selector-tag">small-caps</span>;</span><br><span class="line"><span class="comment">/*大小写转换*/</span></span><br><span class="line"><span class="selector-tag">text-transform</span>: <span class="selector-tag">lowercase</span>;</span><br><span class="line"><span class="selector-tag">text-transform</span>: <span class="selector-tag">uppercase</span>;</span><br><span class="line"><span class="comment">/*首字母大写*/</span></span><br><span class="line"><span class="selector-tag">text-transform</span>: <span class="selector-tag">capitalize</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文本线"><a href="#文本线" class="headerlink" title="文本线"></a>文本线</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-decoration: underline | overline | line-through | none;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文本阴影"><a href="#文本阴影" class="headerlink" title="文本阴影"></a>文本阴影</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">text-shadow</span>: 颜色 水平偏移<span class="selector-tag">px</span> 垂直偏移<span class="selector-tag">px</span> 模糊程度<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文本空白与换行"><a href="#文本空白与换行" class="headerlink" title="文本空白与换行"></a>文本空白与换行</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">white-space: pre保留空白与换行 | pre-wrap保留空白与换行 | pre-line合并保留换行 | nowrap不换行;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*文本不换行 溢出隐藏 隐藏处理*/</span></span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文本缩进与对齐"><a href="#文本缩进与对齐" class="headerlink" title="文本缩进与对齐"></a>文本缩进与对齐</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*文本缩进,按文字大小缩进固定单位*/</span></span><br><span class="line"><span class="selector-tag">text-indent</span>: 2<span class="selector-tag">em</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*文本水平对齐方式*/</span></span><br><span class="line">text-align: left | center | right;	</span><br><span class="line"></span><br><span class="line"><span class="comment">/*文本垂直对齐*/</span></span><br><span class="line">vertical-align: top | middle | bottom;</span><br></pre></td></tr></table></figure>
+
+<h4 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h4><ul>
+<li><p>文本字间距</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*单个字符间距*/</span></span><br><span class="line"><span class="selector-tag">letter-spacing</span>: ?<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*单词间距*/</span></span><br><span class="line"><span class="selector-tag">word-spacing</span>: ?<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>排版方向</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">writing-mode: vertical-lr纵向从左到右 | vertical-rl纵向从右到左 | horizontal-tb横向从上到下 | horizontal-bt横向从下到上</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><h4 id="固定模型"><a href="#固定模型" class="headerlink" title="固定模型"></a>固定模型</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*元素大小固定，不受边距及边框影响。*/</span></span><br><span class="line"><span class="selector-tag">border-sizing</span>： <span class="selector-tag">border-box</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="排列方式"><a href="#排列方式" class="headerlink" title="排列方式"></a>排列方式</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	边距排列</span></span><br><span class="line"><span class="comment">	上右下左</span></span><br><span class="line"><span class="comment">	上下 左右</span></span><br><span class="line"><span class="comment">	上下 左 右</span></span><br><span class="line"><span class="comment">	负值溢出</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="边距合并"><a href="#边距合并" class="headerlink" title="边距合并"></a>边距合并</h4><ul>
+<li>上下元素重叠边距会自动合并取最大值。</li>
+</ul>
+<h4 id="盒子圆角"><a href="#盒子圆角" class="headerlink" title="盒子圆角"></a>盒子圆角</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: ?<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box-shadow</span>: 水平偏移<span class="selector-tag">px</span> 垂直偏移<span class="selector-tag">px</span> 模糊程度<span class="selector-tag">px</span> 阴影颜色<span class="selector-tag">rgba</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="元素轮廓线"><a href="#元素轮廓线" class="headerlink" title="元素轮廓线"></a>元素轮廓线</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*轮廓线显示不占用空间*/</span></span><br><span class="line"><span class="selector-tag">outline</span>: <span class="selector-tag">solid</span> 1<span class="selector-tag">px</span> <span class="selector-id">#000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*取消input轮廓线*/</span></span><br><span class="line"><span class="selector-tag">input</span>&#123;</span><br><span class="line">	<span class="attribute">outline</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="元素隐藏"><a href="#元素隐藏" class="headerlink" title="元素隐藏"></a>元素隐藏</h3><h4 id="display"><a href="#display" class="headerlink" title="display"></a>display</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">none</span>; 元素消失，不保留原始空间。</span><br></pre></td></tr></table></figure>
+
+<h4 id="visibility"><a href="#visibility" class="headerlink" title="visibility"></a>visibility</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">visibility</span>: <span class="selector-tag">hidden</span>; 元素隐藏，保留原始空间，相当于<span class="selector-tag">opacity</span>: 0;设置透明度为0。</span><br></pre></td></tr></table></figure>
+
+<h4 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overflow: scroll | hidden | auto; 溢出滚动 隐藏 自动</span><br></pre></td></tr></table></figure>
+
+<h4 id="尺寸控制"><a href="#尺寸控制" class="headerlink" title="尺寸控制"></a>尺寸控制</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*控制显示最大最小尺寸*/</span></span><br><span class="line"><span class="selector-tag">min-width</span>: ?<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">max-width</span>: ?<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="自动填充"><a href="#自动填充" class="headerlink" title="自动填充"></a>自动填充</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*自动填充*/</span></span><br><span class="line">width | height: fill-available;</span><br></pre></td></tr></table></figure>
+
+<h4 id="自动获取内容尺寸"><a href="#自动获取内容尺寸" class="headerlink" title="自动获取内容尺寸"></a>自动获取内容尺寸</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*适应块元素文本宽度*/</span></span><br><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">fit-content</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*自适应最大最小文本内容的尺寸*/</span></span><br><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">max-content</span>;</span><br><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">min-content</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*透明背景*/</span></span><br><span class="line"><span class="selector-tag">background-color</span>: <span class="selector-tag">transparent</span>;</span><br><span class="line"><span class="comment">/*背景图*/</span></span><br><span class="line"><span class="selector-tag">background-img</span>: <span class="selector-tag">url</span>(),<span class="selector-tag">url</span>();</span><br><span class="line"><span class="comment">/*背景重复*/</span></span><br><span class="line">background-repeat: repeat-x | repeat-y | no-repeat | space平均显示;</span><br><span class="line"><span class="comment">/*背景固定*/</span></span><br><span class="line">background-attachment: scroll滚动 | fixed固定;</span><br><span class="line"><span class="comment">/*背景位置*/</span></span><br><span class="line">background-position: top | top left | center | 50% 50%;</span><br><span class="line"><span class="comment">/*背景比例*/</span></span><br><span class="line">background-size: 100% 100% | cover显示部分 | contain完全显示空留白;</span><br><span class="line"><span class="comment">/*背景裁切*/</span></span><br><span class="line">background-clip: content-box只内容区 | padding-box包含内边距 | border-box包含边框;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">background-origin 规定了指定背景图片background-image 属性的原点位置的背景相对区域.</span></span><br><span class="line"><span class="comment">注意：当使用 background-attachment 为fixed时，该属性将被忽略不起作用。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*组合写法*/</span></span><br><span class="line">background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip];</span><br></pre></td></tr></table></figure>
+
+<h3 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*背景线性渐变*/</span></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(角度, <span class="selector-tag">color1</span>, <span class="selector-tag">color2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*径向渐变*/</span></span><br><span class="line">background: radial-gradient(at|to 原点位置, color1, color2);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*径向渐变标志位 控制渐变的位置 范围*/</span></span><br><span class="line"><span class="selector-tag">linear-gradient</span>(90<span class="selector-tag">deg</span>, <span class="selector-tag">color1</span>, <span class="selector-tag">color2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*渐变颜色中间点 ?%*/</span></span><br><span class="line"><span class="selector-tag">linear-gradient</span>(90<span class="selector-tag">deg</span>, <span class="selector-tag">color1</span>, ?%, <span class="selector-tag">color2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*重复的渐变*/</span></span><br><span class="line"><span class="selector-tag">repeating-linear-gradient</span>(<span class="selector-tag">deg</span>, <span class="selector-tag">color1</span>, <span class="selector-tag">midVal</span>, <span class="selector-tag">color2</span>);</span><br><span class="line"><span class="selector-tag">repeating-radial-gradient</span>(<span class="selector-tag">position</span>, <span class="selector-tag">color1</span>, <span class="selector-tag">color2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*旧进度条*/</span></span><br><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">repeating-linear-gradient</span>(45<span class="selector-tag">deg</span>, <span class="selector-tag">blue</span>, 25<span class="selector-tag">px</span>, <span class="selector-tag">yellow</span> 25<span class="selector-tag">px</span>, 25<span class="selector-tag">px</span>, <span class="selector-tag">red</span> 50<span class="selector-tag">px</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*浮动后元素会影响周围的元素的空间 在浮动元素后的元素可以通过设置清除浮动 还原浮动对空间的影响*/</span></span><br><span class="line">clear:both; //清除所有浮动</span><br><span class="line"></span><br><span class="line"><span class="comment">/*伪元素清除浮动*/</span></span><br><span class="line"><span class="selector-tag">el</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*overflow触发BFC清除浮动 父元素尺寸计算子元素浮动*/</span></span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="内容环绕"><a href="#内容环绕" class="headerlink" title="内容环绕"></a>内容环绕</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*控制浮动元素与内容的距离 加在浮动元素上的样式*/</span></span><br><span class="line">shape-outside: border-box | margin-box | padding-box | content-box;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*控制元素形状*/</span></span><br><span class="line">clip-path: circle(弧度 at 原点坐标)圆形 | ellipse(水平弧度 垂直弧度)椭圆 | polygon(点1坐标, 点2坐标,..)绘制点连接多边形;</span><br><span class="line"></span><br><span class="line">shape-outside: circle() | ellipse() | polygon(); //控制内容按形状环绕</span><br><span class="line">shape-outside： url() //控制图片环绕，需要png类型图片</span><br></pre></td></tr></table></figure>
+
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h4 id="位置参考"><a href="#位置参考" class="headerlink" title="位置参考"></a>位置参考</h4><ul>
+<li>绝对定位或相对定位参考的是离自己最近的设置定位的父元素。</li>
+<li>固定定位参考的是文档根元素。</li>
+</ul>
+<h4 id="粘性定位"><a href="#粘性定位" class="headerlink" title="粘性定位"></a>粘性定位</h4><ul>
+<li>设置元素位置触发时，固定元素。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">sticky</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同级粘性元素会叠加，不同级的会替代。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/* 	声明flex*/</span></span><br><span class="line">	<span class="attribute">display</span>: flex | inline-flex;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 	主轴方向，项目的排列方向,主轴默认水平，交叉轴默认垂直*/</span></span><br><span class="line">	<span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 	声明一条轴线排不下如何换行*/</span></span><br><span class="line">	<span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 	flex-flow，是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。*/</span></span><br><span class="line">	<span class="attribute">flex-flow</span>: column wrap-reverse;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 	justify-content，定义主轴的对齐方式*/</span></span><br><span class="line">	<span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around | space-evenly;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    flex-start（默认值）：左对齐</span></span><br><span class="line"><span class="comment">    flex-end：右对齐</span></span><br><span class="line"><span class="comment">    center： 居中</span></span><br><span class="line"><span class="comment">    space-between：两端对齐，项目之间的间隔都相等。</span></span><br><span class="line"><span class="comment">    space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</span></span><br><span class="line"><span class="comment">    space-evenly：轴上每个项目平均分布。</span></span><br><span class="line"><span class="comment">*/</span>    </span><br><span class="line"></span><br><span class="line"><span class="comment">/* 	align-items，定义交叉轴的排列方式*/</span></span><br><span class="line">	<span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    flex-start：交叉轴的起点对齐。</span></span><br><span class="line"><span class="comment">    flex-end：交叉轴的终点对齐。</span></span><br><span class="line"><span class="comment">    center：交叉轴的中点对齐。</span></span><br><span class="line"><span class="comment">    baseline: 项目的第一行文字的基线对齐。</span></span><br><span class="line"><span class="comment">    stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。    </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	align-content，定义多行交叉轴方向的排列方式*/</span>  </span><br><span class="line">	<span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	</span></span><br><span class="line"><span class="comment">    align-self，对单个元素交叉轴位置控制 设置stretch填充时元素未设置高度或设为auto,可覆盖align-items属性*/</span></span><br><span class="line">	<span class="attribute">align-self</span>: flex-start | flex-end | center | stretch;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	order属性，数值越小越靠前*/</span></span><br><span class="line">	<span class="attribute">order</span>: &lt;integer&gt;;<span class="comment">/*默认0*/</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	flex-grow，放大比例，属性，定义flex容器内元素占用剩余空间的放大比例，默认0原始大小，*/</span></span><br><span class="line">    <span class="attribute">flex-grow</span>: &lt;number&gt;;<span class="comment">/*default 0*/</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	flex-shrink，缩小比例，控制flex容器内元素的缩小比例*/</span></span><br><span class="line">    <span class="attribute">flex-shrink</span>: &lt;number&gt;; <span class="comment">/* default 1 */</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">/*	flex-basis，定义了主轴尺寸。在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。*/</span>    </span><br><span class="line">    <span class="attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="comment">/* default auto */</span></span><br><span class="line">    <span class="comment">/*	优先级max/min尺寸 &gt; flex-basis基准尺寸 &gt; width/height	*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*	flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。*/</span> </span><br><span class="line">    <span class="attribute">flex</span>: flex-grow [flex-shrink] [flex-basis];</span><br><span class="line">    </span><br><span class="line"><span class="comment">/*	flex可作用于文本*/</span>    </span><br><span class="line"><span class="comment">/*	flex边距自动*/</span></span><br><span class="line">    <span class="attribute">margin</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="grid栅格布局"><a href="#grid栅格布局" class="headerlink" title="grid栅格布局"></a>grid栅格布局</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    	绘制栅格，grid-template-rows grid-template-columns 绘制行列repeat绘制次数与绘制占比或尺寸</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(times, percent);</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">100px</span> <span class="number">20px</span>);</span><br><span class="line">    <span class="comment">/*绘制占100和20像素尺寸的列 绘制两次*/</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*	自动填充，auto-fill,自动填充内容绘制次数, 按照父元素的高度绘制20尺寸的栅格n行	*/</span></span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(auto-fill, <span class="number">20px</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*	按比例填充，fr单位*/</span></span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">2</span>，<span class="number">1</span>fr);<span class="comment">/*等比例绘制两行*/</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>:<span class="number">1</span>fr <span class="number">2</span>fr <span class="number">1</span>fr;<span class="comment">/*绘制三列占比1：2：1*/</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* 栅格尺寸范围，minmax*/</span></span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">2</span>，minmax(<span class="number">50px</span>, <span class="number">100px</span>));<span class="comment">/*绘制两行垂直方向上的尺寸最大100最小50*/</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* 栅格间隙留白，row-gap column-gap gap，作用于容器，定义在父元素内*/</span></span><br><span class="line">    <span class="attribute">row-gap</span>: <span class="number">5px</span>;<span class="attribute">column-gap</span>: <span class="number">10px</span>;<span class="comment">/*设置行间距为5，列间距为10*/</span></span><br><span class="line">    gap：&lt;row-gap&gt; &lt;column-gap&gt;;/*简写*/</span><br><span class="line"> </span><br><span class="line">   	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="放置元素"><a href="#放置元素" class="headerlink" title="放置元素"></a>放置元素</h4><ul>
+<li>grid-row-start，元素行开始栅格线位置。 </li>
+<li>grid-row-end，元素行结束栅格线位置。 </li>
+<li>grid-column-start，元素列开始栅格线位置。 </li>
+<li>grid-column-end，元素列结束栅格线位置。</li>
+</ul>
+<img src="C:\Users\yuan\AppData\Roaming\Typora\typora-user-images\image-20201022205659630.png" alt="image-20201022205659630" style="zoom:50%;" />
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">section</span>&#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">60%</span>;</span><br><span class="line"><span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">    <span class="comment">/* 3*3布局 */</span></span><br><span class="line"><span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line"><span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">    <span class="comment">/* 栅格间隔5像素*/</span></span><br><span class="line"><span class="attribute">gap</span>: <span class="number">5px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">section</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line"><span class="attribute">box-sizing</span>: border-box;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#3adf7b</span>;</span><br><span class="line"><span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line"><span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line"><span class="attribute">background-color</span>: <span class="number">#3aef</span>;</span><br><span class="line"><span class="attribute">background-clip</span>: content-box;</span><br><span class="line"><span class="attribute">text-align</span>: center;</span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span>&#123;</span><br><span class="line"><span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line"><span class="attribute">grid-column-end</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:nth-of-type(3)</span>&#123;</span><br><span class="line"><span class="attribute">grid-row-start</span>: <span class="number">2</span>;</span><br><span class="line"><span class="attribute">grid-row-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:nth-of-type(6)</span>&#123;</span><br><span class="line"><span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line"><span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h5 id="固定命名放置"><a href="#固定命名放置" class="headerlink" title="固定命名放置"></a>固定命名放置</h5><ul>
+<li>固定尺寸栅格命名，可以按照命名放置元素</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;	</span><br><span class="line">    <span class="comment">/* 绘制3*3栅格并为栅格线命名命名，可以使用栅格线名字放置元素 */</span></span><br><span class="line">    <span class="attribute">dispaly</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: [r1-start] <span class="number">100px</span> [r1-end r2-start] <span class="number">100px</span> [r2-end r3-start] <span class="number">100px</span> [r3-end];</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: [c1-start] <span class="number">100px</span> [c1-end c2-start] <span class="number">100px</span> [c2-end c3-start] <span class="number">100px</span> [c3-end];</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 元素放置到2号位置 */</span></span><br><span class="line">    <span class="attribute">grid-row-start</span>:  r1-start;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: r1-end;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: r1-end | r2-start;<span class="comment">/*同一条栅格线有两个名字都可以使用*/</span></span><br><span class="line">    <span class="attribute">grid-column-end</span>: r2-end | r3-start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="重复命名"><a href="#重复命名" class="headerlink" title="重复命名"></a>重复命名</h5><ul>
+<li><p>repeat绘制栅格，可以按照栅格线命名加编号放置元素。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 绘制3*3*/</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, [r-start] <span class="number">1</span>fr [r-end]);</span><br><span class="line">    <span class="attribute">grid-template-column</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,[c-start] <span class="number">1</span>fr [c-end]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 同样放置在2号*/</span></span><br><span class="line">    <span class="attribute">grid-row-start</span>: r-start <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: r-end <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: c-start <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: c-end <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>块元素水平垂直居中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">main</span>&#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, [c-s] <span class="number">1</span>fr [c-e]);</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, [r-s] <span class="number">1</span>fr [r-e]);</span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">main</span>&gt;<span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: pink;</span><br><span class="line">    <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span>&#123;</span><br><span class="line">    <span class="attribute">grid-row-start</span>: r-s <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: r-e <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column-start</span>: c-s <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: c-e <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="设置偏移量放置元素"><a href="#设置偏移量放置元素" class="headerlink" title="设置偏移量放置元素"></a>设置偏移量放置元素</h5><ul>
+<li>span</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 偏移设置在end上 */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">grid-row-start</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-row-end</span>: span <span class="number">2</span>;<span class="comment">/*偏移两行*/</span></span><br><span class="line">    <span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column-end</span>: span <span class="number">1</span>;<span class="comment">/*偏移一行*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="元素定位简写"><a href="#元素定位简写" class="headerlink" title="元素定位简写"></a>元素定位简写</h5><ul>
+<li><p><code>grid-row: [row-start]/[row-end];</code></p>
+</li>
+<li><p><code>grid-column: [column-start]/[column-end];</code></p>
+</li>
+<li><p>偏移</p>
+<ul>
+<li><code>grid-row: [row-start]]/span 2;</code></li>
+<li><code>grid-column: [column-start]]/span3;</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*绘制3*3*/</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repear</span>(<span class="number">3</span>, <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*子元素占满第二行*/</span></span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">2</span>/<span class="number">3</span>;</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">1</span>/<span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>可以用栅格布局开发类似bootstrap的栅格系统</strong></p>
+<h4 id="区域定位元素"><a href="#区域定位元素" class="headerlink" title="区域定位元素"></a>区域定位元素</h4><ul>
+<li><code>grid-area: [row-start] [column-start] [row-end] [column-end]</code>，确定元素四条栅格线的位置绘制元素。同时可以为栅格线命名。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 定位元素显示的区域，grid-area */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 3*3 */</span></span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">3</span>,[r] <span class="number">1</span>fr);</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repear</span>(<span class="number">3</span>, [c] <span class="number">1</span>fr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/* 定位到中心 */</span></span><br><span class="line">    <span class="attribute">grid-area</span>: r <span class="number">2</span>/c <span class="number">2</span>/r <span class="number">3</span>/c <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="划分区域"><a href="#划分区域" class="headerlink" title="划分区域"></a>划分区域</h4><ul>
+<li><p><code>grid-template-area: &quot;r1-c1 r1-c2&quot; &quot;r2-c1 r2-c2&quot; &quot;r3-c1 r3-c2&quot;</code>，为栅格命名，划分区域。</p>
+</li>
+<li><p><code>grid-area: xxx</code>，使用命名的区域。</p>
+</li>
+<li><p><strong>命名按行，每行的栅格命名在一起。每行多个栅格名称相同则独占一行。</strong></p>
+</li>
+<li><p><strong>上面栅格不命名区域的话可以使用 . 占位。</strong></p>
+<p><code>grid-template-area: &quot;. .&quot; &quot;. . &quot; &quot;same same&quot;;</code></p>
+<img src="C:\Users\yuan\Desktop\Snipaste_2020-10-22_22-50-32.png" alt="Snipaste_2020-10-22_22-50-32" style="zoom:50%;" />
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>1<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span>2<span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">article</span>&gt;</span>3<span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>4<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">main</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100vw</span>;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="number">60px</span> <span class="number">1</span>fr <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">60px</span> <span class="number">1</span>fr;</span><br><span class="line">    <span class="attribute">grid-template-areas</span>: <span class="string">&quot;header header&quot;</span> <span class="string">&quot;nav article&quot;</span> <span class="string">&quot;footer footer&quot;</span>;</span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">header</span>, <span class="selector-tag">nav</span>, <span class="selector-tag">article</span>, <span class="selector-tag">footer</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>:pink;</span><br><span class="line">    <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">header</span>&#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: header;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">nav</span>&#123;</span><br><span class="line">    <span class="attribute">grid-area</span>:nav;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">article</span>&#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: article;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">footer</span>&#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: footer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="元素流动"><a href="#元素流动" class="headerlink" title="元素流动"></a>元素流动</h4><ul>
+<li><code>grid-auto-flow</code>，控制元素的流动方向，默认从左到右先行后列。<ul>
+<li><code>row</code></li>
+<li><code>column</code></li>
+<li><code>dense</code>，当前面元素定位到后面时，后面的元素自动流动到前面。</li>
+</ul>
+</li>
+</ul>
+<h4 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式"></a>对齐方式</h4><ul>
+<li>水平 垂直</li>
+</ul>
+<h5 id="栅格对齐"><a href="#栅格对齐" class="headerlink" title="栅格对齐"></a>栅格对齐</h5><ul>
+<li>当容器的空间大于栅格的空间，设置栅格的对齐方式，默认在开始位置。    </li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">justify-content</span>: start | end | center | space-between | space-evenly | space-around;</span><br><span class="line">	<span class="attribute">align-content</span>: start | end | center | stretch | space-around | space-between | space-evenly;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>简写，<code>place-content</code>属性是<code>align-content</code>属性和<code>justify-content</code>属性的合并简写形式。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">place-content</span>: &lt;align-content&gt; &lt;justify-content&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="内容对齐"><a href="#内容对齐" class="headerlink" title="内容对齐"></a>内容对齐</h5><ul>
+<li><p>当栅格内容小于栅格，设置内容的对齐方式，默认拉伸占满。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">justify-items</span>: start | end | center | stretch;</span><br><span class="line">  	<span class="attribute">align-items</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简写，<code>place-items</code></p>
+</li>
+<li><p>单个内容设置对齐</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    justify-self：start | end | center | stretch;</span><br><span class="line">    align-self: start | end | center | stretch;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*简写*/</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">place-self</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="意外多出"><a href="#意外多出" class="headerlink" title="意外多出"></a>意外多出</h4><ul>
+<li>grid-auto-rows</li>
+<li>grid-auto-columns</li>
+</ul>
+<h4 id="其他简写"><a href="#其他简写" class="headerlink" title="其他简写"></a>其他简写</h4><p><strong>一般不建议使用</strong></p>
+<ul>
+<li><p><code>grid-template</code>属性是<code>grid-template-columns</code>、<code>grid-template-rows</code>和<code>grid-template-areas</code>这三个属性的合并简写形式。</p>
+</li>
+<li><p><code>grid</code>属性是<code>grid-template-rows</code>、<code>grid-template-columns</code>、<code>grid-template-areas</code>、 <code>grid-auto-rows</code>、<code>grid-auto-columns</code>、<code>grid-auto-flow</code>这六个属性的合并简写形式。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/CSS/" data-id="ckgld2gci000fyku333ixc5bq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/hello-world/" class="article-date">
+  <time datetime="2020-10-22T17:05:36.650Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/hello-world/" data-id="ckgld2gby000byku3hq2m5884" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/23/jQuery/">jQuery相关记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/Cookie/">客户端存储</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/XMLHttpRequest/">XMLHttpRequest</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/">JavaScript异步</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/BOM/">JavaScriptBOM</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 未入圈的羊<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

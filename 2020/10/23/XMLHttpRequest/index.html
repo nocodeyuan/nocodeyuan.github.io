@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>XMLHttpRequest | Points</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="XMLHttpRequest new XMLHttpRequest()   open方法，接收三个参数，准备发送请求。  请求类型 请求url 是否异步，布尔类型   send方法，发送请求。接收一个参数作为请求体内容。  返回值 responseText，响应体。 responseXML，如果响应类型为xml类型，返回包含数据的xml文档。 status，响应http的状态。 statusTex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XMLHttpRequest">
+<meta property="og:url" content="http://example.com/2020/10/23/XMLHttpRequest/index.html">
+<meta property="og:site_name" content="Points">
+<meta property="og:description" content="XMLHttpRequest new XMLHttpRequest()   open方法，接收三个参数，准备发送请求。  请求类型 请求url 是否异步，布尔类型   send方法，发送请求。接收一个参数作为请求体内容。  返回值 responseText，响应体。 responseXML，如果响应类型为xml类型，返回包含数据的xml文档。 status，响应http的状态。 statusTex">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-22T21:44:46.816Z">
+<meta property="article:modified_time" content="2020-10-22T21:44:46.990Z">
+<meta property="article:author" content="未入圈的羊">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Points" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo"></a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-XMLHttpRequest" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/XMLHttpRequest/" class="article-date">
+  <time datetime="2020-10-22T21:44:46.816Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      XMLHttpRequest
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h3><ul>
+<li><p>new XMLHttpRequest() </p>
+</li>
+<li><p>open方法，接收三个参数，准备发送请求。</p>
+<ul>
+<li>请求类型</li>
+<li>请求url</li>
+<li>是否异步，布尔类型</li>
+</ul>
+</li>
+<li><p>send方法，发送请求。接收一个参数作为请求体内容。</p>
+<ul>
+<li>返回值<ul>
+<li>responseText，响应体。</li>
+<li>responseXML，如果响应类型为xml类型，返回包含数据的xml文档。</li>
+<li>status，响应http的状态。</li>
+<li>statusText，响应http的状态描述。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>readyState</p>
+<ul>
+<li>0，未初始化Uninitialized，尚未调用open方法。</li>
+<li>1，已打开Open，已调用open方法，未调用send方法。</li>
+<li>2，已发送Sent，已调用send方法，尚未收到响应。</li>
+<li>3，接收中Receiving，已经收到部分响应。</li>
+<li>4，完成Complete，已经收到所有响应，可以使用了。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="comment">//每次readyState的值变化时，调用onreadystatechange事件。</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">xhr.readyState == <span class="number">4</span></span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span></span>)</span>&#123;</span><br><span class="line">            alert(xhr.reponseText)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            alert(xhr.status)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">xhr.open(<span class="string">&#x27;get&#x27;</span>,url,<span class="literal">true</span>);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br><span class="line"><span class="comment">//取消异步，xhr对象会停止触发事件，并阻止访问这个对象上任何与响应相关的属性。</span></span><br><span class="line">xhr.abort();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>setRequestHeader</strong>，设置请求头信息，setRequestHeader(‘MyHeader’,’MyValue’)</p>
+<p>请求头：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/home.html</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: developer.mozilla.org</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:50.0) Gecko/20100101 Firefox/50.0</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line"><span class="attribute">Accept-Language</span>: en-US,en;q=0.5</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate, br</span><br><span class="line"><span class="attribute">Referer</span>: https://developer.mozilla.org/testpage.html</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span>: 1</span><br><span class="line"><span class="attribute">If-Modified-Since</span>: Mon, 18 Jul 2016 02:36:04 GMT</span><br><span class="line"><span class="attribute">If-None-Match</span>: &quot;c561c68d0ba92bbeb8b0fff2a9199f722e3a621a&quot;</span><br><span class="line"><span class="attribute">Cache-Control</span>: max-age=0</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Accept，浏览器可以处理的内容类型。</li>
+<li>Accept-Charset，浏览器可以显示的字符集。</li>
+<li>Accept-Encoding，浏览器可以处理的压缩编码类型。</li>
+<li>Accept-Language，浏览器使用的语言。</li>
+<li>Connection，浏览器与服务器的连接类型。</li>
+<li>Cookie，页面中设置的cookie。</li>
+<li>Host，发送请求的页面所在的域。</li>
+<li>Referer，发送请求的页面URI。</li>
+<li>User-Agent，浏览器用户代理字符串。</li>
+</ul>
+</li>
+<li><p>http状态码</p>
+<table>
+<thead>
+<tr>
+<th>1**</th>
+<th>信息，服务器收到请求，需要请求者继续执行操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2**</td>
+<td>成功，操作被成功接收并处理</td>
+</tr>
+<tr>
+<td>3**</td>
+<td>重定向，需要进一步的操作以完成请求</td>
+</tr>
+<tr>
+<td>4**</td>
+<td>客户端错误，请求包含语法错误或无法完成请求</td>
+</tr>
+<tr>
+<td>5**</td>
+<td>服务器错误，服务器在处理请求的过程中发生了错误</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">状态码</th>
+<th align="left">状态码英文名称</th>
+<th>中文描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">100</td>
+<td align="left">Continue</td>
+<td>继续。<a target="_blank" rel="noopener" href="http://www.dreamdu.com/webbuild/client_vs_server/">客户端</a>应继续其请求</td>
+</tr>
+<tr>
+<td align="left">101</td>
+<td align="left">Switching Protocols</td>
+<td>切换协议。服务器根据客户端的请求切换协议。只能切换到更高级的协议，例如，切换到HTTP的新版本协议</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">200</td>
+<td align="left">OK</td>
+<td>请求成功。一般用于GET与POST请求</td>
+</tr>
+<tr>
+<td align="left">201</td>
+<td align="left">Created</td>
+<td>已创建。成功请求并创建了新的资源</td>
+</tr>
+<tr>
+<td align="left">202</td>
+<td align="left">Accepted</td>
+<td>已接受。已经接受请求，但未处理完成</td>
+</tr>
+<tr>
+<td align="left">203</td>
+<td align="left">Non-Authoritative Information</td>
+<td>非授权信息。请求成功。但返回的meta信息不在原始的服务器，而是一个副本</td>
+</tr>
+<tr>
+<td align="left">204</td>
+<td align="left">No Content</td>
+<td>无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档</td>
+</tr>
+<tr>
+<td align="left">205</td>
+<td align="left">Reset Content</td>
+<td>重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域</td>
+</tr>
+<tr>
+<td align="left">206</td>
+<td align="left">Partial Content</td>
+<td>部分内容。服务器成功处理了部分GET请求</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">300</td>
+<td align="left">Multiple Choices</td>
+<td>多种选择。请求的资源可包括多个位置，相应可返回一个资源特征与地址的列表用于用户终端（例如：浏览器）选择</td>
+</tr>
+<tr>
+<td align="left">301</td>
+<td align="left">Moved Permanently</td>
+<td>永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</td>
+</tr>
+<tr>
+<td align="left">302</td>
+<td align="left">Found</td>
+<td>临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI</td>
+</tr>
+<tr>
+<td align="left">303</td>
+<td align="left">See Other</td>
+<td>查看其它地址。与301类似。使用GET和POST请求查看</td>
+</tr>
+<tr>
+<td align="left">304</td>
+<td align="left">Not Modified</td>
+<td>未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源</td>
+</tr>
+<tr>
+<td align="left">305</td>
+<td align="left">Use Proxy</td>
+<td>使用代理。所请求的资源必须通过代理访问</td>
+</tr>
+<tr>
+<td align="left">306</td>
+<td align="left">Unused</td>
+<td>已经被废弃的HTTP状态码</td>
+</tr>
+<tr>
+<td align="left">307</td>
+<td align="left">Temporary Redirect</td>
+<td>临时重定向。与302类似。使用GET请求重定向</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">400</td>
+<td align="left">Bad Request</td>
+<td>客户端请求的语法错误，服务器无法理解</td>
+</tr>
+<tr>
+<td align="left">401</td>
+<td align="left">Unauthorized</td>
+<td>请求要求用户的身份认证</td>
+</tr>
+<tr>
+<td align="left">402</td>
+<td align="left">Payment Required</td>
+<td>保留，将来使用</td>
+</tr>
+<tr>
+<td align="left">403</td>
+<td align="left">Forbidden</td>
+<td>服务器理解请求客户端的请求，但是拒绝执行此请求</td>
+</tr>
+<tr>
+<td align="left">404</td>
+<td align="left">Not Found</td>
+<td>服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</td>
+</tr>
+<tr>
+<td align="left">405</td>
+<td align="left">Method Not Allowed</td>
+<td>客户端请求中的方法被禁止</td>
+</tr>
+<tr>
+<td align="left">406</td>
+<td align="left">Not Acceptable</td>
+<td>服务器无法根据客户端请求的内容特性完成请求</td>
+</tr>
+<tr>
+<td align="left">407</td>
+<td align="left">Proxy Authentication Required</td>
+<td>请求要求代理的身份认证，与401类似，但请求者应当使用代理进行授权</td>
+</tr>
+<tr>
+<td align="left">408</td>
+<td align="left">Request Time-out</td>
+<td>服务器等待客户端发送的请求时间过长，超时</td>
+</tr>
+<tr>
+<td align="left">409</td>
+<td align="left">Conflict</td>
+<td>服务器完成客户端的 PUT 请求时可能返回此代码，服务器处理请求时发生了冲突</td>
+</tr>
+<tr>
+<td align="left">410</td>
+<td align="left">Gone</td>
+<td>客户端请求的资源已经不存在。410不同于404，如果资源以前有现在被永久删除了可使用410代码，网站设计人员可通过301代码指定资源的新位置</td>
+</tr>
+<tr>
+<td align="left">411</td>
+<td align="left">Length Required</td>
+<td>服务器无法处理客户端发送的不带Content-Length的请求信息</td>
+</tr>
+<tr>
+<td align="left">412</td>
+<td align="left">Precondition Failed</td>
+<td>客户端请求信息的先决条件错误</td>
+</tr>
+<tr>
+<td align="left">413</td>
+<td align="left">Request Entity Too Large</td>
+<td>由于请求的实体过大，服务器无法处理，因此拒绝请求。为防止客户端的连续请求，服务器可能会关闭连接。如果只是服务器暂时无法处理，则会包含一个Retry-After的响应信息</td>
+</tr>
+<tr>
+<td align="left">414</td>
+<td align="left">Request-URI Too Large</td>
+<td>请求的URI过长（URI通常为网址），服务器无法处理</td>
+</tr>
+<tr>
+<td align="left">415</td>
+<td align="left">Unsupported Media Type</td>
+<td>服务器无法处理请求附带的媒体格式</td>
+</tr>
+<tr>
+<td align="left">416</td>
+<td align="left">Requested range not satisfiable</td>
+<td>客户端请求的范围无效</td>
+</tr>
+<tr>
+<td align="left">417</td>
+<td align="left">Expectation Failed</td>
+<td>服务器无法满足Expect的请求头信息</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">500</td>
+<td align="left">Internal Server Error</td>
+<td>服务器内部错误，无法完成请求</td>
+</tr>
+<tr>
+<td align="left">501</td>
+<td align="left">Not Implemented</td>
+<td>服务器不支持请求的功能，无法完成请求</td>
+</tr>
+<tr>
+<td align="left">502</td>
+<td align="left">Bad Gateway</td>
+<td>作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应</td>
+</tr>
+<tr>
+<td align="left">503</td>
+<td align="left">Service Unavailable</td>
+<td>由于超载或系统维护，服务器暂时的无法处理客户端的请求。延时的长度可包含在服务器的Retry-After头信息中</td>
+</tr>
+<tr>
+<td align="left">504</td>
+<td align="left">Gateway Time-out</td>
+<td>充当网关或代理的服务器，未及时从远端服务器获取请求</td>
+</tr>
+<tr>
+<td align="left">505</td>
+<td align="left">HTTP Version not supported</td>
+<td>服务器不支持请求的HTTP协议的版本，无法完成处理</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>请求类型</p>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">GET</td>
+<td align="left">请求指定的页面信息，并返回实体主体。请求资源。</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">HEAD</td>
+<td align="left">类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">POST</td>
+<td align="left">向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和/或已有资源的修改。提交数据。</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">PUT</td>
+<td align="left">从客户端向服务器传送的数据取代指定的文档的内容。</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">DELETE</td>
+<td align="left">请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">CONNECT</td>
+<td align="left">HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">OPTIONS</td>
+<td align="left">允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">TRACE</td>
+<td align="left">回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">PATCH</td>
+<td align="left">是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>getResponeseHeader(key)，获取指定响应头信息。</p>
+</li>
+<li><p>getAllResponseHeaders()，获取响应头所有信息。</p>
+</li>
+<li><p>get请求</p>
+<p>get请求查询字符串的键值都需要使用encodeURIComponent()编码，所有键值对使用&amp;连接。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//拼接请求url函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addURLParam</span>(<span class="params">url,name,value</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//如果路径中不含参，则以？号拼接，否则用&amp;号拼接</span></span><br><span class="line">    url += (url.indexOf(<span class="string">&#x27;?&#x27;</span>) == -<span class="number">1</span> ? <span class="string">&#x27;?&#x27;</span> : <span class="string">&#x27;&amp;&#x27;</span>);</span><br><span class="line">    <span class="comment">//添加转码后的键值</span></span><br><span class="line">    url += <span class="string">`<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(name)&#125;</span>=<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(value)&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">return</span> url;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;/registerAccount&#x27;</span>;</span><br><span class="line">url = addURIParam(url,<span class="string">&#x27;id&#x27;</span>,<span class="number">1</span>);<span class="comment">//url &#x27;/registerAccont?id=1&#x27;</span></span><br><span class="line">url = addURIParam(url,<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;_this&#x27;</span>);<span class="comment">//url &#x27;/registerAccont?id=1&amp;name=_this&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>post请求</p>
+<p>post请求用于向服务器发送需要保存的数据。</p>
+<ul>
+<li>serialize方法，将form表单中的数据转化为字符串。</li>
+<li>需要设置请求头的Content-Type为<code>application/x-www-formurlencoded</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">submitData</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">xhr.readyState == <span class="number">4</span></span>)</span>&#123;</span><br><span class="line">            <span class="function"><span class="title">if</span>(<span class="params">(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span></span>)</span>&#123;</span><br><span class="line">                alert(xhr.responseText);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                 alert(xhr.status);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    xhr.open(<span class="string">&#x27;post&#x27;</span>,url,<span class="literal">true</span>);</span><br><span class="line">    <span class="comment">//设置Content-Type</span></span><br><span class="line">    xhr.setRequsetHeader(<span class="string">&#x27;Content-Type&#x27;</span>,<span class="string">&#x27;application/x-www-formurlencoded&#x27;</span>);</span><br><span class="line">    <span class="keyword">let</span> form = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;user-info&#x27;</span>);</span><br><span class="line">    <span class="comment">//发送数据</span></span><br><span class="line">    xhr.send(serialize(form));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用FormData，对表单数据序列化。</p>
+<p>不需要设置任何请求头部信息。</p>
+<p><code>xhr.send(new FormData(form))</code></p>
+</li>
+<li><p>超时timeout属性，ie8后所有浏览器给XHR对象添加timeout属性，表示发送请求后等待多时毫秒，如果请求不成功就中断请求。</p>
+</li>
+<li><p>ontimeout事件，在超时时间后仍未收到响应时调用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">xhr.readyState == <span class="number">4</span></span>)</span>&#123;</span><br><span class="line">            <span class="function"><span class="title">if</span>(<span class="params">(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span></span>)</span>&#123;</span><br><span class="line">                alert(xhr.responseText);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                alert(xhr.status);</span><br><span class="line">            &#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;<span class="function"><span class="title">catch</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xhr.open(<span class="string">&#x27;get&#x27;</span>,url,<span class="literal">true</span>);</span><br><span class="line"><span class="comment">//设置超时时间</span></span><br><span class="line">xhr.timeout = <span class="number">1000</span>;</span><br><span class="line"><span class="comment">//超时后调用ontimeout函数，并设置xhr对象的readyState为4，仍然会触发执行onreadystatechange方法，由于是中断响应所以xhr.status不存在。</span></span><br><span class="line">xhr.ontimeout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">&#x27;Request did not return in a second...&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>进度事件</strong></p>
+<ul>
+<li>loadstart，在接受到响应的第一个字符时触发。</li>
+<li>progress，在接收响应期间反复触发。</li>
+<li>error，在请求出错时触发。</li>
+<li>abort，在调用abort()终止连接时触发会终止所有与响应相关的事件触发。</li>
+<li>load，在成功接收完响应时触发。</li>
+<li>loadend，在通信完成时，且在error，abort或load之后触发。</li>
+</ul>
+<p>每次请求都会首先触发loadstart，之后时一个或多个progress事件，之后是error，abort或load中的一个，最后以loadend结束。</p>
+<ul>
+<li><p>进度事件接收一个event对象，他的target属性为XHR对象。</p>
+</li>
+<li><p><strong>onload事件</strong>代替onreadystatechange事件，直接在完成响应时触发。只要从服务器收到响应，无论什么状态码都会触发load事件。</p>
+</li>
+<li><p><strong>onprogress事件</strong>接收一个event对象，target属性为XHR对象，额外三个属性：</p>
+<ul>
+<li>lengthComputable，布尔值，表示进度信息是否可用。</li>
+<li>position，接收到的字节数。</li>
+<li>totalSize，<strong>响应</strong>的Content-Length头部定义的总字节数。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="comment">//onload事件完成响应执行</span></span><br><span class="line">xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span></span>)</span>&#123;</span><br><span class="line">        alert(xhr.responseText);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        alert(xhr.status);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在响应期间反复执行，制作响应进度百分比</span></span><br><span class="line">xhr.onprogress = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> progressStatus = <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">event.lengthComputable</span>)</span>&#123;</span><br><span class="line">        progressStatus.innerHTML = event.position/event.totalSize*<span class="number">100</span> + <span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xhr.open(<span class="string">&#x27;get&#x27;</span>,url,<span class="literal">true</span>);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="原生封装axios"><a href="#原生封装axios" class="headerlink" title="原生封装axios"></a>原生封装axios</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"><span class="built_in">window</span></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//参数为配置对象,默认get请求,queryParams和data都为空对象</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">axios</span>(<span class="params">&#123; url, method = <span class="string">&quot;GET&quot;</span>, params = &#123;&#125;, data = &#123;&#125; &#125;</span>) </span>&#123;</span><br><span class="line">		<span class="comment">//返回一个Promise</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">			<span class="comment">//处理method的大小写</span></span><br><span class="line">			method = method.toUpperCase();</span><br><span class="line"></span><br><span class="line">			<span class="comment">//处理params, 拼接成queryString</span></span><br><span class="line">			<span class="keyword">if</span> (params) &#123;</span><br><span class="line">				<span class="keyword">let</span> queryString = <span class="string">&quot;&quot;</span>;</span><br><span class="line">				<span class="built_in">Object</span>.keys(params).forEach(<span class="function">(<span class="params">key</span>) =&gt;</span> &#123;</span><br><span class="line">					queryString += <span class="string">`<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;params[key]&#125;</span>&amp;`</span>;</span><br><span class="line">				&#125;);</span><br><span class="line">				<span class="comment">//去掉最后一个&amp;</span></span><br><span class="line">				queryString = queryString.substring(<span class="number">0</span>, queryString.length - <span class="number">1</span>);</span><br><span class="line">				<span class="comment">//把queryString拼到url上</span></span><br><span class="line">				url += <span class="string">&quot;?&quot;</span> + queryString;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="comment">//创建xhr对象</span></span><br><span class="line">			<span class="keyword">const</span> request = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">			<span class="comment">//打开连接(还没有请求)</span></span><br><span class="line">			request.open(method, url);</span><br><span class="line">			<span class="comment">//发送请求</span></span><br><span class="line">			<span class="keyword">if</span> (method === <span class="string">&quot;GET&quot;</span> || method === <span class="string">&quot;DELETE&quot;</span>) &#123;</span><br><span class="line">				request.send();</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (method === <span class="string">&quot;POST&quot;</span> || method === <span class="string">&quot;PUT&quot;</span>) &#123;</span><br><span class="line">				<span class="comment">//设置请求头类型</span></span><br><span class="line">				request.setRequestHeader(</span><br><span class="line">					<span class="string">&quot;ContentType&quot;</span>,</span><br><span class="line">					<span class="string">&quot;application/json;charset=utf-8&quot;</span></span><br><span class="line">				);</span><br><span class="line">				<span class="comment">//将data从js对象转成json string</span></span><br><span class="line">				request.send(<span class="built_in">JSON</span>.stringify(data));</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="comment">//绑定状态改变监听</span></span><br><span class="line">			request.onreadystatechange = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">				<span class="comment">//请求没有完成</span></span><br><span class="line">				<span class="keyword">if</span> (request.readyState !== <span class="number">4</span>) <span class="keyword">return</span>;</span><br><span class="line">				<span class="comment">//只有status在[200,300)之间才代表成功</span></span><br><span class="line">				<span class="keyword">const</span> &#123; status, statusText &#125; = request;</span><br><span class="line">				<span class="comment">//axios的源码中也是这样的简单粗暴</span></span><br><span class="line">				<span class="keyword">if</span> ((status &gt;= <span class="number">200</span>) &amp; (status &lt; <span class="number">300</span>)) &#123;</span><br><span class="line">					<span class="comment">//response对象</span></span><br><span class="line">					<span class="keyword">const</span> response = &#123;</span><br><span class="line">						data: <span class="built_in">JSON</span>.parse(request.response),</span><br><span class="line">						status,</span><br><span class="line">						statusText,</span><br><span class="line">					&#125;;</span><br><span class="line">					<span class="comment">//resolve promise</span></span><br><span class="line">					resolve(response);</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="comment">//其他状态都表示失败, reject promise, 给予一个友好的提示</span></span><br><span class="line">					reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;request failed! response code = &quot;</span> + status));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">window</span>.axios = axios;</span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><h4 id="fetch方法"><a href="#fetch方法" class="headerlink" title="fetch方法"></a>fetch方法</h4><ul>
+<li>全局作用域方法，返回promise，fetch(url,option)，参数url，option配置对象。</li>
+</ul>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><ul>
+<li>在then方法中使用response对象。</li>
+</ul>
+<h5 id="分派请求"><a href="#分派请求" class="headerlink" title="分派请求"></a>分派请求</h5><h5 id="读取响应"><a href="#读取响应" class="headerlink" title="读取响应"></a>读取响应</h5><ul>
+<li><p>读取资源完整内容。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetch(url).then(<span class="function"><span class="params">response</span>=&gt;</span>response.text()).then(<span class="function"><span class="params">data</span>=&gt;</span><span class="built_in">console</span>.log(data))</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="处理状态码和请求失败"><a href="#处理状态码和请求失败" class="headerlink" title="处理状态码和请求失败"></a>处理状态码和请求失败</h5><ul>
+<li><p>response的ok属性，测试在状态码为非200~299时响应的状态。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fetch(url).then(</span><br><span class="line">    			response=&gt;&#123;<span class="built_in">console</span>.log(response.status,response.ok)&#125;,</span><br><span class="line">                error=&gt;<span class="built_in">console</span>.log(error)</span><br><span class="line">               );</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="自定义选项"><a href="#自定义选项" class="headerlink" title="自定义选项"></a>自定义选项</h5><ul>
+<li>参数二，初始化请求配置。</li>
+<li>body，请求体。</li>
+<li>cache，缓存设置。</li>
+<li>headers，请求头信息。</li>
+<li>method，请求方法。</li>
+<li>redirect，重定向设置。</li>
+</ul>
+<h4 id="请求模式"><a href="#请求模式" class="headerlink" title="请求模式"></a>请求模式</h4><ul>
+<li>发送json数据</li>
+<li>在请求体中设置发送参数</li>
+<li>发送文件</li>
+<li>加载Blob文件</li>
+<li>发送跨源请求</li>
+<li>中断请求</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/XMLHttpRequest/" data-id="ckgld2gcj000gyku3grqi0k6b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/10/23/Cookie/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          客户端存储
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript异步</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/23/jQuery/">jQuery相关记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/Cookie/">客户端存储</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/XMLHttpRequest/">XMLHttpRequest</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/">JavaScript异步</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/BOM/">JavaScriptBOM</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 未入圈的羊<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

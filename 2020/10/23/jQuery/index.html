@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>jQuery相关记录 | Points</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="jQuery细节 文档加载（入口函数） $(function()&amp;#123;&amp;#125;)  替代window.onload(),js只能加载一次，jQuery可以执行多次   事件绑定  样式绑定  选择器 基本选择器 标签选择器:$(&quot;元素&quot;) id选择器:$(&quot;#id&quot;) 类选择器:$(&quot;.class&quot;) 并集选择器：$(&amp;quot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery相关记录">
+<meta property="og:url" content="http://example.com/2020/10/23/jQuery/index.html">
+<meta property="og:site_name" content="Points">
+<meta property="og:description" content="jQuery细节 文档加载（入口函数） $(function()&amp;#123;&amp;#125;)  替代window.onload(),js只能加载一次，jQuery可以执行多次   事件绑定  样式绑定  选择器 基本选择器 标签选择器:$(&quot;元素&quot;) id选择器:$(&quot;#id&quot;) 类选择器:$(&quot;.class&quot;) 并集选择器：$(&amp;quot">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-22T21:47:48.255Z">
+<meta property="article:modified_time" content="2020-10-22T21:47:38.412Z">
+<meta property="article:author" content="未入圈的羊">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Points" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo"></a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jQuery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/jQuery/" class="article-date">
+  <time datetime="2020-10-22T21:47:48.255Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery相关记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jQuery细节"><a href="#jQuery细节" class="headerlink" title="jQuery细节"></a>jQuery细节</h2><ol>
+<li><p>文档加载（入口函数）</p>
+<p><code>$(function()&#123;&#125;)</code></p>
+<ul>
+<li>替代<code>window.onload()</code>,js只能加载一次，jQuery可以执行多次</li>
+</ul>
+</li>
+<li><p>事件绑定</p>
+</li>
+<li><p>样式绑定</p>
+<hr>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ol>
+<li><strong>基本选择器</strong><ul>
+<li>标签选择器:<code>$(&quot;元素&quot;)</code></li>
+<li>id选择器:<code>$(&quot;#id&quot;)</code></li>
+<li>类选择器:<code>$(&quot;.class&quot;)</code></li>
+<li>并集选择器：<code>$(&quot;a,b&quot;)</code></li>
+</ul>
+</li>
+<li><strong>层级选择器</strong><ol>
+<li>后代选择器：<code>$(&quot;A B&quot;)</code>:选择A内部的所有B元素</li>
+<li>子选择器：<code>$(&quot;A &gt; B&quot;)</code>:选择A元素内部的所有B子元素</li>
+</ol>
+</li>
+<li><strong>属性选择器</strong><ol>
+<li>属性名称：<code>$(&quot;A[属性名]&quot;)</code>：获取拥有固定属性名的元素</li>
+<li>属性：<code>$(&quot;A[属性名=&#39;值&#39;]&quot;)</code>：获取固定属性名值的元素</li>
+<li>复合属性：<code>$(&quot;A[属性名=&#39;值&#39;][]...&quot;)</code>：获取属性多条件的元素</li>
+<li>非xx属性：<code>$(&quot;A[属性名!=&#39;值&#39;]&quot;)</code>：获取属性值不是xxx的元素</li>
+<li>以xx属性开始：<code>$(&quot;A[属性名^=&#39;xxx&#39;]&quot;)</code>：获取属性值以xxx开始的元素</li>
+<li>以xxx结束：<code>$(&quot;A[属性名$=&#39;xxx&#39;]&quot;)</code>：获取属性值以xxx结束的元素</li>
+<li>包含xxx：<code>$(&quot;A[属性名*=&#39;xxx&#39;]&quot;)</code>：获取属性值包含xxx的元素</li>
+</ol>
+</li>
+<li><strong>过滤选择器</strong><ol>
+<li>首元素选择器<ul>
+<li>:first</li>
+</ul>
+</li>
+<li>尾元素选择器<ul>
+<li>:last</li>
+</ul>
+</li>
+<li>非元素选择器<ul>
+<li>:not(selector选择器)</li>
+</ul>
+</li>
+<li>偶数选择器<ul>
+<li>:even 偶数，从0开始计数</li>
+</ul>
+</li>
+<li>奇数选择器<ul>
+<li>:odd 奇数 ，从0开始计数</li>
+</ul>
+</li>
+<li>等于索引选择器<ul>
+<li>:eq(index) 指定索引元素</li>
+</ul>
+</li>
+<li>大于索引选择器<ul>
+<li>:gt(index) 大于指定索引元素</li>
+</ul>
+</li>
+<li>小于索引选择器<ul>
+<li>:lt(index) 小于指定元素</li>
+</ul>
+</li>
+<li>标题选择器<ul>
+<li>:header 获得标题（h1-h6）元素，固定写法</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>表单过滤选择器</strong><ol>
+<li>可用元素选择器<ul>
+<li>:enable：获取可用元素</li>
+</ul>
+</li>
+<li>不可用元素选择器<ul>
+<li>:disable：不可用</li>
+</ul>
+</li>
+<li>选中后选择器<ul>
+<li>:checked 获取单选/复选框选中的元素</li>
+<li>:selected 获取下拉框选中的元素</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><ol>
+<li><strong>内容操作</strong><ol>
+<li>html():获取/设置元素的标签体内容</li>
+<li>text():获取/设置元素的标签体纯文本内容</li>
+<li>val():获取/设置元素的value属性值</li>
+</ol>
+</li>
+<li><strong>属性操作</strong><ol>
+<li>通用属性操作<ul>
+<li>attr():获取/设置元素的属性</li>
+<li>remoneAttr():删除元素属性</li>
+<li>prop():获取/设置元素的属性</li>
+<li>removeProp():删除元素属性</li>
+<li>区别：<ul>
+<li>操作元素固有属性，使用prop</li>
+<li>操作自定义属性，使用attr</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对class属性操作<ul>
+<li>getClass():获取class属性值</li>
+<li>removeClass():删除class属性值</li>
+<li>toggleClass():切换class属性值<ul>
+<li>toggleClass(“one”):判断元素是否存在class=“one”，存在删除，不存在添加</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>CRUD</strong>操作<ol>
+<li>append()：父元素将子元素追加到末尾<ul>
+<li>o1.append(o2):将o2添加o1末尾,<strong>父子关系</strong></li>
+</ul>
+</li>
+<li>prepend()：父元素将子元素追加到开头</li>
+<li>appendTo():</li>
+<li>prependTo():</li>
+<li>after():添加元素到元素后<ul>
+<li>o1.after(o2):将o2添加到o1后面，<strong>兄弟关系</strong></li>
+</ul>
+</li>
+<li>before():添加元素到元素前</li>
+<li>insertAfter()</li>
+<li>insertBefore() </li>
+<li>remove():移除元素<ul>
+<li>obj.remove()</li>
+</ul>
+</li>
+<li>empty():清空元素的所有后代元素</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ol>
+<li>默认显示隐藏动画<ul>
+<li>show([speed,[easing],[fn]])<ul>
+<li>参数<ul>
+<li>speed<ul>
+<li>动画的速度。三个预定义的值（slow，normal，fast）或者动画时长毫秒值</li>
+</ul>
+</li>
+<li>easing：用来指定切换效果，默认’swing‘，可用参数‘linear’<ul>
+<li>swing：动画执行先慢，中间快，最后又慢</li>
+<li>linear：动画匀速执行</li>
+</ul>
+</li>
+<li>fn：在动画完成时执行的和函数，每个元素执行一次</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>hide()</li>
+<li>toggle()</li>
+</ul>
+</li>
+<li>淡入淡出动画<ul>
+<li>slidedown()</li>
+<li>slideup()</li>
+<li>slideToggle()</li>
+</ul>
+</li>
+<li>滑动显示隐藏<ul>
+<li>fadeIn()</li>
+<li>fadeout()</li>
+<li>fadeToggle()</li>
+</ul>
+</li>
+</ol>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><ol>
+<li>jQuery对象.each(callback)<ul>
+<li>循环中true相当于continue，false相当于break</li>
+</ul>
+</li>
+<li>$.each(object,[callback])</li>
+<li>for…of;</li>
+</ol>
+<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><ol>
+<li>标准绑定方式<ul>
+<li>jq对象.事件(回调函数);</li>
+</ul>
+</li>
+<li>on绑定/off绑定<ul>
+<li>jq对象.on(“事件名称”,回调函数);</li>
+<li>jq对象.off(“事件名称”);</li>
+</ul>
+</li>
+<li>事件切换：toggle:1.9以后版本移除toggle方法，需要导入jquery-migrate.js 插件<ul>
+<li>jq对象.toggle(fn1,fn2…)</li>
+</ul>
+</li>
+</ol>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ol>
+<li>实现方式:增强JQuery功能<ol>
+<li>$.fn.extend(object)<ul>
+<li>增强通过JQuery获取对象的功能  $(“#id”)</li>
+</ul>
+</li>
+<li>$.extend(object)<ul>
+<li>增强JQuery对象自身的功能 $/JQuery</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><ol>
+<li><p>概念：ASynchronous JavaScript And Xml 异步的JavaScript和XML</p>
+</li>
+<li><p>同步与异步</p>
+<ul>
+<li>同步：客户端必须等待服务器端的响应。在等待的期间客户端不能做其他操作</li>
+<li>异步：客户端不需要等待服务器端的响应，在服务器处理请求的过程中，客户端可以进行其他操作</li>
+</ul>
+</li>
+<li><p>实现方式：AJAX是一种不需要刷新网页的情况下，能够更新部分网页的技术</p>
+<ol>
+<li><p>原生js</p>
+</li>
+<li><p>JQuery</p>
+<ol>
+<li><p>$.ajax()</p>
+<ul>
+<li><p>$.ajax({</p>
+<p>​    url:”xxxx”,</p>
+<p>​    type:”POST”,</p>
+<p>​    data:{</p>
+<p>​        “xxx”:”xxx”,</p>
+<p>​        “xxx”:”xxx”</p>
+<p>​    },success:function(data){</p>
+<p>​            xxx</p>
+<p>​        },error:function(){</p>
+<p>​                xxxx</p>
+<p>​            },dataType:”text/json”</p>
+<p>})</p>
+</li>
+</ul>
+</li>
+<li><p>$.get():发送GET请求</p>
+<ul>
+<li>$get(url,[data],[callback],[type])<ul>
+<li>url:请求路径</li>
+<li>data：数据</li>
+<li>callback：回调函数</li>
+<li>type：数据格式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>$.post()</p>
+<ul>
+<li>$post(url,[data],[callback],[type])<ul>
+<li>url:请求路径</li>
+<li>data：数据</li>
+<li>callback：回调函数</li>
+<li>type：数据格式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ol>
+<li>概念：JavaScript Object Notation  JavaScript对象表示法，现在多用于存储和交换文本信息的语法，进行数据传输</li>
+<li>语法<ol>
+<li>基本规则<ul>
+<li>数据在名称/值对中：json数据是由键值对构成<ul>
+<li>键用引号包裹</li>
+<li>值的取值类型：<ol>
+<li>数字（整数/浮点数）</li>
+<li>字符串（在双引号中）</li>
+<li>逻辑值（true/false）</li>
+<li>数组（在方括号中）</li>
+<li>对象（在花括号中）</li>
+<li>null</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>数据用逗号分隔：多个键值对由逗号分隔</li>
+<li>花括号保存对象</li>
+<li>方括号保存数组</li>
+</ul>
+</li>
+<li>获取数据<ol>
+<li>json对象 .键名</li>
+<li>json对象.[“键名”]</li>
+<li>数组对象[索引]</li>
+</ol>
+</li>
+<li>JSON解析器<ol>
+<li>Jsonlib</li>
+<li>Gson</li>
+<li>fastjson</li>
+<li>jackson！！</li>
+</ol>
+</li>
+<li>JSON数据和Java对象的相互转换<ol>
+<li>JSON转为Java对象<ol>
+<li>导入Jackson相关jar包</li>
+<li>创建Jackson核心对象ObjectMapper</li>
+<li>调用方法<ul>
+<li>readValue(json字符串数据, Class)</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Java对象转为JSON<ol>
+<li>导入Jackson相关jar包</li>
+<li>创建Jackson核心对象ObjectMapper</li>
+<li>调用方法<ul>
+<li>writeValue(参数1，obj)：<ul>
+<li>参数1：<ul>
+<li>File：将obj对象转换为JSON字符串，并保存到指定文件中</li>
+<li>Writer：将obj对象转换为JSON字符串，并将JSON数据填充到字符输入流</li>
+<li>OutputStream</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>writeValueAsString(obj)：将对象转为JSON字符串</li>
+</ul>
+</li>
+<li>注解：<ol>
+<li>@JsonIgnore：排除属性：转化后不显示该属性</li>
+<li>@JsonFormat：定义在属性声明或者get方法上，属性值的格式化：@JsonFormat（pattern = “xxx”）转换为固定xxx格式</li>
+</ol>
+</li>
+<li>复杂的Java对象转换<ol>
+<li>List：转换后为数组包裹的json字符串</li>
+<li>Map：转换后格式与对象转换一样</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>校验用户名是否存在<ol>
+<li>服务器响应的数据，在客户端使用时，要想当作json数据格式使用<ol>
+<li>$get(type)：将最后一个参数type指定为“json”</li>
+<li>在服务器端设置响应数据的MIME类型，application/json</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/jQuery/" data-id="ckgld2gc1000cyku30ity4qmq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/23/Cookie/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">客户端存储</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/23/jQuery/">jQuery相关记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/Cookie/">客户端存储</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/XMLHttpRequest/">XMLHttpRequest</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/">JavaScript异步</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/BOM/">JavaScriptBOM</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 未入圈的羊<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Javascript集合 | Points</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Array定义数组 new Array([length]) []  Array.from() 参数1：类数组对象，可迭代的结构，有length属性或可索引的结构。 参数2：增强数组元素的函数。 参数3：指定参数二函数对象引用的this对象。  Array.of() 将一组参数转换为数组。  数组索引 通过数组索引访问，增加及删除元素。 1234567let arr &#x3D; [];arr[0] &#x3D; 1;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript集合">
+<meta property="og:url" content="http://example.com/2020/10/23/Javascript%E9%9B%86%E5%90%88/index.html">
+<meta property="og:site_name" content="Points">
+<meta property="og:description" content="Array定义数组 new Array([length]) []  Array.from() 参数1：类数组对象，可迭代的结构，有length属性或可索引的结构。 参数2：增强数组元素的函数。 参数3：指定参数二函数对象引用的this对象。  Array.of() 将一组参数转换为数组。  数组索引 通过数组索引访问，增加及删除元素。 1234567let arr &#x3D; [];arr[0] &#x3D; 1;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-22T21:39:39.612Z">
+<meta property="article:modified_time" content="2020-10-22T21:39:39.825Z">
+<meta property="article:author" content="未入圈的羊">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Points" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo"></a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Javascript集合" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Javascript%E9%9B%86%E5%90%88/" class="article-date">
+  <time datetime="2020-10-22T21:39:39.612Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript集合
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h4 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h4><ol>
+<li>new Array([length])</li>
+<li>[]</li>
+</ol>
+<h4 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a>Array.from()</h4><ul>
+<li>参数1：类数组对象，可迭代的结构，有length属性或可索引的结构。</li>
+<li>参数2：增强数组元素的函数。</li>
+<li>参数3：指定参数二函数对象引用的this对象。</li>
+</ul>
+<h4 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of()"></a>Array.of()</h4><ul>
+<li>将一组参数转换为数组。</li>
+</ul>
+<h4 id="数组索引"><a href="#数组索引" class="headerlink" title="数组索引"></a>数组索引</h4><ul>
+<li><p>通过数组索引访问，增加及删除元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [];</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">1</span>;	<span class="comment">//add</span></span><br><span class="line">arr.length === <span class="number">1</span>; <span class="comment">//true</span></span><br><span class="line">arr[arr.length] = <span class="number">2</span>; <span class="comment">//add</span></span><br><span class="line">arr.length = <span class="number">1</span>; <span class="comment">//delete</span></span><br><span class="line">arr[<span class="number">5</span>] = <span class="number">6</span>; <span class="comment">//add</span></span><br><span class="line">arr.length; <span class="comment">//6</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h4><ul>
+<li><p>判断一个对象是不是数组</p>
+<p><code>Array.isArray(arr)</code></p>
+<p><code>arr instanceof Array</code>：在多框架结构中可能被重写而导致不适用。</p>
+</li>
+</ul>
+<h4 id="迭代器方法"><a href="#迭代器方法" class="headerlink" title="迭代器方法"></a>迭代器方法</h4><p>Array原型上暴露的方法，keys(),values(),entries()，返回可迭代的数据结构，可通过Array.from获取。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">Array</span>.from(a.keys());</span><br><span class="line"><span class="built_in">Array</span>.from(a.values());</span><br><span class="line"><span class="built_in">Array</span>.from(a.entries());</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>keys返回键数组。</li>
+<li>values返回值数组。</li>
+<li>entries返回元素键值对数组的二维数组。</li>
+</ul>
+<h4 id="填充与复制"><a href="#填充与复制" class="headerlink" title="填充与复制"></a>填充与复制</h4><ul>
+<li>fill()：将参数1的值填充到数组参数二位置与参数三位置之间，左闭右开，填充不影响数组长度。</li>
+<li>copyWithin：<ul>
+<li>一个参数，代表从0开始复制原数组插入到数组参数位置。</li>
+<li>二个参数，代表从第二个参数位置开始复制，插入到原数组第一个参数位置。</li>
+<li>三个参数，代表复制从第二个参数位置到第三个参数位置，插入到第一个参数位置。</li>
+</ul>
+</li>
+</ul>
+<h4 id="数组元素"><a href="#数组元素" class="headerlink" title="数组元素"></a>数组元素</h4><ul>
+<li>null和undefined在操作时会以空字符串的形式表示。</li>
+</ul>
+<h4 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h4><ul>
+<li>toString：返回数组元素以逗号相连接的字符串。</li>
+<li>valueOf：返回数组本身。</li>
+<li>toLocaleString：在调用时会调用每个元素的toLocaleString方法，无特殊跟toString相同。</li>
+</ul>
+<h4 id="栈方法"><a href="#栈方法" class="headerlink" title="栈方法"></a>栈方法</h4><ul>
+<li>后进先出。</li>
+<li><strong>push</strong>末尾压入<strong>返回数组新长度</strong>,<strong>pop</strong>取出返回<strong>最后一项</strong>。</li>
+<li>改变原数组。</li>
+</ul>
+<h4 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h4><ul>
+<li>先进先出，shift和push方法。</li>
+<li><strong>shift取出数组第一项并返回值</strong>。</li>
+<li><strong>unshift将元素推入数组开头，返回新长度</strong>。</li>
+</ul>
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><ul>
+<li><p><strong>sort排序，reverse反转会改变原数组</strong>，<strong>返回新数组</strong>。</p>
+</li>
+<li><p>sort会调用String()转型为字符串比较。</p>
+<p>稳妥的比较方法时在sort方法内传入一个比较函数作为参数。</p>
+<p><code>sort((v1,v2) =&gt; v1-v2)</code>正序</p>
+<p><code>sort((v1,v2) =&gt; v2-v1)</code>倒序</p>
+</li>
+</ul>
+<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><ul>
+<li><p><strong>slice：截取原数组，不改变原数组大小</strong>。</p>
+</li>
+<li><p><strong>splice：可以进行删除，插入，更新操作，直接操作原数组。</strong></p>
+<p>splice(开始位置索引，改变元素数量，新元素…)</p>
+</li>
+</ul>
+<h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><ul>
+<li><p><strong>indexOf，lastIndexOf，includes</strong>。</p>
+</li>
+<li><p><strong>includes，返回布尔值</strong>。</p>
+</li>
+<li><p>断言函数</p>
+<p>find，findIndex</p>
+<p>接受一个函数，参数为元素，元素索引和数组本身。</p>
+<p><strong>find返回第一个匹配的值</strong>。</p>
+<p><strong>findIndex返回第一个匹配的值的索引</strong>。</p>
+</li>
+</ul>
+<h4 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h4><ul>
+<li>every：返回所有元素经函数的判断是否全都满足，返回布尔类型。<strong>判断</strong></li>
+<li>some：对数组每一项都运行函数传入的函数，有一个结果为true，则返回true。<strong>判断</strong></li>
+<li>filter：返回经函数返回true的元素数组，不改变原数组。<strong>过滤</strong></li>
+<li>foreach：对数组每一项都运行函数传入的函数，不返回。<strong>遍历</strong></li>
+<li>map：对数组每一项都运行函数传入的函数，返回每一项的处理结果组成的数组，不改变原数组。<strong>遍历及操作</strong></li>
+</ul>
+<h4 id="归并方法"><a href="#归并方法" class="headerlink" title="归并方法"></a>归并方法</h4><ul>
+<li>reduce：<strong>接受一个回调函数和一个初始值作为参数</strong>，回调函数四个参数：上一次归并值，当前项，当前项的索引，数组本身。第一次进行时，第一个参数取数组第一个元素。第二个参数取数组第二个元素。</li>
+<li>reduceRight：从数组最后一位向前归并。</li>
+</ul>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ol>
+<li>定义：new Map()</li>
+<li>设置值：set(‘id’,’1010’)</li>
+<li>判断：has(key)</li>
+<li>获取：get(key)</li>
+<li>删除：map.delete(key)</li>
+<li>清空：map.clear()</li>
+<li>迭代：for…of，foreach</li>
+<li>迭代器：keys，values，entries和本身相同。</li>
+</ol>
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><ul>
+<li>基本和map相同，添加元素用add方法。</li>
+<li>迭代器entries返回的都是值。</li>
+</ul>
+<h3 id="默认迭代对象"><a href="#默认迭代对象" class="headerlink" title="默认迭代对象"></a>默认迭代对象</h3><p>都可以使用解构和for……of</p>
+<ul>
+<li>Array</li>
+<li>定型数组</li>
+<li>Map</li>
+<li>Set</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Javascript%E9%9B%86%E5%90%88/" data-id="ckgld2gbv0008yku3haobbzeg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/10/23/Javascript%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Javascript对象原型
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/23/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">垃圾回收</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/23/jQuery/">jQuery相关记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/Cookie/">客户端存储</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/XMLHttpRequest/">XMLHttpRequest</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/">JavaScript异步</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/23/BOM/">JavaScriptBOM</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 未入圈的羊<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
