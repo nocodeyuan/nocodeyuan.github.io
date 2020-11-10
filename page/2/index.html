@@ -64,6 +64,229 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-垃圾回收" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" class="article-date">
+  <time datetime="2020-10-22T21:38:35.940Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/">垃圾回收</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><ol>
+<li>var声明的变量会被提升到当前作用域的前端（函数作用域或全局作用域），对一个变量声明并赋值，声明的语句会被提升，赋值语句不会。</li>
+<li>let块级作用域，即花括号包裹的语句块，不可重复声明。严格来说会被提升，但由于暂时性死区，所以会报错。</li>
+<li>const声明的常量同样拥有块级作用域，变量不可以重新赋值，但可以给对象变量属性赋值。如果不想改变对象属性使用<code>const a = Object.freeze()</code>，会使变量的属性赋值无效。</li>
+</ol>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ul>
+<li><p>标识符查找</p>
+<p>当作用域引用变量的时候，会确定变量的值，如果当前作用域无法获取变量的值，则会访问上一级作用域继续搜索，当获取到值的时候搜索结束。也就产生了局部变量与全局变量的关系，当他们相同，则优先搜索到局部变量使搜索结束。搜索发生在当前作用域或当前作用域链上，同时会搜索对象以及对象的原型链所以并不会获得全局变量的值。</p>
+</li>
+</ul>
+<h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><ul>
+<li>浏览器史上用过的垃圾标记策略。</li>
+</ul>
+<ol>
+<li><p>标记清理</p>
+<p>垃圾回收程序运行时，会去掉在上下文中的变量及其应用的变量，其他添加标记待删除。随后运行一次清理，回收内存。</p>
+</li>
+<li><p>引用计数</p>
+<p>保留变量被引用的次数，当被替换引用时减1直到归零，垃圾回收程序运行时清理所有计数为零的变量内存。</p>
+<p>缺点是当两个对象分别以属性的方式引用对方，那么他们的计数永远为2，无法清除。</p>
+</li>
+</ol>
+<ul>
+<li><p>性能</p>
+<p>垃圾回收的事件调度会影响js的性能。ie6是固定分配空间来进行垃圾回收，ie7按回收空间占比进行了改进。</p>
+</li>
+<li><p>内存管理</p>
+<ol>
+<li><p>全局作用域的对象，在数据不再必要的时候将它设置为null，解除引用。</p>
+</li>
+<li><p>通过es6，let，const声明块级作用域的变量，不接受window全局，在某些情况下块级作用域先于函数作用域关闭，优先被垃圾回收。</p>
+</li>
+<li><p>隐藏类和删除操作优化：</p>
+<ul>
+<li>隐藏类存在于类的声明中，当类的两个实例对象同时声明时，他们存在相同的隐藏类，垃圾回收可以方便地回收。</li>
+</ul>
+<ol>
+<li>在声明类的时候，将需要的参数全部放到构造函数中，防止私自添加改变实例的隐藏类。</li>
+<li>如不需要类的属性，不是将属性删除，而是将属性设置为null。</li>
+</ol>
+</li>
+<li><p>内存泄漏，通过程序改变内存占用的时间和空间。</p>
+<ol>
+<li>声明全局变量。</li>
+<li>定时器占用外部变量。</li>
+<li>闭包占用变量。</li>
+</ol>
+</li>
+<li><p>静态分配与对象池</p>
+<ul>
+<li>频繁的对象创建，更新与删除会更快地占用内存从而触发垃圾回收程序。</li>
+<li>避免动态创建对象和其他对象（数组会自己动态改变自身长度弃用原数组，提前分配长度有效避免）实例化。</li>
+<li>静态分配就是使用对象池静态方法按需获取对象，使用，归还。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" data-id="ckhbgha01000e5su3279df7yg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Javascript语句与操作符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/23/Javascript%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%AC%A6/" class="article-date">
+  <time datetime="2020-10-22T21:37:13.154Z" itemprop="datePublished">2020-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/23/Javascript%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%AC%A6/">Javascript语句与操作符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><ol>
+<li><p>一元操作符</p>
+<ul>
+<li><p>++/–</p>
+<p>自增/自减</p>
+<p> 对于数值做加减，字符数值、布尔类型、调用Number()转换类型再作加减，对象类型获取valueOf/toString转换为字符再进行计算。</p>
+</li>
+<li><p>位运算符</p>
+<ul>
+<li>位运算将64位数值转为32位二进制数，操作完成再转换为64位数值存储。</li>
+<li>补数：二进制数反转。</li>
+<li>取反数：正数取反为二进制取补数加一。</li>
+</ul>
+</li>
+<li><p>~按位非，取32位二进制的补数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>; <span class="comment">//0b1010</span></span><br><span class="line">~a; <span class="comment">//-11 -0b1011</span></span><br><span class="line"><span class="comment">//1111 1111 1111 1111 1111 1111 1111 0101</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&amp;按位与，32位二进制数相与运算</p>
+<p>2 &amp; 3</p>
+<p>原二进制按位相与运算，返回二进制再进行计算。</p>
+</li>
+<li><p>|按位或，32位二进制相或运算。</p>
+</li>
+<li><p>^按位异或，32位二进制异或运算，负负或正正皆为0。</p>
+</li>
+<li><p>&lt;&lt;左移,&gt;&gt;右移，将指定位数左右移动指定位数做运算。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;	<span class="comment">//10</span></span><br><span class="line"><span class="keyword">let</span> b = a &lt;&lt; <span class="number">5</span>; <span class="comment">//0b1000000 b===64</span></span><br><span class="line"><span class="keyword">let</span> c = b &gt;&gt; <span class="number">5</span>; <span class="comment">//0b10 c===2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&gt;&gt;&gt;无符号右移，所有32位右移，对负数影响大，对整数与有符号右移一样。</p>
+</li>
+<li><p>逻辑与或非</p>
+<p>与或操作有中断执行情况，即满足第一个条件则不会继续执行第二个条件。</p>
+<p>null返回null，undefined返回undefined，NaN返回NaN，对象操作返回对象。</p>
+</li>
+<li><p>乘除取模</p>
+</li>
+<li><p>指数运算</p>
+<p><code>3 ** 2 === Math.pow(3,2)</code></p>
+</li>
+<li><p>加减性运算符</p>
+<p>数字加字符得字符</p>
+<p>减操作会自动转换</p>
+</li>
+<li><p>关系运算符</p>
+<p>大于小于等于不等于</p>
+<ul>
+<li>任一布尔值，则转换为数值比较</li>
+<li>任意字符串和数值，转换为数值。都是字符串，则逐个比较每一位的字符编码。</li>
+<li>对象取valueOf/toString比较。</li>
+<li>对象判断相等，比较两个对象的地址是否相等。</li>
+</ul>
+</li>
+<li><p>全等与不全等</p>
+<p>全等不转换数值类型</p>
+</li>
+<li><p>三元运算符</p>
+</li>
+<li><p>逗号操作符</p>
+<p><code>let a = (1,2,3,4,5); //5</code></p>
+</li>
+</ul>
+</li>
+<li><p>逻辑非</p>
+<ul>
+<li>！对象，返回false。</li>
+<li>！空字符串，返回true。</li>
+<li>！0，返回true。</li>
+<li>！null，返回true。</li>
+<li>！NaN，返回true。</li>
+<li>！undefined，返回true。</li>
+</ul>
+</li>
+</ol>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><ol>
+<li><p>条件</p>
+<p>if……else</p>
+</li>
+<li><p>循环</p>
+<p>while</p>
+<p>do……while</p>
+<p>for</p>
+<p>for……in 对象元素遍历</p>
+<p>for……of 可迭代对象遍历</p>
+<p>break……continue</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标签语句</span></span><br><span class="line"><span class="keyword">let</span> num = <span class="number">0</span>;</span><br><span class="line">outFor:</span><br><span class="line"><span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">i === <span class="number">5</span> &amp;&amp; j === <span class="number">5</span></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">break</span> outFor; <span class="comment">//中止最外层循环</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    num++；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>with语句(不推荐使用)</em></p>
+<p>用于连接对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原本</span></span><br><span class="line"><span class="keyword">let</span> qs = location.search.substring(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">let</span> hostname = location.hostname;</span><br><span class="line"><span class="keyword">let</span> url = location.href;</span><br><span class="line"><span class="comment">//with</span></span><br><span class="line"><span class="function"><span class="title">with</span>(<span class="params">location</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> qs = search.substring(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">let</span> hostName = hostname;</span><br><span class="line">    <span class="keyword">let</span> url = href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>switch</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/23/Javascript%E8%AF%AD%E5%8F%A5%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%AC%A6/" data-id="ckhbgh9zt00085su3cs1tehed" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Javascript数据类型" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/10/23/Javascript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
@@ -291,7 +514,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/23/Javascript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" data-id="ckgld2gbr0005yku329bs8z58" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/23/Javascript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" data-id="ckhbgh9zr00065su3bahdgwhf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -431,7 +654,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/23/HTML/" data-id="ckgld2gbn0002yku37pzh2s5u" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/23/HTML/" data-id="ckhbgh9zo00035su37ad708sn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -497,11 +720,11 @@
 <li><p><code>npm install --save -dev</code>，<code>npm i -D</code>，开发环境。</p>
 <p><code>npm install --save</code>，<code>npm i -S</code>，生产环境。</p>
 </li>
-<li><p>安装依赖<code>npm i -D webpack webpack-cli webpack-dev-server babel-loader@7 babel-core babel-prset-env babel-plugin-transform-runtime babel-plugin-transform-decorators babel-plugin-transform-decorators-legacy sass-loader node-sass css-loader style-loader ejs-loader html-webpack-plugin --registry=https://registry.npm.taobao.org/</code></p>
+<li><p>安装依赖<code>npm i -D webpack webpack-cli webpack-dev-server babel-loader@7 babel-core babel-preset-env babel-plugin-transform-runtime babel-plugin-transform-decorators babel-plugin-transform-decorators-legacy sass-loader node-sass css-loader style-loader ejs-loader html-webpack-plugin --registry=https://registry.npm.taobao.org/</code></p>
 </li>
 </ol>
 <h3 id="配置依赖"><a href="#配置依赖" class="headerlink" title="配置依赖"></a>配置依赖</h3><ul>
-<li>配置文件webpack.config.js，作为模块导出module.exports。</li>
+<li>配置文件webpack.config.js，作为模块导出module.exportse。</li>
 <li>mode，webpack模式，development/production。</li>
 <li>path模块，解决文件url问题，通过require导入<code>const path = require(&#39;path&#39;);</code><ul>
 <li>resolve方法，相当于命令行cd。<ul>
@@ -588,118 +811,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/23/Webpack/" data-id="ckgld2gbx000ayku3e9dte4ks" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-resume" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/23/resume/" class="article-date">
-  <time datetime="2020-10-22T21:27:37.097Z" itemprop="datePublished">2020-10-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/23/resume/">前端简历</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 style="cursor:pointer;color:#4b4b4b;border-bottom:0.4px solid #f1f2f3"><a target="_blank" rel="noopener" href="https://nocodeyuan.github.io/" style="color:#4b4b4b;text-decoration:none"><strong><svg t="1602523766402" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3973" width="18" height="18"><path d="M954.181818 795.927273c-55.854545-162.909091-172.218182-286.254545-314.181818-332.8 76.8-41.890909 128-123.345455 128-216.436364C768 111.709091 656.290909 0 518.981818 0c-137.309091 0-249.018182 111.709091-249.018182 249.018182 0 90.763636 48.872727 169.890909 121.018182 211.781818C246.690909 505.018182 125.672727 628.363636 69.818182 795.927273c-16.290909 51.2-9.309091 114.036364 23.272727 158.254545 30.254545 41.890909 76.8 69.818182 128 69.818182l390.981818 0c13.963636 0 27.927273-16.290909 27.927273-30.254545 0-13.963636-11.636364-30.254545-27.927273-30.254545L221.090909 963.490909c-32.581818 0-65.163636-16.290909-83.781818-44.218182-20.945455-30.254545-27.927273-69.818182-16.290909-104.727273 62.836364-190.836364 221.090909-318.836364 390.981818-318.836364S840.145455 623.709091 902.981818 814.545455c11.636364 34.909091 6.981818 74.472727-16.290909 104.727273-20.945455 27.927273-51.2 44.218182-83.781818 44.218182-13.963636 0-27.927273 11.636364-27.927273 27.927273 0 13.963636 11.636364 27.927273 27.927273 27.927273 51.2 0 97.745455-23.272727 128-65.163636C963.490909 905.309091 972.8 847.127273 954.181818 795.927273zM323.490909 249.018182c0-107.054545 88.436364-193.163636 195.490909-193.163636s195.490909 86.109091 195.490909 193.163636S626.036364 442.181818 518.981818 442.181818 323.490909 356.072727 323.490909 249.018182z" p-id="3974"></path></svg> 袁靖玮</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                                     <strong style="line-height:27px;font-style:oblique">前端开发 南京</strong></h2>
-
-<h6 style="color:#4b4b4b;">19814666836 | <a href="mailto:15077861350@163.com" style="color:#4b4b4b;text-decoration:none">15077861350@163.com</a></h6>
-
-
-
-<h3><a style="text-decoration:none;color:#4b4b4b" target="_blank" rel="noopener" href="https://www.chsi.com.cn/xlcx/lscx/query.do?zsbh=65320189124105003&xm=%E8%A2%81%E9%9D%96%E7%8E%AE"><svg t="1602524386578" class="icon" viewBox="0 0 1026 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5837" width="20" height="18"><path d="M981.567401 373.726208 981.567401 543.26272l35.689472 35.699712-74.415104 77.443072-75.336704-75.158528 51.58912-46.90944L919.094185 400.489472c-218.90048 90.257408-289.074176 118.310912-337.620992 140.2112-48.54784 21.900288-83.506176 21.789696-131.652608 3.647488-48.1536-18.147328-277.363712-101.80096-391.17824-156.269568-75.948032-36.340736-80.837632-59.388928 1.304576-90.231808 107.200512-40.725504 284.38528-105.946112 378.305536-141.541376 55.593984-22.490112 84.995072-34.768896 136.026112-9.121792C665.399209 184.810496 873.609129 262.941696 977.141673 305.6896 1067.266985 345.020416 1006.677929 357.957632 981.567401 373.726208L981.567401 373.726208zM592.030633 607.809536c52.936704-21.84192 124.314624-57.957376 202.141696-91.298816L794.172329 784.20992c0 0-100.652032 107.07456-277.599232 107.07456-190.558208 0-293.490688-107.07456-293.490688-107.07456L223.082409 534.336512c60.068864 24.4736 127.521792 45.531136 209.153024 73.473024C482.546601 625.71008 546.388905 631.899136 592.030633 607.809536L592.030633 607.809536zM592.030633 607.809536" p-id="5838" fill="#707070"></path></svg> 学历</a></h3>
-
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2017.07.01    南京航空航天大学    软件工程    本科</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 style="color:#4b4b4b"><a target="_blank" rel="noopener" href="https://github.com/nocodeyuan/" style="color:#4b4b4b;text-decoration:none"><svg t="1602524590632" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6824" width="20" height="18"><path d="M254.037315 745.648h267.208c11.52 19.344 24.616 37.304 39.44 53.536h-306.64v-53.536z m0-84.688h231.312a358.4 358.4 0 0 1-10.112-53.504h-221.2v53.504z m0-138.16H475.941315c2.304-18.288 5.712-36.256 10.72-53.496H254.021315v53.496h0.024z m431.304 358.72v46.8c0 22.384-16.76 40.6-37.336 40.6h-560.56c-20.608 0-37.304-18.216-37.304-40.6V250.08l185.76-167.68v178H138.101315v53.504h147.12V53.504h362.784c20.608 0 37.336 18.216 37.336 40.528v160.072c15.896-5.4 32.424-9.024 49.36-11.56v-148.48C734.725315 42.24 695.813315 0 648.037315 0H250.021315L0.821315 224.944v703.336c0 51.84 38.872 94.072 86.656 94.072h560.56c47.792 0 86.696-42.16 86.696-94.072v-35.28c-16.936-2.496-33.464-6.12-49.36-11.48h-0.032zM187.053315 469.336h-63.68v53.504h63.68v-53.504z m-63.648 329.84h63.68v-53.528h-63.68v53.536z m63.648-191.68h-63.68v53.496h63.68v-53.504z m717.744-120.336l-39.168-32.56-99.576 140.904-89.52-74.44-30.096 42.488 128.728 107.04 129.632-183.432zM1024.821315 567.824c0-149.056-111.76-270.256-249.176-270.256-137.344 0-249.08 121.24-249.08 270.256 0 149.024 111.76 270.264 249.08 270.264 137.376 0 249.144-121.2 249.144-270.264H1024.821315z m-49.36 0c0 119.464-89.624 216.8-199.848 216.8-110.16 0-199.896-97.264-199.896-216.8 0-119.528 89.56-216.792 199.896-216.792 110.224 0 199.856 97.264 199.856 216.8z" p-id="6825" fill="#515151"></path></svg> 专业技能</a></h3>
-
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* HTML、CSS、Javascript ES5&#x2F;ES6、jQuery、React、Ant Design、Bootstrap.</span><br><span class="line"></span><br><span class="line">* Java、Spring.</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 style="border-bottom:1px solid #f1f2f3;color:#4b4b4b"><svg t="1602526854936" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8932" width="20" height="18"><path d="M895.872 131.648c-53.568-55.232-228.608-66.88-366.144-66.88L523.648 64.768C519.168 64.64 500.096 64 472.512 64c-103.744 0-241.664 7.872-309.12 45.248C64.512 163.968 61.376 406.272 64.768 509.568c-3.392 104.96-0.256 350.464 98.624 405.248C230.784 952.128 368.64 960 472.384 960c27.584 0 46.72-0.64 51.264-0.768l6.144 0c137.472 0 312.512-11.648 366.08-66.88 60.352-62.272 64.96-286.464 64.064-380.352C960.832 418.048 956.224 193.92 895.872 131.648zM186.048 149.312C248.32 114.752 394.88 109.952 472.512 109.952c30.528 0 50.368 0.704 50.368 0.704s2.432 0 6.784 0c43.904 0 283.904 2.368 332.8 52.736 53.888 55.68 51.2 348.608 51.2 348.608s0.192 24.576-0.768 60.352c-1.6-1.344-3.2-2.816-5.44-3.136l-173.312-23.808-67.264-298.368L666.88 246.464c-3.2-13.888-14.016-25.472-28.8-29.056-20.8-4.928-41.6 7.936-46.592 28.8l-95.36 401.856L406.208 367.872 406.08 367.36C402.56 356.608 393.728 347.84 381.888 344.576 363.328 339.648 344.192 350.656 339.2 369.344L290.816 550.016l-174.08 19.2C114.496 569.408 112.576 570.624 110.848 572.032 110.336 536.96 111.04 512.256 111.168 509.568 110.848 499.904 100.736 196.544 186.048 149.312zM862.528 860.608c-48.896 50.368-288.768 52.736-332.736 52.736-4.416 0-6.848 0-6.848 0s-19.968 0.704-50.496 0.704c-77.76 0-224.192-4.8-286.4-39.296-58.752-32.576-72.256-188.736-74.816-286.144 1.664 1.344 3.264 2.816 5.568 3.072l200.448 22.208c13.888 1.408 27.264-7.168 31.104-20.992l1.024-3.52 25.856-91.008 93.632 286.016c3.52 10.56 12.16 19.392 23.744 22.336 18.048 4.608 36.544-6.272 41.216-24.384l0.064-0.256 92.352-359.488 36.608 166.528 1.216 4.928c3.712 16.96 19.968 28.416 37.504 26.048l206.016-28.288c1.856-0.256 3.392-1.344 4.864-2.368C909.248 680.256 898.56 823.36 862.528 860.608z" p-id="8933"></path></svg> 工作经历</h3>
-
-<h4 style="color:#636e72">瑞声科技公司（全职）    2019.04 - 2020.04</h4>
-
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">主要业务：建立工厂信息化数据管理平台。</span><br><span class="line"></span><br><span class="line">职位：研发（信息化）</span><br><span class="line"></span><br><span class="line">技术栈：Javascript、MySQL.</span><br><span class="line"></span><br><span class="line">岗位职责：</span><br><span class="line"></span><br><span class="line">  1. 切实理解工厂的运作模式。</span><br><span class="line"></span><br><span class="line">  2. 参与平台建立的整个开发流程，包括：</span><br><span class="line"></span><br><span class="line">     产品对接、需求评省、功能设计、数据库设计、前端开发、站点部署（数据采集）、运维等。</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 style="color:#636e72">南京安威德科技有限公司（实习)    2018.04 - 2018.10 </h4>   
-
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">主要业务：开发行政监管办公系统。</span><br><span class="line"></span><br><span class="line">职位：JavaWeb开发</span><br><span class="line"></span><br><span class="line">技术栈：Javascript、Java、Spring、Oracle.</span><br><span class="line"></span><br><span class="line">岗位职责：负责项目前后端功能开发。</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 style="color:#4b4b4b"><svg t="1602527002852" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11611" width="20" height="20"><path d="M67.030138 926.781818l890.334721 0L957.364859 707.735963 67.030138 707.735963 67.030138 926.781818zM511.17368 758.959601 906.14122 758.959601l0 116.598578L511.17368 875.55818 511.17368 758.959601zM67.030138 97.788164l0 219.045855 890.334721 0L957.364859 97.788164 67.030138 97.788164zM906.14122 265.61038 512.196986 265.61038 512.196986 149.010779 906.14122 149.010779 906.14122 265.61038zM67.030138 621.807918l890.334721 0L957.364859 402.762063 67.030138 402.762063 67.030138 621.807918zM511.17368 453.985702 906.14122 453.985702l0 116.598578L511.17368 570.58428 511.17368 453.985702z" p-id="11612"></path></svg> 项目经历</h3>
-
-<h4 style="border-bottom:1px solid #f1f2f3;color:#636e72">2019.04 - 2020.04    数据管理平台项目</h4>
-
-<ul>
-<li><p><strong style="color:#636e55">项目简介：</strong></p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 建立基于办公网络B&#x2F;S架构的数据展示平台。</span><br><span class="line"></span><br><span class="line">2. 实现识别工厂机器工作状态、实现人员产量数据的动态展示。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong style="color:#636e55">主要技术栈：</strong>Javascript、Bootstrap.</p>
-</li>
-<li><p><strong style="color:#636e55">主要工作：</strong></p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 在工作中使用HTML、CSS完成符合W3C规范的PC端页面。</span><br><span class="line"></span><br><span class="line">2. 使用XMLHttpRequest封装Ajax请求获取后台数据。</span><br><span class="line"></span><br><span class="line">3. 贴近用户，接受反馈，修复页面BUG。</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h4 style="border-bottom:1px solid #f1f2f3;color:#636e72">2018.07 - 2018.10    安徽行政信息管理平台项目</h4>
-
-<ul>
-<li><p><strong style="color:#636e55">项目简介：</strong></p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">该系统主要服务于警务办公，实现人员数据管理、人员会话记录、报表、工作流程审批等服务。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong style="color:#636e55">主要技术栈：</strong></p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">React、Java、Spring、Oracle、Android SDK.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong style="color:#636e55">主要工作：</strong></p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 参与开发，熟悉公司业务结构与技术栈。</span><br><span class="line"></span><br><span class="line">2. 独立完成封装系统公共查询、数据展示服务到Android平台客户端的开发。</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h4 style="border-bottom:1px solid #f1f2f3;color:#636e72">2018.04 - 2018.06    福建行政管理系统项目</h4>
-
-<ul>
-<li><p><strong style="color:#636e55">项目简介：</strong></p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 该系统致力于监管场所人员信息的电子化管理。</span><br><span class="line"></span><br><span class="line">2. 要求记录被监管人员的所有个人信息、日常活动轨迹及管理人员、医生的工作记录。</span><br><span class="line"></span><br><span class="line">3. 要求录入数据人性化，人员监管状态实时更新。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong style="color:#636e55">主要工作：</strong></p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过学习了解公司的技术栈与业务结构、完成系统的功能测试、修复系统Bug。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/23/resume/" data-id="ckgld2gc2000dyku38vi4fiwz" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/23/Webpack/" data-id="ckhbgh9zw000b5su3c5op7pe6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -789,7 +901,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/23/Module/" data-id="ckgld2gbw0009yku38us120g5" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/23/Module/" data-id="ckhbgh9zv000a5su30auh9ffl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1040,56 +1152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/23/CSS/" data-id="ckgld2gci000fyku333ixc5bq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/23/hello-world/" class="article-date">
-  <time datetime="2020-10-22T17:05:36.650Z" itemprop="datePublished">2020-10-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/23/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/23/hello-world/" data-id="ckgld2gby000byku3hq2m5884" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/23/CSS/" data-id="ckhbgha0e000f5su3btrm0tg9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1122,7 +1185,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
     </div>
   </div>
 
@@ -1135,6 +1198,14 @@
       <ul>
         
           <li>
+            <a href="/2020/11/10/%E5%89%8D%E7%AB%AF%E7%AE%80%E5%8E%86/">前端简历</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/26/Node/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2020/10/23/jQuery/">jQuery相关记录</a>
           </li>
         
@@ -1144,14 +1215,6 @@
         
           <li>
             <a href="/2020/10/23/XMLHttpRequest/">XMLHttpRequest</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/23/JavaScript%E5%BC%82%E6%AD%A5/">JavaScript异步</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/23/BOM/">JavaScriptBOM</a>
           </li>
         
       </ul>
